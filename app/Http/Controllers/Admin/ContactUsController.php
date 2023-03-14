@@ -18,4 +18,5 @@ class ContactUsController extends Controller
         $contacts = ContactUs::orderby('id', 'desc')->get();
         return view('admin.contact_us.index', compact('contacts'));
     }
+    
 }

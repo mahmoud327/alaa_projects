@@ -13,8 +13,7 @@
 </head>
 <body>
     @include('website.layouts.navbar')
-    @include('website.layouts.whatsapp')
-    @include('website.layouts.messanger')
+
     @yield('content')
     @include('website.layouts.footer')
     @include('website.layouts.up-btn')

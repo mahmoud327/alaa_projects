@@ -1,19 +1,41 @@
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-cente">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-        <h1 class="logo me-auto me-lg-0"><a href="{{ route('website.home.index') }}"> <img
-                    src="{{ asset('website/img/logo/logo.png') }}" alt=""> </a></h1>
+<div class="container">
 
-        <nav id="navbar" class="navbar order-last order-lg-0">
-            <ul>
-                <li><a class="nav-link scrollto {{ isActive(request()->getHttpHost()) }}" href="{{ route('website.home.index') }}">Home</a></li>
-                <li><a class="nav-link scrollto {{ isActive('why-us') }}" href="{{ route('website.why-us') }}">Why Us</a></li>
-                <li><a class="nav-link scrollto {{ isActive('course') }}" href="{{ route('website.courses') }}">Courses</a></li>
-                <li><a class="nav-link scrollto {{ isActive('fees') }}" href="{{ route('website.fees') }} ">Fees </a></li>
-                <li><a class="nav-link scrollto {{ isActive('faqs') }}" href="{{ route('website.faqs') }}">FAQs </a></li>
-                <li><a class="nav-link scrollto {{ isActive('contact-us') }}" href="{{ route('website.contact-us') }}">Contact Us</a></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-    </div>
-</header><!-- End Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow" id="nav">
+        <!--start social section-->
+        <!--end social section-->
+        <div class="container">
+            <a class="navbar-brand " href="#">
+                <img id="logo" src="{{ asset('website/img/logo.png') }}" alt="logo" class="img-fluid" width="100" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active " href="{{ route('home') }}">الرئيسية<span
+                            class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('our-services')}}">خدماتنا</a>
+                    <a class="nav-link" href="{{route('my-works.index')}}">أعمالنا</a>
+                    <a class="nav-link" href="{{ route('products.index') }}">منتجاتنا</a>
+                    <a class="nav-link" href="{{route('blogs.index')}}">مدونتنا</a>
+                    <a class="nav-link" href="{{route('about-us')}}">نبذه عنا</a>
+                    <a class="nav-link" href="{{route('contact-us.index')}}">تواصل معنا</a>
+                </div>
+                <!--start social section-->
+                <div class="upper_header">
+                    <div class="links">
+                        <div class="main-moon">
+                            <img class="moon" src="{{ asset('website/img/moon.png') }}" alt="gf">
+                        </div>
+
+                        <!-- <a class="lang" href="en/index.php">En</a> -->
+                        <a class="lang" href="en/indexd41d.html?">En</a>
+                    </div>
+                </div>
+                <!--end social section-->
+            </div>
+        </div>
+    </nav>
+</div>

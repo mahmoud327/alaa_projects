@@ -141,8 +141,7 @@
                                 <th class="border-bottom-0">name</th>
                                 <th class="border-bottom-0">email</th>
                                 <th class="border-bottom-0">phone</th>
-                                <th class="border-bottom-0">nationality</th>
-                                <th class="border-bottom-0">type</th>
+                                <th class="border-bottom-0">message</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -153,14 +152,8 @@
                                     <td>{{ $contact->name }}</td>
                                     <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->phone }}</td>
-                                    <td>{{ optional($contact->nationality)->name }}</td>
-                                    <td>
-                                        @if( $contact->is_free )
-                                            Free Trail
-                                        @else
-                                            Normal
-                                        @endif
-                                    </td>
+                                    <td>{{ $contact->message }}</td>
+
                                 </tr>
                             @endforeach
                         </tbody>

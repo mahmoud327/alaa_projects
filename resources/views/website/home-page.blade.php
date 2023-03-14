@@ -1,835 +1,754 @@
 @extends('website.layouts.master')
 @section('content')
-    <div class="slider" id="slider">
-        <div class="slItems">
+    <section class="main">
+        <div class="overlay">
+            <div class="container" data-aos="zoom-in" data-aos-duration="2000">
+                <div class="row"
+                    style="justify-content: center;
+                        margin: auto;
+                        width: 100%;
+                        text-align: center;">
+                    <div class="col-md-6 col-sm-12">
+                        <h1 style="font-weight: bolder;">علاء عزاني للتقنية</h1>
+                        <p>شريكك التقني الأول للتحول الرقمي</p>
+                        <p>
+                            <span style="color: #64b1e7;">
+                                مستعد
+                            </span>
 
-            <div class="slItem" style="background-image: url({{ asset('website/img/slider/s1.jpg') }});">
-                <div class="bg-op"></div>
-                <div class="slText">
-                    Welcome to Makkah Quran Academy <br>
-                    learn the Quran online in a way that is engaging, interesting, and effective.
+                            <span class="example-selector"></span>
+                        </p>
 
-                </div>
-            </div>
-
-            <div class="slItem" style="background-image: url({{ asset('website/img/slider/s2.jpg') }});">
-                <div class="bg-op"></div>
-                <div class="slText">
-                    learn how to read Holy Quran with tajweed rules
-                </div>
-            </div>
-
-            <div class="slItem" style="background-image: url({{ asset('website/img/slider/s3.jpg') }});">
-                <div class="bg-op"></div>
-                <div class="slText">
-                    Memorize the Holy Quran online with certified Hafiz teachers
-                </div>
-            </div>
-
-            <div class="slItem" style="background-image: url({{ asset('website/img/slider/s4.jpg') }});">
-                <div class="bg-op"></div>
-                <div class="slText">
-                    ISLAMIC STUDIES <br>
-                    Learn how to say Duaa, how to pray, and how to deal with people according to the Islamic law
+                    </div>
 
                 </div>
             </div>
+        </div>
+        <a href="#services" class="scroll_down" id="scroll_down"><i class="fa-solid fa-angle-down"></i></a>
 
-            <div class="slItem" style="background-image: url({{ asset('website/img/slider/s5.jpg') }});">
-                <div class="bg-op"></div>
-                <div class="slText">
-                    learn classical Quranic Arabic with expert native Arabic teachers
+    </section>
+    <!--end main section-->
+    <!--start services section-->
+    <section class="services" id="services">
+        <div class="container text-center" data-aos="zoom-in" data-aos-duration="2000">
+            <h2>خدماتنا</h2>
+            <p class="my-2">
+                نقدم لك أفضل الخدمات والحلول الرقمية المتكاملة لتلبي جميع احتياجاتك لنجاح وإنطلاق مشروعك من الصفر
+            </p>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 box-services">
+                    <div class="card">
+                        <img src="{{ asset('website/img/coding.png') }}" alt="web-development" class="img-fluid">
+                        <h4> حلول التقنية</h4>
+                        <ul class="list-unstyled">
+                            <li>انشاء المواقع الالكترونية</li>
+                            <li>إنشاء المتاجر الإلكترونية</li>
+                            <li>تطوير تطبيقات الجوال</li>
+                            <li>تطوير برمجيات مخصصة</li>
+                            <li>خدمات الحوسبة السحابية</li>
+                            <li>حجز النطاق والإستضافة للمواقع</li>
+                            <li>الإستشارات التقنية وحلول الأعمال</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 box-services">
+                    <div class="card">
+                        <img src="{{ asset('website/img/Graphic Design.png') }}" alt="cms" class="img-fluid">
+                        <h4>تصميم الجرافيك</h4>
+                        <ul class="list-unstyled">
+                            <li>تصميم الهوية البصرية كاملة</li>
+                            <li>تصميم الشعار وبطاقة العمل</li>
+                            <li>تصميم ملصقات التواصل الاجتماعي</li>
+                            <li>تصميم الدعوات والإعلانات ولافتات الويب</li>
+                            <li>تصميم صور انفو جرافيك</li>
+                            <li>تصميم فيديو موشن جرافيك</li>
+                            <li>تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 box-services">
+                    <div class="card">
+                        <img src="{{ asset('website/img/digital marketing.png') }}" alt="e-learning" class="img-fluid">
+                        <h4>التسويق الالكتروني</h4>
+                        <ul class="list-unstyled">
+                            <li>كتابة المحتوي القيم والمقالات</li>
+                            <li>تحسين محركات البحث (SEO)</li>
+                            <li>التسويق عبر وسائل التواصل الاجتماعي</li>
+                            <li>التسويق عبر البريد الإلكتروني</li>
+                            <li>الحملات الإعلانية المدفوعة (AD)</li>
+                            <li>الفيديو الدعائي</li>
+                            <li>خطة تسويق متنوعة</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <!-- <div class="clip-path"> -->
+            <a href="#" data-toggle="modal" data-target="#exampleModal">أطلب الان</a>
+            <!-- </div> -->
+        </div>
+    </section>
+    <!--start form modal-->
 
-            <div class="slItem" style="background-image: url({{ asset('website/img/slider/s6.jpg') }});">
-                <div class="bg-op"></div>
-                <div class="slText">
-                    We have Al-Azhar certified teachers who are fluent in English and well trained to teach online
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div> -->
+
+                <div class="modal-body">
+                    <div class="form">
+                        <h3> أرسل لنا فكرتك لتبدء قصتك
+                        </h3>
+                        <form method="POST" action="https://api.bassamelabassy.me/index.php">
+                            <div class="form-row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label for="name">الإسم</label>
+                                    <input type="text" name="name" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <label for="email">البريد الالكتروني</label>
+                                    <input type="email" name="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label for="phone">رقم التواصل</label>
+                                    <div class="input-group ">
+                                        <span class=" input-group-text" id="basic-addon1">+</span>
+                                        <input type="text" name="phone" class=" form-control border-end-0"
+                                            id="phone" required>
+                                    </div>
+                                    <input type="text" name="phone" class="border-0 contactNumber" id="phone"
+                                        required>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <label for="address">البلد</label>
+                                    <select class="custom-select mr-sm-2" name="service" id="service" required>
+                                        <option value="برمجة وحلول تقنية">مصر</option>
+                                        <option value="تصميم الجرافيك"> السعوديه</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label for="service">نوع الخدمه</label>
+                                    <select class="custom-select mr-sm-2" name="service" id="service" required>
+                                        <option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>
+                                        <option value="تصميم الجرافيك">تصميم الجرافيك</option>
+                                        <option value="تسويق الكتروني">تسويق الكتروني</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <label for="service"> الخدمه</label>
+                                    <select class="custom-select mr-sm-2" name="service" id="service" required>
+                                        <option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>
+                                        <option value="تصميم الجرافيك">تصميم الجرافيك</option>
+                                        <option value="تسويق الكتروني">تسويق الكتروني</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="d-flex mt-3 p-2">
+                                        <span class="ml-2 input-group-text" id="basic-addon1">+</span>
+                                        <p class="mt-2 mb-0">اضافه خدمه اخري</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="message">الرسالة
+
+                                        <span style="    color: #c3c2c2;">(اختياري)</span>
+
+                                    </label>
+                                    <textarea class="form-control" name="message" rows="8" id="message" required></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer  justify-content-center">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
+                                <button type="submit" name="save" class="btn send m-c">إرسال</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+
             </div>
-
-            <div class="slItem" style="background-image: url({{ asset('website/img/slider/s7.jpg') }});">
-                <div class="bg-op"></div>
-                <div class="slText">
-                    schedule free trial class now
-
-                </div>
-            </div>
-
         </div>
     </div>
-
-    <main id="main" class="et-main">
-
-        <!-- ======= Why Us Section ======= -->
-
-        <section id="why-us" class="why-us">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <p>Why Choose Our Academy ?</p>
-                    <hr>
+    <!--end form modal-->
+    <!--end services section-->
+    <!--start why-us section-->
+    <section class="why-us">
+        <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                </svg> -->
+        <div class="container text-center">
+            <h2>لماذا تختارنا</h2>
+            <div class="row">
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-1.png') }}" alt="why-us-1"class="img-fluid">
+                        <p>برمجيات آمنة ومحمية من الثغرات</p>
+                    </div>
                 </div>
-
-                <div class="row">
-
-                    <div class="col-lg-4" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <i class="far fa-folder"></i>
-                                </div>
-                                <div class="col-md-10">
-                                    <h4>Qualified Tutors</h4>
-                                    <p>We are committed to help people not only learn how to memorize Quran, but also learn
-                                        to
-                                        recite Quran
-                                        perfect
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-2.png') }}" alt="why-us-2" class="img-fluid">
+                        <p>تصميم متجاوب مع جميع الأجهزة والشاشات</p>
                     </div>
-
-                    <div class="col-lg-4" data-aos="fade-down" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <i class="far fa-folder"></i>
-                                </div>
-                                <div class="col-md-10">
-                                    <h4>Qualified Tutors</h4>
-                                    <p>We are committed to help people not only learn how to memorize Quran, but also learn
-                                        to
-                                        recite Quran
-                                        perfect
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <i class="far fa-folder"></i>
-                                </div>
-                                <div class="col-md-10">
-                                    <h4>Qualified Tutors</h4>
-                                    <p>We are committed to help people not only learn how to memorize Quran, but also learn
-                                        to
-                                        recite Quran
-                                        perfect
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <i class="far fa-folder"></i>
-                                </div>
-                                <div class="col-md-10">
-                                    <h4>Qualified Tutors</h4>
-                                    <p>We are committed to help people not only learn how to memorize Quran, but also learn
-                                        to
-                                        recite Quran
-                                        perfect
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <i class="far fa-folder"></i>
-                                </div>
-                                <div class="col-md-10">
-                                    <h4>Qualified Tutors</h4>
-                                    <p>We are committed to help people not only learn how to memorize Quran, but also learn
-                                        to
-                                        recite Quran
-                                        perfect
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <i class="far fa-folder"></i>
-                                </div>
-                                <div class="col-md-10">
-                                    <h4>Qualified Tutors</h4>
-                                    <p>We are committed to help people not only learn how to memorize Quran, but also learn
-                                        to
-                                        recite Quran
-                                        perfect
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-        </section>
-
-        <!-- End Why Us Section -->
-
-        <!-- ======= How Ues Section ======= -->
-        <section id="how-use" data-aos="fade-down">
-            <div class="how-use-head">
-                <h2 class="text-center"> How to Learn at Makka Quran Academy in 3 Steps? </h2>
-                <hr>
-            </div>
-            <div class="container">
-                <div class="row how-use-cards">
-
-                    <div class="col-md-4" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="how-card">
-                            <div class="icon">
-                                <i class='bx bxs-log-in-circle'></i>
-                            </div>
-
-                            <h2 class="step">STEP 1</h2>
-                            <h5 class="step-title">Fill out The Free Trial Form</h5>
-                            <p class="step-desc">Simply go to the registration page. You can register for free online
-                                Quran classes with our online Quran teachers just by filling in your name and contact
-                                information.</p>
-                            <a href="" class="step-link">
-                                <h5> REGISTER NOW > </h5>
-                            </a>
-                        </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-3.png') }}" alt="why-us-3" class="img-fluid">
+                        <p>تحسين ظهور موقعك
+                            في محركات البحث (SEO)</p>
                     </div>
-
-                    <div class="col-md-4" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="how-card">
-                            <div class="icon">
-                                <i class='bx bx-down-arrow-alt'></i>
-                            </div>
-
-                            <h2 class="step">STEP 2</h2>
-                            <h5 class="step-title">Take Your Free Trial </h5>
-                            <p class="step-desc">Upon receiving your registration, we will contact you back to set your
-                                convenient time for the Free Trial Class and connect you with one of our certified teacher.
-                            </p>
-                            <a href="" class="step-link">
-                                <h5> DOWNLOAD ZOOM APP > </h5>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
-                        <div class="how-card">
-                            <div class="icon">
-                                <i class='bx bxs-school'></i>
-                            </div>
-
-                            <h2 class="step">STEP 3</h2>
-                            <h5 class="step-title">Enroll in Full Course</h5>
-                            <p class="step-desc">After the Free Trials, choose a Monthly Plan and get registered for
-                                the full course to start your regular classes with your qualified Quran and Arabic M/F
-                                teacher.</p>
-                            <a href="" class="step-link">
-                                <h5> MONTHLY PLANS > </h5>
-                            </a>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-        </section>
-        <!-- ======== How Ues Section ======= -->
-
-
-        <!-- ======= Courses Section ======= -->
-        <section class="wrapper white-section">
-            <div class="container">
-                <div class="section-title">
-                    <p>Courses</p>
-                    <hr>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-4.png') }}" alt="why-us-4" class="img-fluid">
+                        <p>المرونة في إجراء
+                            التعديلات حسب رغبتك</p>
+                    </div>
                 </div>
-                <div class="content">
-                    <div class="row">
-                        @foreach ($courses as $course )
-                            <div class="col-xs-12 col-md-3">
-                                <div class="card" data-aos="zoom-in-up" >
-                                    <a class="img-card" href="#">
-                                        <img src="{{asset($course->image)}}" alt="course-image">
-                                    </a>
-                                    <div class="card-content">
-                                        <h5 class="card-title">
-                                           {{  $course->title}}
-                                        </h5>
-                                        <ul>
-                                            <li> {{ $course->des}} </li>
-                                            {{-- <li>
-                                                <i class="far fa-clock"></i>
-                                                <span>{{ $course->start_date}}</span>
-                                            </li> --}}
-                                        </ul>
-
-                                    </div>
-                                    <div class="card-read-more">
-                                        <a href="#">
-                                            learn more
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-5.png') }}" alt="why-us-5" class="img-fluid">
+                        <p>إدارة موقعك مع لوحة تحكم مميزة (cPanel)</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-6.png') }}" alt="why-us-6" class="img-fluid">
+                        <p>تصاميم عصرية وجذابة تناسب مختلف المجالات</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-7.png') }}" alt="why-us-7" class="img-fluid">
+                        <p>إمكانية التطوير والتوسع في المستقبل</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-8.png') }}" alt="why-us-8" class="img-fluid">
+                        <p>سرعة التصفح وسهولة الإستخدام</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-9.png') }}" alt="why-us-9" class="img-fluid">
+                        <p>الجودة والإحترافية في تقديم الخدمات الرقمية</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-10.png') }}" alt="why-us-10" class="img-fluid">
+                        <p>جميع الخدمات الرقمية لمشروعك في مكان واحد </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-11.png') }}" alt="why-us-11" class="img-fluid">
+                        <p>أسعار تنافسية مقابل أعلى جودة </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 p-2 col-md-3 col-sm-12">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                        <img src="{{ asset('website/img/whu-us-12.png') }}" alt="why-us-12" class="img-fluid">
+                        <p>دعم فني 24/7 لحل أي مشاكل أو أعطال</p>
                     </div>
                 </div>
             </div>
-            </div>
-        </section>
-
-        <!-- ======= Courses Section ======= -->
-
-        <!-- ======= ContactUs Section ======= -->
-        <section class="contact-us">
-            <div class="container">
-                <div class="content">
-                    <div class="row">
-                        <div class="content col-md-2 col-sm-12">
-                            <h5>Get 2 Days</h5>
-                            <h3>Free Classes</h3>
-                        </div>
-
-                        <div class="form-group col-md-10 col-sm-12">
-                            <form id="contact-us" action="{{ route('website.contact_us.store') }}" method="POST">
-                                @csrf
-                                <div class="row">
-                                    <input type="hidden" name="is_free" value="1">
-                                    <input class="form-input col-md-2" type="text" name="name" placeholder="Your Name"
-                                        required>
-                                    <input class="form-input col-md-2" type="email" name="email" placeholder="Your Email"
-                                        required>
-                                    <input class="form-input col-md-2" type="text" name="phone"
-                                        placeholder="Phone With Country Code" required>
-                                    <select class="form-input col-md-2" name="nationality_id" id="nationality" required>
-                                        <option value="">Nationality</option>
-                                        @foreach ($nationalities as $nationality)
-                                            <option value="{{ $nationality->id }}">{{ $nationality->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <input class="submit-btn col-md-2" type="submit" value="Book Now">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
-        <!-- ======= ContactUs Section ======= -->
-
-
-        <!--Start Fees -->
-
-        <div class="white-section pricing-sec pricingsec">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="tab-content">
-                            <div id="tajweed-model" class="tab-pane active">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="pricing-area-head text-center">
-                                            <h3>Our Economical Pricing</h3>
-                                            <p>Quran Online Master provides the intuitive tuition for the Alphabet Sound
-                                                Recognition for all
-                                                people who intend to learn the Holy Quran in a proper religious way.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="tab-content pricing-tabs-content">
-                                            <div id="alphabets-recognation" class="tab-pane active">
-                                                <!--<div class="row"> <div class="col-12"> <div class="pricing-area-head text-center"> <h3>Alphabets Sound Recognition</h3> <p>Quran Online Master provides the intuitive tuition for the Alphabet Sound Recognition for all people who intend to learn the Holy Quran in a proper religious way.</p> </div> </div> </div>-->
-                                                <div class="row pricing-row">
-                                                    <div class="col-lg-3 col-md-6" data-aos="fade-right"
-                                                        data-aos-offset="100" data-aos-easing="ease-in-sine">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="{{ asset('website/img/price/icons-01.png') }}"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>2 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>30<sub>/mo</sub>
-                                                                        <p>For Weekends $35/mo</p>
-                                                                    </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>8 Classes/Month</li>
-                                                                        <li>4 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6" data-aos="flip-right"
-                                                        data-aos-offset="200" data-aos-easing="ease-in-sine">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="{{ asset('website/img/price/icons-02.png') }}"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>3 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>45<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>12 Classes/Month</li>
-                                                                        <li>6 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6" data-aos="flip-left"
-                                                        data-aos-offset="300" data-aos-easing="ease-in-sine">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="{{ asset('website/img/price/icons-3.png') }}"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>4 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>60<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>16 Classes/Month</li>
-                                                                        <li>8 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6" data-aos="fade-left"
-                                                        data-aos-offset="100" data-aos-easing="ease-in-sine">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="{{ asset('website/img/price/icons-4.png') }} "
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>5 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>75<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>20 Classes/Month</li>
-                                                                        <li>10 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="alphabets-pronounciation" class="tab-pane fade">
-                                                <!--<div class="row"> <div class="col-12"> <div class="pricing-area-head text-center"> <h3>Alphabets Pronounciation</h3> <p>Quran Online Master teaches the perfect Quranic Alphabet Pronunciation for all people ranging from children to elders of any age. Learning the Quran has no age limits, and that’s our motto.</p> </div> </div> </div>-->
-                                                <div class="row pricing-row">
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-06.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>2 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>30<sub>/mo</sub>
-                                                                        <p>For Weekends $35/mo</p>
-                                                                    </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>8 Classes/Month</li>
-                                                                        <li>4 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-07.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>3 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>45<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>12 Classes/Month</li>
-                                                                        <li>6 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-08.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>4 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>60<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>16 Classes/Month</li>
-                                                                        <li>8 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-09.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>5 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>75<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>20 Classes/Month</li>
-                                                                        <li>10 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="tajawed-rules" class="tab-pane fade">
-                                                <!--<div class="row"> <div class="col-12"> <div class="pricing-area-head text-center"> <h3>Tajawed Rules</h3> <p>We offer the tajweed rules under the three dynamic stages such as AT-TAHQEEQ, AL-HADR, AT-TADWEER. Have a Quran Master Online for your perfect assistance in learning or reading the Quran.</p> </div> </div> </div>-->
-                                                <div class="row pricing-row">
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-06.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>2 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>30<sub>/mo</sub>
-                                                                        <p>For Weekends $35/mo</p>
-                                                                    </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>8 Classes/Month</li>
-                                                                        <li>4 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-07.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>3 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>45<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>12 Classes/Month</li>
-                                                                        <li>6 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-08.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>4 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>60<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>16 Classes/Month</li>
-                                                                        <li>8 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-6">
-                                                        <div class="single-pricing">
-                                                            <div class="single-pricing-head"> <svg
-                                                                    xmlns="http://www.w3.org/2000/svg" id="Layer_1"
-                                                                    data-name="Layer 1" viewBox="0 0 394 262">
-                                                                    <path class="pricing-ornament-path"
-                                                                        d="M0,262H394v-4.8s2.1-66.4-67.6-89.3a3.79,3.79,0,0,1-2.6-3.8c.8-10.5,1-47.1-28.7-69.6-.1-.1-.2-.1-.3-.2-3.4-2.2-64.3-40.7-90-83.4-.1-.1-.1-.2-.2-.3L200.3,2a3.7,3.7,0,0,0-6.6,0l-4.3,8.6c-.1.1-.1.2-.2.3-25.7,42.7-86.6,81.2-90,83.4-.1.1-.2.1-.3.2C69.1,117,69.4,153.6,70.2,164.1a3.67,3.67,0,0,1-2.6,3.8C-2.1,190.8,0,257.2,0,257.2V262Z">
-                                                                    </path>
-                                                                </svg> <img
-                                                                    src="https://ik.imagekit.io/quranmasteronline/assets/images/third-sec/icons-09.png"
-                                                                    alt=""> </div>
-                                                            <div class="single-pricing-body">
-                                                                <h5>5 Days/Week</h5>
-                                                                <div class="single-inner-pricing">
-                                                                    <h3> <sup>$</sup>75<sub>/mo</sub> </h3>
-                                                                    <ul>
-                                                                        <li>30 min lessons</li>
-                                                                        <li>20 Classes/Month</li>
-                                                                        <li>10 hours/Month</li>
-                                                                    </ul> <a href="{{ route('website.contact-us') }}">Contact Us</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-5">
-
-                    </div>
-                </div>
-            </div>
+ 
         </div>
 
-        <!-- End Fees Section -->
+    </section>
+    <!--end why-us section-->
+    <!--start works section-->
+    <section class="works" id="works">
+        <div class="container text-center" data-aos="zoom-in" data-aos-duration="2000">
+            <h2>أعمالنا</h2>
+            <!-- Swiper -->
+            <div class="swiper mySwiper7 gallery" id="gallery">
+                <div class="swiper-wrapper">
+                    {{-- @foreach ($my_works as $my_work)
+                        <div class="swiper-slide ">
+                            <div class="gallery-card sites">
+                                <div class="">
+                                    <div class="galleryCard-head">
+                                        <ul class="list-unstyled d-flex justify-content-between  px-2 m-0">
+                                            <li>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                <span>{{ $my_work->created_at->format('Y-m-D') }}</span>
+                                            </li>
+                                            <li><i class="fa-solid fa-eye"></i> <span>3</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="image">
 
-        <!--Start Status -->
+                                        <img src="{{ $my_work->image_path }}" alt="gallery-1" class="img-fluid">
+                                        <div class="overlay">
+                                            <a href="{{route('my-works.show',$my_work->id)}}">للتفاصيل </a>
+                                        </div>
+                                    </div>
+                                    <div class="galleryCard-footer">
+                                        <p class="p-1 m-0"> {{ $my_work->name }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach --}}
+                    @foreach ($my_works as $my_work)
 
-        <section class="stats-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="single-stats">
-                            <h3 class="counting" data-count="100">0</h3>
-                            <p>Registered Students</p>
+                        <div class="swiper-slide">
+                            <div class="gallery-card sites">
+                                <div class="">
+                                    <div class="galleryCard-head">
+                                        <p class="p-1 m-0">{{ $my_work->name }} </p>
+                                    </div>
+                                    <div class="image">
+
+                                        <img src="{{$my_work->image_path}}" alt="gallery-1" class="img-fluid">
+                                        <div class="overlay">
+                                            <a href="{{route('my-works.show',$my_work->id)}}">للتفاصيل </a>
+                                        </div>
+                                    </div>
+                                    <div class="galleryCard-footer">
+                                        <p class="p-1 m-0">{{$my_work->desc}} </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-stats">
-                            <h3 class="counting" data-count="30">0</h3>
-                            <p>Quran Tutors Available</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-stats">
-                            <h3 class="counting" data-count="900">0</h3>
-                            <p>Sessions Completed</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-stats">
-                            <h3 class="counting" data-count="600">0</h3>
-                            <p>Satisfied Customers</p>
-                        </div>
-                    </div>
+
+                     @endforeach
+
+
                 </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
-        </section>
-        <!--End Status -->
+            <!-- <div class="clip-path"> -->
+            <a href="{{ route('my-works.index') }}">المزيد من المقالات</a>
+            <!-- </div> -->
+        </div>
+    </section>
 
-        <!--Start playList -->
-        {{-- <section class="yp-playlist">
+    <section class="testimonials mt-4">
+        <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+        </svg> -->
+        <div class="container text-center">
+            <h2>أراء عملائنا</h2>
+            <!-- Swiper -->
+            <div class="swiper mySwiper8">
+                <div class="swiper-wrapper">
+                    @foreach ($customer_reviews as $customer_review)
+                    <div class="swiper-slide">
+                        <div class="card w-100">
+                            <img src="{{$customer_review->image_path}}" alt="quote" class="img-fluid">
+                            <h3>{{ $customer_review->user_name }}</h3>
+                            <span> {{ $customer_review->job }}</span>
+                            <p>
+                                {{$customer_review->desc}}
 
+                             </p>
 
-            <iframe id="ytplayer" type="text/html" width="100%" height="405"
-            src="https://www.youtube.com/embed/?listType=playlist&list=PLoqNzfHlA__knCeUoKUHjQfZpUL6mj64w"
-            frameborder="0" allowfullscreen> </iframe>
-
-        </section> --}}
-<!--End playList -->
-
-
-
-        <!-- Start FeedBack Section -->
-
-        <section class="white-section testimonial-section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12">
-                        <div class="section-heading text-center mb-40">
-                            <h2>We Appreciate Your Precious Feedback!</h2>
-                            <p>We highly value the excellent feedback of our satisfied clients and the testimonials. We
-                                have fulfilled
-                                countless students’ wishes to learn and read the Holy Quran worldwide and still cover
-                                the entire
-                                community with our skilled and dynamic Quran Educating Services.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in-up">
-                        <div class="single-testi"> <img
-                                src="https://ik.imagekit.io/quranmasteronline/assets/images/testimonial/client/1.jpg?updatedAt=1631276508466"
-                                alt="Client">
-                            <h3>Aadil Baasit</h3>
-                            <div class="testimonial-stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> </div>
-                            <p>My son have been taking Quran memorization class for a few years now with
-                                Quranmasteronline. The
-                                courses are of great quality.</p>
+                    @endforeach
+
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="works" id="works">
+        <div class="container text-center" data-aos="zoom-in" data-aos-duration="2000">
+            <h2>منتجاتنا</h2>
+            <!-- Swiper -->
+            <div class="swiper mySwiper5 gallery" id="gallery">
+                <div class="swiper-wrapper">
+                    @foreach ($products as $product)
+                        <div class="swiper-slide ">
+                            <div class="gallery-card sites">
+                                <div class="">
+                                    <div class="galleryCard-head">
+                                        <p class="p-1 m-0">{{$product->type}} </p>
+                                    </div>
+                                    <div class="image">
+
+                                        <img src="{{$product->image_path}}" alt="gallery-1" class="img-fluid">
+                                        <div class="overlay">
+                                            <a href="{{route('products.show',$product->id)}}">للتفاصيل </a>
+                                        </div>
+                                    </div>
+                                    <div class="galleryCard-footer">
+                                        <p class="p-1 m-0"> {{$product->name}}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- <div class="clip-path"> -->
+            <a href="{{route('products.index')}}">المزيد من المنتجات</a>
+            <!-- </div> -->
+        </div>
+    </section>
+    <!--end projects section-->
+    <!--start partner section-->
+    <section class="partner">
+        <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                </svg> -->
+        <div class="container text-center">
+            <h2>شركاء النجاح</h2>
+            <p class="mt-2">عملائنا هم شركاء نجاحنا</p>
+            <!-- Swiper -->
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in-up">
-                        <div class="single-testi"> <img
-                                src="https://ik.imagekit.io/quranmasteronline/assets/images/testimonial/client/2.jpg?updatedAt=1631276509225"
-                                alt="Client">
-                            <h3>Wasia Ozair</h3>
-                            <div class="testimonial-stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> </div>
-                            <p>It is a satisfying and helpful Quran lessons Alhamdulillah. The teachers are very sincere
-                                and
-                                hardworking. My kids are very happy.</p>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in-up">
-                        <div class="single-testi"> <img
-                                src="https://ik.imagekit.io/quranmasteronline/assets/images/testimonial/client/3.jpg?updatedAt=1631284586052"
-                                alt="Client">
-                            <h3>Haamid Ali</h3>
-                            <div class="testimonial-stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> </div>
-                            <p>I am sincerely pleased with my learning experience with Quranmasteronline living in USA.
-                                I have learned
-                                alot with them.</p>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in-up">
-                        <div class="single-testi"> <img
-                                src="https://ik.imagekit.io/quranmasteronline/assets/images/testimonial/client/4.jpg?updatedAt=1631284598558"
-                                alt="Client">
-                            <h3>Fahad umair</h3>
-                            <div class="testimonial-stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> </div>
-                            <p>JazakAllah Khair Teacher Ahmed for helping me memorise Juz Amma I am really happy. May
-                                Allah give them
-                                all Jannah Ameen..</p>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in-up">
-                        <div class="single-testi"> <img
-                                src="https://ik.imagekit.io/quranmasteronline/assets/images/testimonial/client/5.jpg?updatedAt=1631284606634"
-                                alt="Client">
-                            <h3>Taahira Anis</h3>
-                            <div class="testimonial-stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> </div>
-                            <p>Higly Recommended! I am very glad, my son is very fond of the lesson. Quranmasteronline
-                                help us a lot,
-                                thank you very much.</p>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in-up">
-                        <div class="single-testi"> <img
-                                src="https://ik.imagekit.io/quranmasteronline/assets/images/testimonial/client/6.jpg?updatedAt=1631284615474"
-                                alt="Client">
-                            <h3>Bayzad Ahmed</h3>
-                            <div class="testimonial-stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> </div>
-                            <p>This is very good for learning Quran. I only have classes on the weekends.That helps me
-                                keep up with my
-                                classwork/homework at school.</p>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/img/quote (1).png') }}" alt="quote" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ asset('website/imgs/quote (1).png') }}" alt="quote" class="img-fluid">
+                        </div>
                     </div>
                 </div>
-        </section>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- <svg class="b_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
+                                </svg> -->
+    </section>
 
 
-    </main><!-- End #main -->
+    <section class="works" id="works">
+        <div class="container text-center" data-aos="zoom-in" data-aos-duration="2000">
+            <h2>مدونتنا</h2>
+            <!-- Swiper -->
+            <div class="swiper mySwiper3 gallery" id="gallery">
+                <div class="swiper-wrapper">
+                    @foreach ($my_works as $blog)
+                        <div class="swiper-slide ">
+                            <div class="gallery-card sites">
+                                <div class="">
+                                    <div class="galleryCard-head">
+                                        <ul class="list-unstyled d-flex justify-content-between  px-2 m-0">
+                                            <li>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                <span>{{ $blog->created_at->format('Y-m-D') }}</span>
+                                            </li>
+                                            <li><i class="fa-solid fa-eye"></i> <span>3</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="image">
+
+                                        <img src="{{ $blog->image_path }}" alt="gallery-1" class="img-fluid">
+                                        <div class="overlay">
+                                            <a href="sites.html">للتفاصيل </a>
+                                        </div>
+                                    </div>
+                                    <div class="galleryCard-footer">
+                                        <p class="p-1 m-0"> {{ $blog->title }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- <div class="clip-path"> -->
+            <a href="{{ route('blogs.index') }}">المزيد من المقالات</a>
+            <!-- </div> -->
+        </div>
+    </section>
 @endsection
+@push('js')
+    <script>
+        $(document).ready(function() {
+
+            $(".loder").fadeOut(3000, function() {
+                $("body").css({
+                    overflow: `auto`
+                })
+            })
+
+        })
+        // !لإحداث تغيير ؟!", " لإمتلاك مشروعك ؟!" ," لتحقيق حلمك ؟!", " لتبدء قصتك ؟"
+        // const exampleText = ['لإحداث تغيير ؟!', 'لإمتلاك مشروعك ؟!', ' لتحقيق حلمك ؟!', 'لتبدء قصتك  ؟!'];
+        // const exampleTyping = new AutoTyping('.example-selector', exampleText, {
+        //     typeSpeed: 50,
+        //     deleteSpeed: 50,
+        //     waitBeforeDelete: 2000,
+        //     waitBetweenWords: 500,
+        // });
+        // exampleTyping.start()
+
+        let swiper3 = new Swiper(".mySwiper3", {
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        let swiper4 = new Swiper(".mySwiper4", {
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        let swiper5 = new Swiper(".mySwiper5", {
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        let swiper6 = new Swiper(".mySwiper6", {
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        let swiper7 = new Swiper(".mySwiper7", {
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        let swiper8 = new Swiper(".mySwiper8", {
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+@endpush

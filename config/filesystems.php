@@ -34,9 +34,24 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-        'posts' => [
+        'blogs' => [
             'driver' => 'local',
-            'root' => public_path('uploads/posts'),
+            'root' => public_path('uploads/blogs'),
+
+        ],
+        'products' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/products'),
+
+        ],
+        'customer_reviews' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/customer_reviews'),
+
+        ],
+        'my_works' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/my_works'),
 
         ],
 

@@ -1,10 +1,16 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\UserScoreController;
+use App\Http\Controllers\WebSite\BlogController;
+use App\Http\Controllers\WebSite\ContactUsController;
+use App\Http\Controllers\WebSite\MyWorkController;
+use App\Http\Controllers\WebSite\ProductController;
+use App\Http\Controllers\WebSite\WebSiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use \Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -25,27 +31,25 @@ use \Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 
- Route::redirect('/', 'admin/login-page');
+Route::redirect('/', 'home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::group(['prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] ], function()
-{
-
-
-    Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-        Route::get('login-page', 'AuthController@loginPage')->name('admin.login.page');
-        Route::post('login', 'AuthController@login')->name('admin.login');
-        Route::get('logout', 'AuthController@logout')->name('admin.logout');
-
-        Route::group(['middleware' => ['admin']], function () {
-            Route::get('home', 'HomeController@index')->name('admin.home');
-
-            Route::resource('questions',QuestionController::class);
-            Route::resource('user-scores',UserScoreController::class);
+// Route::group([
+//     'prefix' => LaravelLocalization::setLocale(),
+//     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+// ], function () {
 
 
-        });
-    });
-});
+
+
+    Route::get('home', [WebSiteController::class,'home'])->name('home');
+    Route::get('home', [WebSiteController::class,'home'])->name('home');
+    Route::get('our-services', [WebSiteController::class,'ourServices'])->name('our-services');
+    Route::get('about-us', [WebSiteController::class,'aboutUs'])->name('about-us');
+    Route::resource('blogs', BlogController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('my-works', MyWorkController::class);
+    Route::resource('contact-us', ContactUsController::class);
+
+// });

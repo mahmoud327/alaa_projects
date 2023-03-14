@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Post;
+use App\Models\MyWorkCategory as Category;
 use App\Traits\ImageTrait;
 use File;
 use Illuminate\Http\Request;
@@ -26,7 +25,7 @@ class CategoryController extends Controller
             $categories=Category::latest()->paginate(10);
 
 
-        return view('admin.posts.categories.index',compact('categories'));
+        return view('admin.my_works.categories.index',compact('categories'));
     }
     /**
      * Store a newly created resource in storage.

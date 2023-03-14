@@ -4,53 +4,49 @@ namespace App\Http\Controllers\WebSite;
 
 use App\Http\Requests\Website\ContactUsRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\CustomerReview;
+use App\Models\MyWork;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Models\Nationality;
-use App\Models\ContactUs;
-use App\Models\Course;
-use App\Models\Question;
-use App\Models\Setting;
+
 
 class WebSiteController extends Controller
 {
     public function home()
     {
-        $nationalities = Nationality::all();
-        $courses=Course::all();
-        return view('website.home-page', compact('nationalities', 'courses'));
+
+        $nationalities = Blog::all();
+        $blogs = Blog::query()
+            ->take(6)
+            ->latest()
+            ->get();
+        $products = Product::query()
+            ->take(6)
+            ->latest()
+            ->get();
+        $my_works = MyWork::query()
+            ->take(6)
+            ->latest()
+            ->get();
+
+        $customer_reviews = CustomerReview::query()
+            ->take(6)
+            ->latest()
+            ->get();
+
+
+        return view('website.home-page', compact('nationalities', 'blogs','products','my_works','customer_reviews'));
     }
 
-    public function whyUs()
+    public function ourServices()
     {
-        return view('website.why-us');
+        return view('website.our-services');
+    }
+    public function aboutUs()
+    {
+        return view('website.about-us');
     }
 
-    public function courses()
-    {
-        $courses=Course::all();
-        return view('website.courses',compact('courses'));
-    }
 
-    public function fees()
-    {
-        return view('website.fees');
-    }
-
-    public function faqs()
-    {
-        $questions = Question::all();
-        return view('website.faqs', compact('questions'));
-    }
-
-    public function contactUs()
-    {
-        $nationalities = Nationality::all();
-        return view('website.contact-us', compact('nationalities'));
-    }
-
-    public function contactUsCreate(ContactUsRequest $request)
-    {
-        ContactUs::create($request->validated());
-        return back();
-    }
 }

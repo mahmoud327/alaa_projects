@@ -14,11 +14,8 @@ class ContactUs extends Model
         'name',
         'email',
         'phone',
-        'nationality_id',
-        'is_free'
+        'message',
+        'subject'
     ];
-    public function nationality()
-    {
-        return $this->belongsTo('App\Models\Nationality');
-    }
+
 }
