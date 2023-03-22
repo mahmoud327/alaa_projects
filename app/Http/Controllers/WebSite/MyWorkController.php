@@ -23,7 +23,7 @@ class MyWorkController extends Controller
      */
     public function index()
     {
-        $my_works = Mywork::latest()->paginate(10);
+        $my_works = MyWork::latest()->paginate(10);
         $categories = MyWorkCategory::latest()->get();
         $customer_reviews = CustomerReview::latest()->take(6)->get();
         return view('website.my_works.index', compact('my_works','categories','customer_reviews'));
