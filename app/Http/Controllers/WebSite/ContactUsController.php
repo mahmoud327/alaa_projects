@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\ContactUs;
+use App\Models\UserRequest;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -23,5 +24,16 @@ class ContactUsController extends Controller
     {
         ContactUs::create($request->all());
         return back()->with('sucefuuly send message');
+    }
+    public function userRequest(Request $request){
+        $this->validate($request,[
+            'email'=>'required|unique:user_requests,email'
+        ]);
+
+        UserRequest::create([
+            'email'=>$request->email
+        ]);
+
+        return back()->with('status','reuqest send for admin');
     }
 }

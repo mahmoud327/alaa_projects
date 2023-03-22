@@ -20,6 +20,60 @@
     @endif
 
 
+    <style>
+        .SumoSelect>.CaptionCont {
+            width: 60%;
+
+        }
+
+        .dropzone.dz-clickable {
+            border: none;
+        }
+
+        .dropzone .dz-preview:not(.dz-processing) .dz-progress {
+            display: none;
+        }
+
+        .dropzone .dz-preview .dz-details .dz-filename:not(:hover) span {
+            display: none;
+        }
+
+        .dropzone .dz-preview .dz-details .dz-filename span,
+        .dropzone .dz-preview .dz-details .dz-size span {
+            display: none;
+
+        }
+
+        .SumoSelect>.optWrapper.multiple>.options li.opt span i,
+        .SumoSelect .select-all>span i {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #e1e6f1;
+            border-radius: 2px;
+            background-color: #fff;
+        }
+
+        .SumoSelect>.optWrapper>.options li.opt label,
+        .SumoSelect>.CaptionCont,
+        .SumoSelect .select-all>label {
+            padding-left: 40px;
+        }
+
+
+        .SumoSelect>.CaptionCont>span {
+            color: #000
+        }
+
+        .SumoSelect.open>.optWrapper {
+            width: 550px;
+        }
+    </style>
+
+
 @section('title')
     Add product
 @stop
@@ -83,6 +137,19 @@
                                 <input type="file" class="form-control required" name="image"
                                     placeholder="Address">
                             </div>
+                          <br>
+                          <br>
+                          <br>
+
+
+                            <div class="form-group col-md-7">
+                                <h4 class="form-section"><i class="ft-home"></i>رفع الصور</h4>
+
+                                <div id="dpz-multiple-files" class="dropzone dropzone-area">
+                                    <div class="dz-message"> رفع الصوره  </div>
+                                </div>
+
+                            </div>
 
                             <button type="submit" class="btn btn-info">save</button>
                         </section>
@@ -127,4 +194,80 @@
 <script src="{{ URL::asset('assets/plugins/telephoneinput/inttelephoneinput.js') }}"></script>
 
 <script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
+
+
+<script>
+    var uploadedDocumentMap = {}
+    Dropzone.options.dpzMultipleFiles = {
+        paramName: "dzfile", // The name that will be used to transfer the file
+        //autoProcessQueue: false,
+
+        // MB
+        clickable: true,
+        addRemoveLinks: true,
+        acceptedFiles: 'image/*',
+        dictFallbackMessage: " المتصفح الخاص بكم لا يدعم خاصيه تعدد الصوره والسحب والافلات ",
+        dictInvalidFileType: "لايمكنك رفع هذا النوع من الملفات ",
+        dictCancelUpload: "الغاء الرفع ",
+        dictCancelUploadConfirmation: " هل انت متاكد من الغاء رفع الملفات ؟ ",
+        dictRemoveFile: "حذف الصوره",
+
+        dictMaxFilesExceeded: "لايمكنك رفع عدد اكثر من هضا ",
+        headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+        },
+        url: "{{ route('admin.products.images.store') }}", // Set the url
+        success: function(file, response) {
+            $('form').append('<input class="images" data-img="' + file.name +
+                '"  type="hidden" name="document[]" value="' + response.name + '">')
+            uploadedDocumentMap[file.name] = response.name
+        },
+        removedfile: function(file) {
+
+            $('.images').each(function(index) {
+
+                var input = $(this);
+
+                if (input.data('img') == file.name) {
+                    file_name = input.val()
+                    input.remove();
+                }
+
+            });
+
+
+            var imgSrcValue = $('img[alt="' + file.name + '"]').prop('alt'); //get the src value
+
+            $.ajax({
+
+                url: "{{ URL::to('admin/product/delete/image') }}",
+                type: "GET",
+                dataType: "json",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: file.id,
+                    file_name: file_name,
+                }
+            });
+            var fmock;
+            return (fmock = file.previewElement) != null ? fmock.parentNode.removeChild(file.previewElement) :
+                void 0;
+        },
+        // previewsContainer: "#dpz-btn-select-files", // Define the container to display the previews
+        init: function() {
+            @if (isset($event) && $event->document)
+                var files =
+                    {!! json_encode($event->document) !!}
+                for (var i in files) {
+                    var file = files[i]
+                    this.options.addedfile.call(this, file)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="document[]" value="' + file.file_name + '">')
+                }
+            @endif
+        }
+
+
+    }
+</script>
 @endpush

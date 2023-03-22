@@ -39,11 +39,24 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-
         $product = Product::create($request->all());
 
         $this->uploadImage('uploads/products', $request->file('image'));
         $product->update(['image' => $request->image->hashName()]);
+
+
+        if ($request->document) {
+
+            foreach ($request->document as $file) {
+                $product->images()->create([
+                    'url' => $file
+                ]);
+            }
+        }
+
+
+
+
 
 
         session()->flash('Add', 'تم اضافة سجل بنجاح ');
@@ -89,5 +102,16 @@ class ProductController extends Controller
         $product->delete();
         session()->flash('delete', 'تم حذف سجل بنجاح ');
         return redirect()->back();
+    }
+
+    public function uploadProductImage(Request $request)
+    {
+        $file = $request->file('dzfile');
+        $filename = $this->uploadImage('uploads/products/', $file);
+
+        return response()->json([
+            'name' => $filename,
+            'original_name' => $file->getClientOriginalName(),
+        ]);
     }
 }

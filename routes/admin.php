@@ -51,10 +51,13 @@ Route::group([
 
             Route::resource('blogs', BlogController::class);
             Route::resource('products', ProductController::class);
+            Route::post('products-image', [ProductController::class,'uploadProductImage'])->name('products.images.store');
+
             Route::resource('my-works', MyWorkController::class);
             Route::resource('customer-reviews', CustomerReviewController::class);
             Route::resource('categories', CategoryController::class);
             Route::resource('contact-us', ContactUsController::class);
+            Route::get('user-requests', [ContactUsController::class,'userRequest'])->name('user-request.index');
         });
     });
 });

@@ -51,5 +51,6 @@ Route::redirect('/', 'home');
     Route::resource('products', ProductController::class);
     Route::resource('my-works', MyWorkController::class);
     Route::resource('contact-us', ContactUsController::class);
+    Route::post('user-requests', [ContactUsController::class,'userRequest'])->name('user.requests');
 
 // });

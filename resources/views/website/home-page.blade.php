@@ -1,5 +1,6 @@
 @extends('website.layouts.master')
 @section('content')
+
     <section class="main">
         <div class="overlay">
             <div class="container" data-aos="zoom-in" data-aos-duration="2000">
@@ -95,10 +96,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div> -->
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div> -->
 
                 <div class="modal-body">
                     <div class="form">
@@ -186,8 +187,8 @@
     <!--start why-us section-->
     <section class="why-us">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                </svg> -->
+                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                    </svg> -->
         <div class="container text-center">
             <h2>لماذا تختارنا</h2>
             <div class="row">
@@ -278,7 +279,7 @@
                     </div>
                 </div>
             </div>
- 
+
         </div>
 
     </section>
@@ -318,7 +319,6 @@
                         </div>
                     @endforeach --}}
                     @foreach ($my_works as $my_work)
-
                         <div class="swiper-slide">
                             <div class="gallery-card sites">
                                 <div class="">
@@ -327,19 +327,18 @@
                                     </div>
                                     <div class="image">
 
-                                        <img src="{{$my_work->image_path}}" alt="gallery-1" class="img-fluid">
+                                        <img src="{{ $my_work->image_path }}" alt="gallery-1" class="img-fluid">
                                         <div class="overlay">
-                                            <a href="{{route('my-works.show',$my_work->id)}}">للتفاصيل </a>
+                                            <a href="{{ route('my-works.show', $my_work->id) }}">للتفاصيل </a>
                                         </div>
                                     </div>
                                     <div class="galleryCard-footer">
-                                        <p class="p-1 m-0">{{$my_work->desc}} </p>
+                                        <p class="p-1 m-0">{{ $my_work->desc }} </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                     @endforeach
+                    @endforeach
 
 
                 </div>
@@ -355,26 +354,26 @@
 
     <section class="testimonials mt-4">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-        </svg> -->
+                <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+            </svg> -->
         <div class="container text-center">
             <h2>أراء عملائنا</h2>
             <!-- Swiper -->
             <div class="swiper mySwiper8">
                 <div class="swiper-wrapper">
                     @foreach ($customer_reviews as $customer_review)
-                    <div class="swiper-slide">
-                        <div class="card w-100">
-                            <img src="{{$customer_review->image_path}}" alt="quote" class="img-fluid">
-                            <h3>{{ $customer_review->user_name }}</h3>
-                            <span> {{ $customer_review->job }}</span>
-                            <p>
-                                {{$customer_review->desc}}
+                        <div class="swiper-slide">
+                            <div class="card w-100">
+                                <img src="{{ $customer_review->image_path }}" alt="quote" class="img-fluid">
+                                <h3>{{ $customer_review->user_name }}</h3>
+                                <span> {{ $customer_review->job }}</span>
+                                <p>
+                                    {{ $customer_review->desc }}
 
-                             </p>
+                                </p>
 
+                            </div>
                         </div>
-                    </div>
                     @endforeach
 
 
@@ -398,17 +397,17 @@
                             <div class="gallery-card sites">
                                 <div class="">
                                     <div class="galleryCard-head">
-                                        <p class="p-1 m-0">{{$product->type}} </p>
+                                        <p class="p-1 m-0">{{ $product->type }} </p>
                                     </div>
                                     <div class="image">
 
-                                        <img src="{{$product->image_path}}" alt="gallery-1" class="img-fluid">
+                                        <img src="{{ $product->image_path }}" alt="gallery-1" class="img-fluid">
                                         <div class="overlay">
-                                            <a href="{{route('products.show',$product->id)}}">للتفاصيل </a>
+                                            <a href="{{ route('products.show', $product->id) }}">للتفاصيل </a>
                                         </div>
                                     </div>
                                     <div class="galleryCard-footer">
-                                        <p class="p-1 m-0"> {{$product->name}}</p>
+                                        <p class="p-1 m-0"> {{ $product->name }}</p>
 
                                     </div>
                                 </div>
@@ -423,7 +422,7 @@
                 <div class="swiper-pagination"></div>
             </div>
             <!-- <div class="clip-path"> -->
-            <a href="{{route('products.index')}}">المزيد من المنتجات</a>
+            <a href="{{ route('products.index') }}">المزيد من المنتجات</a>
             <!-- </div> -->
         </div>
     </section>
@@ -431,8 +430,8 @@
     <!--start partner section-->
     <section class="partner">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                </svg> -->
+                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                    </svg> -->
         <div class="container text-center">
             <h2>شركاء النجاح</h2>
             <p class="mt-2">عملائنا هم شركاء نجاحنا</p>
@@ -501,8 +500,8 @@
             </div>
         </div>
         <!-- <svg class="b_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
-                                </svg> -->
+                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
+                                    </svg> -->
     </section>
 
 

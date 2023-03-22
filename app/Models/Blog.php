@@ -19,7 +19,7 @@ class Blog extends Model
 
 
     protected $translationForeignKey = "blog_id";
-    public $translatedAttributes = ['title', 'desc'];
+    public $translatedAttributes = ['title', 'desc','title1','desc1'];
     public $translationModel = 'App\Models\Translation\Blog';
     protected $table = "blogs";
     protected $fillable = ['user_id', 'image'];

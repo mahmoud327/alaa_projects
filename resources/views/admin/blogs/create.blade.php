@@ -51,27 +51,46 @@
                         <section>
                             <div class="control-group form-group">
                                 <label class="form-label">title arabic</label>
-                                <input type="text" class="form-control required" name="ar[title]" placeholder="Name">
+                                <input type="text" class="form-control required" required name="ar[title]" placeholder="Name">
                             </div>
                             <div class="control-group form-group">
                                 <label class="form-label">title English</label>
-                                <input type="text" class="form-control required" name="en[title]"placeholder="text ">
+                                <input type="text" class="form-control required"required name="en[title]"placeholder="text ">
+                            </div>
+                            <div class="control-group form-group">
+                                <label class="form-label">title1 arabic</label>
+                                <input type="text" class="form-control required"  required name="ar[title1]" placeholder="Name">
+                            </div>
+                            <div class="control-group form-group">
+                                <label class="form-label">title1 English</label>
+                                <input type="text" class="form-control required" required name="en[title]"placeholder="text ">
                             </div>
 
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">desc english</label>
-                                <textarea type="text" class="form-control required" name="en[desc]" placeholder="Address">
+                                <textarea type="text" class="form-control required" required name="en[desc]" placeholder="Address">
                                             </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">desc arabic</label>
-                                <textarea type="text" class="form-control required" name="ar[desc]"placeholder="Address">
+                                <textarea type="text" class="form-control required" required name="ar[desc]"placeholder="Address">
                                   </textarea>
                             </div>
 
                             <div class="control-group form-group mb-0">
-                                <input type="file" class="form-control required" name="image"
+                                <label class="form-label">desc1 english</label>
+                                <textarea type="text" class="form-control required"required  name="en[desc1]" placeholder="Address">
+                                            </textarea>
+                            </div>
+                            <div class="control-group form-group mb-0">
+                                <label class="form-label">desc1 arabic</label>
+                                <textarea type="text" class="form-control required"  required name="ar[desc]"placeholder="Address">
+                                  </textarea>
+                            </div>
+
+                            <div class="control-group form-group mb-0">
+                                <input type="file" class="form-control required"required name="image"
                                     placeholder="Address">
                             </div>
 

@@ -40,7 +40,8 @@ class BlogController extends Controller
 
 
         $blog = Blog::find($id);
-        return view('website.blogs.show', compact('blog'));
+        $blogs=Blog::where('id','!=',$id)->take(3)->get();
+        return view('website.blogs.show', compact('blog','blogs'));
     }
 
 

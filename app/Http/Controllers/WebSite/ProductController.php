@@ -56,7 +56,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
+        $product = Product::query()
+        ->with('images')
+        ->find($id);
 
         return view('website.products.show', compact('product'));
 

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
@@ -38,5 +39,18 @@ class Product extends Model
     public function getImagePathAttribute()
     {
         return $this->image ? asset('uploads/products/' . $this->image) : asset('uploads/default.jpeg');
+    }
+
+
+    /*
+     * ----------------------------------------------------------------- *
+     * --------------------------- relations --------------------------- *
+     * ----------------------------------------------------------------- *
+     */
+
+
+    public function images()
+    {
+        return $this->hasmany('App\Models\ProductImage','product_id');
     }
 }

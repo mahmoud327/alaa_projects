@@ -1,14 +1,37 @@
-
 <section class="footer">
+
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn-close btn-close-white" data-dismiss="alert" aria-label="Close">×</button>
+            {{ session('status') }}
+        </div>
+    @elseif(session('failed'))
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn-close btn-close-white" aria-label="Close">×</button>
+            {{ session('failed') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="container">
         <div class="contact-info">
             <div class="row m-0">
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h6>اشترك في النشرة البريدية لتصلك آخر عروضنا وأخبارنا</h6>
-                    <form method="POST" action="https://api.bassamelabassy.me/index.php">
+                    <form method="POST" action="{{ route('user.requests') }}">
+                        @csrf
                         <div class="form-group">
-                            <input class="form-control" name="email" type="email" required>
+                            <input class="form-control" name="email" type="email" name="email"required>
                             <button type="submit" name="send">اشترك</button>
                         </div>
                     </form>
@@ -22,8 +45,8 @@
                 <a target="_blank" href="https://maroof.sa/30220"><img width="252" height="111"
                         src="https://awscdn1.tasawk.com/wp-content/themes/tasawk/assets/images/ImageCr.png"></a>
             </div> -->
-            <a href="#"><img src="{{asset('website/img/logo final ابيض وازرق.gif')}}" width="500" alt="logo"
-                    class="img-fluid mt-4"></a>
+            <a href="#"><img src="{{ asset('website/img/logo final ابيض وازرق.gif') }}" width="500"
+                    alt="logo" class="img-fluid mt-4"></a>
             <ul class="list-unstyled conn">
                 <li><a href="mailto:info@AlaaAzani.com">info@AlaaAzani.com</a></li>
                 <li style="direction: ltr;"><a href="tel:+966 55 554 9743">+966 55 554 9743</a></li>
@@ -71,8 +94,8 @@
                                 d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
                                 fill-rule="evenodd" clip-rule="evenodd" />
                         </svg></a></li>
-                <li><a href="https://www.facebook.com/AlaaAzani" target="_blank"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <li><a href="https://www.facebook.com/AlaaAzani" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24">
                             <path
                                 d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                         </svg></a></li>

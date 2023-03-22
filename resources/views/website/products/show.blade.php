@@ -129,18 +129,13 @@
                         </div>
                         <div thumbsSlider="" class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="{{$product->image_path }}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{$product->image_path }}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{$product->image_path }}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{$product->image_path }}" />
-                                </div>
+                                @foreach ($product->images  as $image)
+
+                                    <div class="swiper-slide">
+                                        <img src="{{$image->image_path }}" />
+                                    </div>
+                                @endforeach
+
                             </div>
                         </div>
 
