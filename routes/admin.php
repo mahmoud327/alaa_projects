@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\CustomerReviewController;
+use App\Http\Controllers\Admin\JobController;
+use App\Http\Controllers\Admin\MyTeamController;
 use App\Http\Controllers\Admin\MyWorkController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController;
@@ -56,6 +58,8 @@ Route::group([
             Route::resource('my-works', MyWorkController::class);
             Route::resource('customer-reviews', CustomerReviewController::class);
             Route::resource('categories', CategoryController::class);
+            Route::resource('my-teams', MyTeamController::class);
+            Route::resource('jobs', JobController::class);
             Route::resource('contact-us', ContactUsController::class);
             Route::get('user-requests', [ContactUsController::class,'userRequest'])->name('user-request.index');
         });

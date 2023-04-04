@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WebSite;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\BlogView;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -40,8 +41,19 @@ class BlogController extends Controller
 
 
         $blog = Blog::find($id);
-        $blogs=Blog::where('id','!=',$id)->take(3)->get();
-        return view('website.blogs.show', compact('blog','blogs'));
+
+        $view = BlogView::where('ip_adress', gethostbyname(gethostname()))
+            ->where('blog_id', $id)
+            ->first();
+        if (!$view) {
+            BlogView::create([
+                'ip_adress' =>  gethostbyname(gethostname()),
+                'blog_id' => $id
+            ]);
+        }
+
+        $blogs = Blog::where('id', '!=', $id)->take(3)->get();
+        return view('website.blogs.show', compact('blog', 'blogs'));
     }
 
 

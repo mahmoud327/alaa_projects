@@ -28,7 +28,7 @@
                                             <i class="fa-solid fa-calendar-days"></i>
                                             <span>{{ $blog->created_at->format('Y-m-d')}}</span>
                                         </li>
-                                        <li><i class="fa-solid fa-eye"></i> <span>3</span></li>
+                                        <li><i class="fa-solid fa-eye"></i> <span>{{ $blog->blog_views()->count() }}</span></li>
                                     </ul>
                                 </div>
                                 <div class="image">
@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="galleryCard-footer">
-                                    <p class="p-1 m-0">    {{$blog->desc}}</p>
+                                    <p class="p-1 m-0">    {{$blog->title}}</p>
                                 </div>
                             </div>
                         </div>

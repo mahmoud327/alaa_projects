@@ -426,6 +426,33 @@
             <!-- </div> -->
         </div>
     </section>
+
+    <section class="team">
+
+        <div class="container text-center">
+            <h2>فريقنا</h2>
+            <!-- Swiper -->
+            <div class="swiper mySwiper4">
+                <div class="swiper-wrapper">
+                    @foreach ($teams as $team)
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="{{ $team->image_path }}" alt="quote" class="img-fluid">
+                            <h3>{{ $team->name }}</h3>
+                            <span>{{ $team->job_title }} </span>
+                        </div>
+                    </div>
+                    @endforeach
+
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
     <!--end projects section-->
     <!--start partner section-->
     <section class="partner">
@@ -511,7 +538,7 @@
             <!-- Swiper -->
             <div class="swiper mySwiper3 gallery" id="gallery">
                 <div class="swiper-wrapper">
-                    @foreach ($my_works as $blog)
+                    @foreach ($blogs as $blog)
                         <div class="swiper-slide ">
                             <div class="gallery-card sites">
                                 <div class="">
@@ -521,14 +548,14 @@
                                                 <i class="fa-solid fa-calendar-days"></i>
                                                 <span>{{ $blog->created_at->format('Y-m-D') }}</span>
                                             </li>
-                                            <li><i class="fa-solid fa-eye"></i> <span>3</span></li>
+                                            <li><i class="fa-solid fa-eye"></i> <span>{{ $blog->blog_views()->count() }}</span></li>
                                         </ul>
                                     </div>
                                     <div class="image">
 
                                         <img src="{{ $blog->image_path }}" alt="gallery-1" class="img-fluid">
                                         <div class="overlay">
-                                            <a href="sites.html">للتفاصيل </a>
+                                            <a href="{{ route('blogs.show',$blog->id) }}">للتفاصيل </a>
                                         </div>
                                     </div>
                                     <div class="galleryCard-footer">

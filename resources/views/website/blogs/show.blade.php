@@ -9,10 +9,10 @@
     <section class="blogcontent">
         <div class="container">
 
-            <h4>بعض المصطلحات في عالم التقنية ومعناها</h4>
+            <h4>{{$blog->title}}</h4>
 
             <div class="content">
-                <h2>{{$blog->title}}</h2>
+                <h2>{{$blog->title1}}</h2>
                 <div class="text">
                     <p>
                      {{ $blog->desc }}
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="content">
-                <h2> {{ $blog->title1 }}</h2>
+                <h2> {{ $blog->title2 }}</h2>
                 <div class="text">
                     <p>
                      {{ $blog->desc1 }}
@@ -124,7 +124,7 @@
                                             </div>
                                         </div>
                                         <div class="galleryCard-footer">
-                                            <p class="p-1 m-0"> {{ $blog->desc }}</p>
+                                            <p class="p-1 m-0"> {{ $blog->title }}</p>
                                         </div>
                                     </div>
                                 </div>

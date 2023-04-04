@@ -50,41 +50,51 @@
                         <h3>blog data</h3>
                         <section>
                             <div class="control-group form-group">
-                                <label class="form-label">title arabic</label>
+                                <label class="form-label">عنوان الرئيسى بالعربى</label>
                                 <input type="text" class="form-control required" required name="ar[title]" placeholder="Name">
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label">title English</label>
+                                <label class="form-label">عنوان الرئيسى بالانجليزى</label>
                                 <input type="text" class="form-control required"required name="en[title]"placeholder="text ">
                             </div>
+
                             <div class="control-group form-group">
-                                <label class="form-label">title1 arabic</label>
+                                <label class="form-label"> عنوان الفرعى الاول بالعربى </label>
                                 <input type="text" class="form-control required"  required name="ar[title1]" placeholder="Name">
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label">title1 English</label>
+                                <label class="form-label"> عنوان الفرعى الاول بالانجليزى</label>
                                 <input type="text" class="form-control required" required name="en[title]"placeholder="text ">
+                            </div>
+
+                            <div class="control-group form-group">
+                                <label class="form-label"> عنوان الفرعى التانى بالعربى </label>
+                                <input type="text" class="form-control required"  required name="ar[title2]" placeholder="Name">
+                            </div>
+                            <div class="control-group form-group">
+                                <label class="form-label"> عنوان الفرعى التانى بالانجليزى</label>
+                                <input type="text" class="form-control required" required name="en[title2]"placeholder="text ">
                             </div>
 
 
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc english</label>
+                                <label class="form-label"> وصف الفرعى الاول بالانجليزى</label>
                                 <textarea type="text" class="form-control required" required name="en[desc]" placeholder="Address">
                                             </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc arabic</label>
+                                <label class="form-label"> وصف الفرعى الاول بالعربى</label>
                                 <textarea type="text" class="form-control required" required name="ar[desc]"placeholder="Address">
                                   </textarea>
                             </div>
 
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc1 english</label>
+                                <label class="form-label">وصف الفرعى التانى بالانجليزى </label>
                                 <textarea type="text" class="form-control required"required  name="en[desc1]" placeholder="Address">
                                             </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc1 arabic</label>
+                                <label class="form-label">وصف الفرعى التانى بالانجليزى </label>
                                 <textarea type="text" class="form-control required"  required name="ar[desc]"placeholder="Address">
                                   </textarea>
                             </div>

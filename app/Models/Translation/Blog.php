@@ -9,7 +9,7 @@ class Blog extends Model
 
     protected $table = "blog_translations";
 
-    protected $fillable = ['title', 'desc', 'locale', 'blog_id', 'desc1', 'title1'];
+    protected $fillable = ['title', 'desc', 'locale', 'blog_id', 'desc1', 'title1','title2'];
 
     protected $guarded = ['blog_id'];
 

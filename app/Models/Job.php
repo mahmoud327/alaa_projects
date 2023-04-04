@@ -4,25 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Job extends Model
 {
 
-    use \Astrotomic\Translatable\Translatable;
-
-    protected $with = [
-        'translations',
-    ];
-
-    protected $appends = [
-        'image_path',
-    ];
 
 
-    protected $translationForeignKey = "blog_id";
-    public $translatedAttributes = ['title', 'desc','title1','desc1','title2','title2'];
-    public $translationModel = 'App\Models\Translation\Blog';
-    protected $table = "blogs";
-    protected $fillable = ['user_id', 'image'];
+
+
+    protected $table = "jobs";
+    protected $fillable = ['name', 'email','phone','message','cv','job'];
 
     /*
      * ----------------------------------------------------------------- *
@@ -39,11 +29,6 @@ class Blog extends Model
         return $this->belongsTo('App\Models\Category', 'blog_category_id');
     }
 
-    public function blog_views()
-    {
-        return $this->hasmany('App\Models\BlogView', 'blog_id');
-    }
-
 
 
 
@@ -54,8 +39,8 @@ class Blog extends Model
      */
 
 
-    public function getImagePathAttribute()
+    public function getCvPathAttribute()
     {
-        return $this->image ? asset('uploads/blogs/' . $this->image) : asset('uploads/default.jpeg');
+        return $this->cv ? asset('uploads/jobs/' . $this->cv) : asset('uploads/default.jpeg');
     }
 }
