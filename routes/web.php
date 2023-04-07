@@ -43,16 +43,16 @@ Route::redirect('/', 'home');
 
 
 
-    Route::get('home', [WebSiteController::class,'home'])->name('home');
-    Route::get('jobs', [WebSiteController::class,'job'])->name('job');
-    Route::post('save-jobs', [WebSiteController::class,'saveJob'])->name('save.jobs');
-    Route::get('home', [WebSiteController::class,'home'])->name('home');
-    Route::get('our-services', [WebSiteController::class,'ourServices'])->name('our-services');
-    Route::get('about-us', [WebSiteController::class,'aboutUs'])->name('about-us');
-    Route::resource('blogs', BlogController::class);
-    Route::resource('products', ProductController::class);
-    Route::resource('my-works', MyWorkController::class);
-    Route::resource('contact-us', ContactUsController::class);
-    Route::post('user-requests', [ContactUsController::class,'userRequest'])->name('user.requests');
+Route::get('home', [WebSiteController::class, 'home'])->name('home');
+Route::get('jobs', [WebSiteController::class, 'job'])->name('job');
+Route::post('save-jobs', [WebSiteController::class, 'saveJob'])->name('save.jobs');
+Route::get('home', [WebSiteController::class, 'home'])->name('home');
+Route::get('our-services', [WebSiteController::class, 'ourServices'])->name('our-services');
+Route::get('about-us', [WebSiteController::class, 'aboutUs'])->name('about-us');
+Route::resource('blogs', BlogController::class);
+Route::resource('products', ProductController::class);
+Route::resource('my-works', MyWorkController::class);
+Route::resource('contact-us', ContactUsController::class);
+Route::post('user-requests', [ContactUsController::class, 'userRequest'])->name('user.requests');
 
 // });

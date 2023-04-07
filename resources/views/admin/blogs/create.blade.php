@@ -21,7 +21,7 @@
 
 
 @section('title')
-    Add blog
+    اضافه مدونه
 @stop
 
 
@@ -31,8 +31,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">blogs</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-                add blog</span>
+            <h4 class="content-title mb-0 my-auto">المدونات</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
+                اضافة مدونه </span>
         </div>
     </div>
 </div>
@@ -47,59 +47,49 @@
                 <form action="{{ route('admin.blogs.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <div id="wizard1">
-                        <h3>blog data</h3>
                         <section>
-                            <div class="control-group form-group">
-                                <label class="form-label">عنوان الرئيسى بالعربى</label>
-                                <input type="text" class="form-control required" required name="ar[title]" placeholder="Name">
+                            <div class="w-50">
+                                <label class="form-label">عنوان الرئيسى </label>
+                                <input type="text" class="form-control w-60" required name="title"
+                                    placeholder="Name">
                             </div>
-                            <div class="control-group form-group">
-                                <label class="form-label">عنوان الرئيسى بالانجليزى</label>
-                                <input type="text" class="form-control required"required name="en[title]"placeholder="text ">
+                            <div id="other_data" class="tab-pane ">
+                                <div class="div_phone_inputs ">
+
+                                    <div class="col-md-6">
+                                        <label>عنوان الفرعى: </label>
+
+                                        <input class="form-control" data-parsley-class-handler="#lnWrapper"
+                                            name="title2[]" type="text" placeholder="عنوان الفرعى ">
+
+                                        <div class="clearfix"></div>
+                                        <br>
+
+                                        <br>
+                                        <label>وصف الفرعى: </label>
+
+                                        <textarea class="form-control w-80" data-parsley-class-handler="#lnWrapper"
+                                            name="description[]" type="text" placeholder="وصف بالعربى">
+                                        </textarea>
+
+                                        <div class="clearfix"></div>
+                                        <br>
+                                        <a href="#" class="remove_input btn btn-danger btn-sm"><i
+                                                class="fa fa-trash"></i></a>
+                                        <br>
+
+                                    </div>
+
+                                </div>
+
+                                <br>
+
+                                <a href="#" class="add_phone_input btn btn-info btn-sm"><i
+                                        class="fa fa-plus"></i></a>
+
                             </div>
 
-                            <div class="control-group form-group">
-                                <label class="form-label"> عنوان الفرعى الاول بالعربى </label>
-                                <input type="text" class="form-control required"  required name="ar[title1]" placeholder="Name">
-                            </div>
-                            <div class="control-group form-group">
-                                <label class="form-label"> عنوان الفرعى الاول بالانجليزى</label>
-                                <input type="text" class="form-control required" required name="en[title]"placeholder="text ">
-                            </div>
-
-                            <div class="control-group form-group">
-                                <label class="form-label"> عنوان الفرعى التانى بالعربى </label>
-                                <input type="text" class="form-control required"  required name="ar[title2]" placeholder="Name">
-                            </div>
-                            <div class="control-group form-group">
-                                <label class="form-label"> عنوان الفرعى التانى بالانجليزى</label>
-                                <input type="text" class="form-control required" required name="en[title2]"placeholder="text ">
-                            </div>
-
-
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label"> وصف الفرعى الاول بالانجليزى</label>
-                                <textarea type="text" class="form-control required" required name="en[desc]" placeholder="Address">
-                                            </textarea>
-                            </div>
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label"> وصف الفرعى الاول بالعربى</label>
-                                <textarea type="text" class="form-control required" required name="ar[desc]"placeholder="Address">
-                                  </textarea>
-                            </div>
-
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label">وصف الفرعى التانى بالانجليزى </label>
-                                <textarea type="text" class="form-control required"required  name="en[desc1]" placeholder="Address">
-                                            </textarea>
-                            </div>
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label">وصف الفرعى التانى بالانجليزى </label>
-                                <textarea type="text" class="form-control required"  required name="ar[desc]"placeholder="Address">
-                                  </textarea>
-                            </div>
-
-                            <div class="control-group form-group mb-0">
+                            <div class="control-group form-group w-50">
                                 <input type="file" class="form-control required"required name="image"
                                     placeholder="Address">
                             </div>
@@ -147,4 +137,38 @@
 <script src="{{ URL::asset('assets/plugins/telephoneinput/inttelephoneinput.js') }}"></script>
 
 <script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
+
+<script type="text/javascript">
+    var x = 2;
+    $(document).on('click', '.add_phone_input', function(e) {
+        e.preventDefault();
+        $('.div_phone_inputs').append('<div>' +
+
+            '<div class="col-md-6">' +
+            '<lable>العنوان الفرعى</lable>' +
+            '<br>' +
+
+            '<input type="phone" name="title2[]" class="form-control" placeholder="العنوان الفرعى" /> ' +
+            '</div>' +
+            '<div class="clearfix"></div>' +
+            '<br>' +
+
+            '<label>وصف الفرعى: </label>'+
+
+                '<textarea class="form-control w-50"  name="description[]" type="text" placeholder="وصف بالعربى">'+
+            '</textarea>'+
+            '</div>' +
+            '<div class="clearfix"></div>' +
+            '<br>' +
+            '<a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>' +
+            '<br>' +
+            '</div>');
+        x++;
+    });
+    $(document).on('click', '.remove_input', function() {
+        $(this).parent('div').remove();
+        x--;
+        return false;
+    });
+</script>
 @endpush

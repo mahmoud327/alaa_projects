@@ -9,24 +9,26 @@
     <section class="blogcontent">
         <div class="container">
 
-            <h4>{{$blog->title}}</h4>
+            <h4>{{ $blog->title }}</h4>
 
             <div class="content">
-                <h2>{{$blog->title1}}</h2>
-                <div class="text">
-                    <p>
-                     {{ $blog->desc }}
-                    </p>
-                </div>
+                @if ($blog->title2)
+                    @foreach ($blog->title2 as $title)
+                        <h2>{{ $title }}</h2>
+                    @endforeach
+                @endif
+
+                @if ($blog->description)
+                    @foreach ($blog->description as $desc)
+                        <div class="text">
+                            <p>
+                                {{ $desc }}
+                            </p>
+                        </div>
+                    @endforeach
+                @endif
             </div>
-            <div class="content">
-                <h2> {{ $blog->title2 }}</h2>
-                <div class="text">
-                    <p>
-                     {{ $blog->desc1 }}
-                    </p>
-                </div>
-            </div>
+
             <div class="content   ">
                 <div class="data social">
                     <div class="d-flex align-items-center my-2">

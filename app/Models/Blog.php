@@ -7,22 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
 
-    use \Astrotomic\Translatable\Translatable;
 
-    protected $with = [
-        'translations',
-    ];
 
     protected $appends = [
         'image_path',
     ];
 
 
-    protected $translationForeignKey = "blog_id";
-    public $translatedAttributes = ['title', 'desc','title1','desc1','title2','title2'];
-    public $translationModel = 'App\Models\Translation\Blog';
     protected $table = "blogs";
-    protected $fillable = ['user_id', 'image'];
+    protected $fillable = ['user_id', 'image', 'title', 'title2', 'description'];
 
     /*
      * ----------------------------------------------------------------- *
@@ -30,6 +23,10 @@ class Blog extends Model
      * ----------------------------------------------------------------- *
      */
 
+    protected $casts = [
+        'title2' => 'array',
+        'description' => 'array'
+    ];
     public function user()
     {
         return $this->hasOne('App\Models\User', 'id', 'user_id');
