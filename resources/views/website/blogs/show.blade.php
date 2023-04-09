@@ -12,6 +12,7 @@
             <h4>{{ $blog->title }}</h4>
 
             <div class="content">
+                
                 @if ($blog->title2)
                     @foreach ($blog->title2 as $title)
                         <h2>{{ $title }}</h2>
