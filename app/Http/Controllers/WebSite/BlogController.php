@@ -52,6 +52,8 @@ class BlogController extends Controller
             ]);
         }
 
+
+        
         $blogs = Blog::where('id', '!=', $id)->take(3)->get();
         return view('website.blogs.show', compact('blog', 'blogs'));
     }

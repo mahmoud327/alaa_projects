@@ -11,30 +11,31 @@
 
             <h4>{{ $blog->title }}</h4>
 
-            <div class="content">
-                
-                @if ($blog->title2)
-                    @foreach ($blog->title2 as $title)
-                        <h2>{{ $title }}</h2>
-                    @endforeach
-                @endif
+            @if ($blog->title2)
+                @for ($i = 0; $i < count($blog->title2); $i++)
+                    <div class="content mt-2">
 
-                @if ($blog->description)
-                    @foreach ($blog->description as $desc)
+                        @if ($blog->title2[$i])
+                            <h2>{{ $blog->title2[$i] }}</h2>
+                            @else
+
+                        @endif
+
                         <div class="text">
                             <p>
-                                {{ $desc }}
+                                {{ $blog->description[$i] }}
                             </p>
                         </div>
-                    @endforeach
-                @endif
-            </div>
+                    </div>
+                @endfor
+            @endif
+
 
             <div class="content   ">
                 <div class="data social">
                     <div class="d-flex align-items-center my-2">
 
-                        <img class="" src="imgs/sites-share.png" alt="" width="20">
+                        <img class="" src="{{ asset('website/img/sites-share.png')}}" alt="" width="20">
                         <h5 class="mx-2 my-2" style="color: #48a5e7;"> مشاركة المقال</h5>
                     </div>
                     <div class="share">

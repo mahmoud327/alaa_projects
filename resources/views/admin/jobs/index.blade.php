@@ -144,7 +144,7 @@ categoires - Page
                                     <td>{{ $job->email }}</td>
                                     <td>{{ $job->phone }}</td>
                                     <td>{{ $job->message }}</td>
-                                    <td>{{ $job->job_title }}
+                                    <td>{{ $job->job }}
 
                                     </td>
                                     <td>
