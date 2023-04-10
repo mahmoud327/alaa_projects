@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\MyWork;
 use App\Models\MyWorkCategory;
+use App\Models\UserRequestService;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Telegram\Bot\Laravel\Facades\Telegram;
 
-class MyWorkController extends Controller
+class UserRequestServiceController extends Controller
 {
     use ImageTrait;
     /**
@@ -20,8 +21,9 @@ class MyWorkController extends Controller
      */
     public function index()
     {
-        $my_works = MyWork::latest()->paginate(10);
-        return view('admin.my_works.index', compact('my_works'));
+        $services = UserRequestService::latest()->paginate(10);
+
+        return view('admin.services.index', compact('services'));
     }
 
     public function create()

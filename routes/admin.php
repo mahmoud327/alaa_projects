@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\MyWorkController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\UserRequestServiceController;
 use App\Http\Controllers\Admin\UserScoreController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +57,8 @@ Route::group([
             Route::post('products-image', [ProductController::class,'uploadProductImage'])->name('products.images.store');
 
             Route::resource('my-works', MyWorkController::class);
+            Route::resource('user-request-services', UserRequestServiceController::class);
+
             Route::resource('customer-reviews', CustomerReviewController::class);
             Route::resource('categories', CategoryController::class);
             Route::resource('my-teams', MyTeamController::class);

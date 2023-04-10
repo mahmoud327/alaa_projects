@@ -45,6 +45,9 @@ Route::redirect('/', 'home');
 
 Route::get('home', [WebSiteController::class, 'home'])->name('home');
 Route::get('jobs', [WebSiteController::class, 'job'])->name('job');
+
+Route::post('service-request', [WebSiteController::class, 'serviceRequest'])->name('service-request');
+
 Route::post('save-jobs', [WebSiteController::class, 'saveJob'])->name('save.jobs');
 Route::get('home', [WebSiteController::class, 'home'])->name('home');
 Route::get('our-services', [WebSiteController::class, 'ourServices'])->name('our-services');

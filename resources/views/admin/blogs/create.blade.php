@@ -73,9 +73,7 @@
                                         </textarea>
 
                                         <div class="clearfix"></div>
-                                        <br>
-                                        <a href="#" class="remove_input btn btn-danger btn-sm"><i
-                                                class="fa fa-trash"></i></a>
+
                                         <br>
 
                                     </div>
@@ -145,10 +143,10 @@
         $('.div_phone_inputs').append('<div>' +
 
             '<div class="col-md-6">' +
-            '<lable>العنوان الفرعى</lable>' +
-            '<br>' +
+                '<lable>العنوان الفرعى</lable>' +
+                '<br>' +
 
-            '<input type="phone" name="title2[]" class="form-control" placeholder="العنوان الفرعى" /> ' +
+                   '<input type="phone" name="title2[]" class="form-control" placeholder="العنوان الفرعى" /> ' +
             '</div>' +
             '<div class="clearfix"></div>' +
             '<br>' +
@@ -157,7 +155,7 @@
 
                 '<textarea class="form-control w-50"  name="description[]" type="text" placeholder="وصف بالعربى">'+
             '</textarea>'+
-            '</div>' +
+    
             '<div class="clearfix"></div>' +
             '<br>' +
             '<a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>' +

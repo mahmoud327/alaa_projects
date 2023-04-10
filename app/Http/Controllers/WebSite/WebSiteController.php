@@ -9,7 +9,11 @@ use App\Models\CustomerReview;
 use App\Models\Job;
 use App\Models\MyTeam;
 use App\Models\MyWork;
+use App\Models\MyWorkCategory;
 use App\Models\Product;
+use App\Models\UserRequestService;
+use App\Models\UserRequesttService;
+use App\Services\CategoryService;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 
@@ -33,8 +37,8 @@ class WebSiteController extends Controller
             ->take(6)
             ->latest()
             ->get();
-        $teams = MyTeam::query()
-            ->take(6)
+
+        $categories = MyWorkCategory::query()
             ->latest()
             ->get();
 
@@ -44,12 +48,16 @@ class WebSiteController extends Controller
             ->get();
 
 
-        return view('website.home-page', compact('nationalities', 'blogs','products','my_works','customer_reviews','teams'));
+        return view('website.home-page', compact('nationalities', 'blogs', 'products', 'my_works', 'customer_reviews','categories'));
     }
 
     public function ourServices()
     {
-        return view('website.our-services');
+        $categories = MyWorkCategory::query()
+        ->latest()
+        ->get();
+
+        return view('website.our-services',compact('categories'));
     }
     public function job()
     {
@@ -58,17 +66,24 @@ class WebSiteController extends Controller
 
     public function saveJob(Request $request)
     {
-      $job=  Job::create($request->all());
-      $path=$this->uploadFile('uploads/jobs',$request->file('cv'));
-      $job->update(['cv'=>$path]);
+        $job =  Job::create($request->all());
+        $path = $this->uploadFile('uploads/jobs', $request->file('cv'));
+        $job->update(['cv' => $path]);
         return back();
+    }
+    public function serviceRequest(Request $request)
+    {
+        UserRequestService::create($request->all());
 
-
+        return back();
     }
     public function aboutUs()
     {
-        return view('website.about-us');
+        $teams = MyTeam::query()
+        ->take(6)
+        ->latest()
+        ->get();
+        
+        return view('website.about-us',compact('teams'));
     }
-
-
 }

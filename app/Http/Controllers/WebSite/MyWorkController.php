@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\CustomerReview;
-use App\Models\Mywork;
+use App\Models\MyWork;
 use App\Models\MyWorkCategory;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;

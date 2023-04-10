@@ -22,7 +22,7 @@ class MyWork extends Model
     public $translatedAttributes = ['name', 'desc'];
     public $translationModel = 'App\Models\Translation\MyWork';
     protected $table = "my_works";
-    protected $fillable = ['type', 'image', 'link'];
+    protected $fillable = ['type', 'image', 'link','type_link','link_app_stroe','link_geogle_play'];
 
 
 

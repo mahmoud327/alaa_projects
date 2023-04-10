@@ -44,7 +44,7 @@
                                 <h5> مشاركة المنتج</h5>
                                 <div class="share">
                                     <p class="dataSocial">
-                                        <span>{{$my_work->link}}</span>
+                                        <span>{{ $my_work->link }}</span>
                                     </p>
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -119,7 +119,7 @@
                             class="swiper mySwiper2">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="{{$my_work->image_path }}" />
+                                    <img src="{{ $my_work->image_path }}" />
                                 </div>
 
 
@@ -130,25 +130,47 @@
                         <div thumbsSlider="" class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="{{$my_work->image_path }}" />
+                                    <img src="{{ $my_work->image_path }}" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="{{$my_work->image_path }}" />
+                                    <img src="{{ $my_work->image_path }}" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="{{$my_work->image_path }}" />
+                                    <img src="{{ $my_work->image_path }}" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="{{$my_work->image_path }}" />
+                                    <img src="{{ $my_work->image_path }}" />
                                 </div>
                             </div>
                         </div>
 
                         <!-- Swiper JS -->
-                        <div class="vist">
+                        @if ($my_work->type_link == 'website')
+                            <div class="vist ">
 
-                            <h5>زيارة الموقع </h5>
-                        </div>
+                                <a href="{{ $my_work->link }}" style="text-decoration: none">
+                                <h5>زيارة الموقع </h5>
+                                </a>
+
+
+                            </div>
+                        @else
+                            <div class="text-center">
+
+                                <a href="{{ $my_work->link_app_stroe }}" >
+                                    <img style="width:20%" src="{{ asset('uploads/apple-store.jpg') }}">
+
+                                </a>
+
+
+                                <a href="{{ $my_work->link_app_stroe }}">
+                                    <img style="width:26%"  src="{{ asset('uploads/google-play.png') }}">
+                                </a>
+
+
+                            </div>
+                        @endif
+
                     </div>
                 </div>
             </div>

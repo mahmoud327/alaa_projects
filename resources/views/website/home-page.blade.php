@@ -1,6 +1,5 @@
 @extends('website.layouts.master')
 @section('content')
-
     <section class="main">
         <div class="overlay">
             <div class="container" data-aos="zoom-in" data-aos-duration="2000">
@@ -92,103 +91,15 @@
     <!--start form modal-->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div> -->
 
-                <div class="modal-body">
-                    <div class="form">
-                        <h3> أرسل لنا فكرتك لتبدء قصتك
-                        </h3>
-                        <form method="POST" action="https://api.bassamelabassy.me/index.php">
-                            <div class="form-row">
-                                <div class="col-md-6 col-sm-12">
-                                    <label for="name">الإسم</label>
-                                    <input type="text" name="name" class="form-control" id="name" required>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <label for="email">البريد الالكتروني</label>
-                                    <input type="email" name="email" class="form-control" id="email" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 col-sm-12">
-                                    <label for="phone">رقم التواصل</label>
-                                    <div class="input-group ">
-                                        <span class=" input-group-text" id="basic-addon1">+</span>
-                                        <input type="text" name="phone" class=" form-control border-end-0"
-                                            id="phone" required>
-                                    </div>
-                                    <input type="text" name="phone" class="border-0 contactNumber" id="phone"
-                                        required>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <label for="address">البلد</label>
-                                    <select class="custom-select mr-sm-2" name="service" id="service" required>
-                                        <option value="برمجة وحلول تقنية">مصر</option>
-                                        <option value="تصميم الجرافيك"> السعوديه</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 col-sm-12">
-                                    <label for="service">نوع الخدمه</label>
-                                    <select class="custom-select mr-sm-2" name="service" id="service" required>
-                                        <option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>
-                                        <option value="تصميم الجرافيك">تصميم الجرافيك</option>
-                                        <option value="تسويق الكتروني">تسويق الكتروني</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <label for="service"> الخدمه</label>
-                                    <select class="custom-select mr-sm-2" name="service" id="service" required>
-                                        <option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>
-                                        <option value="تصميم الجرافيك">تصميم الجرافيك</option>
-                                        <option value="تسويق الكتروني">تسويق الكتروني</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col">
-                                    <div class="d-flex mt-3 p-2">
-                                        <span class="ml-2 input-group-text" id="basic-addon1">+</span>
-                                        <p class="mt-2 mb-0">اضافه خدمه اخري</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col">
-                                    <label for="message">الرسالة
-
-                                        <span style="    color: #c3c2c2;">(اختياري)</span>
-
-                                    </label>
-                                    <textarea class="form-control" name="message" rows="8" id="message" required></textarea>
-                                </div>
-                            </div>
-                            <div class="modal-footer  justify-content-center">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
-                                <button type="submit" name="save" class="btn send m-c">إرسال</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    @include('website.modal_service')
     <!--end form modal-->
     <!--end services section-->
     <!--start why-us section-->
     <section class="why-us">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                    </svg> -->
+                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                    </svg> -->
         <div class="container text-center">
             <h2>لماذا تختارنا</h2>
             <div class="row">
@@ -354,8 +265,8 @@
 
     <section class="testimonials mt-4">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-            </svg> -->
+                                                <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                            </svg> -->
         <div class="container text-center">
             <h2>أراء عملائنا</h2>
             <!-- Swiper -->
@@ -427,38 +338,13 @@
         </div>
     </section>
 
-    <section class="team">
 
-        <div class="container text-center">
-            <h2>فريقنا</h2>
-            <!-- Swiper -->
-            <div class="swiper mySwiper4">
-                <div class="swiper-wrapper">
-                    @foreach ($teams as $team)
-
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <img src="{{ $team->image_path }}" alt="quote" class="img-fluid">
-                            <h3>{{ $team->name }}</h3>
-                            <span>{{ $team->job_title }} </span>
-                        </div>
-                    </div>
-                    @endforeach
-
-
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
     <!--end projects section-->
     <!--start partner section-->
     <section class="partner">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                    </svg> -->
+                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                    </svg> -->
         <div class="container text-center">
             <h2>شركاء النجاح</h2>
             <p class="mt-2">عملائنا هم شركاء نجاحنا</p>
@@ -527,8 +413,8 @@
             </div>
         </div>
         <!-- <svg class="b_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
-                                    </svg> -->
+                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
+                                                                    </svg> -->
     </section>
 
 
@@ -548,14 +434,16 @@
                                                 <i class="fa-solid fa-calendar-days"></i>
                                                 <span>{{ $blog->created_at->format('Y-m-D') }}</span>
                                             </li>
-                                            <li><i class="fa-solid fa-eye"></i> <span>{{ $blog->blog_views()->count() }}</span></li>
+                                            <li><i class="fa-solid fa-eye"></i>
+                                                <span>{{ $blog->blog_views()->count() }}</span>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="image">
 
                                         <img src="{{ $blog->image_path }}" alt="gallery-1" class="img-fluid">
                                         <div class="overlay">
-                                            <a href="{{ route('blogs.show',$blog->id) }}">للتفاصيل </a>
+                                            <a href="{{ route('blogs.show', $blog->id) }}">للتفاصيل </a>
                                         </div>
                                     </div>
                                     <div class="galleryCard-footer">
@@ -579,6 +467,62 @@
     </section>
 @endsection
 @push('js')
+    <script type="text/javascript">
+        var x = 2;
+        $(document).on('click', '.add_phone_input', function(e) {
+            e.preventDefault();
+            $('.div_phone_inputs').append('<div>' +
+
+
+
+                '<div class="form-row">' +
+                '<div class="col-md-6 col-sm-12">' +
+                '<label for="service">نوع الخدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" type=""required>' +
+                '<option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>' +
+                '<option value="تصميم الجرافيك">تصميم الجرافيك</option>' +
+                '<option value="تسويق الكتروني">تسويق الكتروني</option>' +
+                '</select>' +
+                '</div>' +
+
+
+
+                '<div class="col-md-6 col-sm-12">' +
+                '<label for="service"> الخدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="categories_ids[]" id="service"required>' +
+
+
+
+                '@foreach ($categories as $cat)' +
+                '<option value="{{ $cat->id }}">{{ $cat->title }}</option>' +
+                '@endforeach' +
+
+
+
+
+
+
+                '</select>' +
+                '</div>' +
+
+                '</div>' +
+
+
+                '<div class="clearfix"></div>' +
+
+                '<a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i class=></a>' +
+
+                '</div>');
+            x++;
+        });
+        $(document).on('click', '.remove_input', function() {
+            $(this).parent('div').remove();
+            x--;
+            return false;
+        });
+    </script>
+
+
     <script>
         $(document).ready(function() {
 
@@ -628,35 +572,7 @@
                 clickable: true,
             },
         });
-        let swiper4 = new Swiper(".mySwiper4", {
-            spaceBetween: 30,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
+  
 
         let swiper5 = new Swiper(".mySwiper5", {
             spaceBetween: 30,

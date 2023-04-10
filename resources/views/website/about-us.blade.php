@@ -54,6 +54,35 @@
                 </p>
             </div>
 
+            <br>
+            
+
+            <section class="team">
+
+                <div class="container text-center">
+                    <h2>فريقنا</h2>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper4">
+                        <div class="swiper-wrapper">
+                            @foreach ($teams as $team)
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="{{ $team->image_path }}" alt="quote" class="img-fluid">
+                                        <h3>{{ $team->name }}</h3>
+                                        <span>{{ $team->job_title }} </span>
+                                    </div>
+                                </div>
+                            @endforeach
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
             <div class="goals">
                 <div class="row text-center">
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -85,3 +114,36 @@
         </div>
     </section>
 @endsection
+@push('js')
+    <script>
+        let swiper4 = new Swiper(".mySwiper4", {
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+@endpush
