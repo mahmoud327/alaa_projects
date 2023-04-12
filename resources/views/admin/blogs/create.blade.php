@@ -31,8 +31,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">المدونات</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-                اضافة مدونه </span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.blogs')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
+                 @lang('lang.add blog') </span>
         </div>
     </div>
 </div>
@@ -49,27 +49,27 @@
                     <div id="wizard1">
                         <section>
                             <div class="w-50">
-                                <label class="form-label">عنوان الرئيسى </label>
+                                <label class="form-label"> @lang('lang.main title') </label>
                                 <input type="text" class="form-control w-60" required name="title"
-                                    placeholder="Name">
+                                    placeholder=@lang('lang.main title')>
                             </div>
                             <div id="other_data" class="tab-pane ">
                                 <div class="div_phone_inputs ">
 
                                     <div class="col-md-6">
-                                        <label>عنوان الفرعى: </label>
+                                        <label> @lang('lang.sub title') </label>
 
                                         <input class="form-control" data-parsley-class-handler="#lnWrapper"
-                                            name="title2[]" type="text" placeholder="عنوان الفرعى ">
+                                            name="title2[]" type="text" placeholder=@lang('lang.sub title')>
 
                                         <div class="clearfix"></div>
                                         <br>
 
                                         <br>
-                                        <label>وصف الفرعى: </label>
+                                        <label>@lang('lang.sub description') </label>
 
                                         <textarea class="form-control w-80" data-parsley-class-handler="#lnWrapper"
-                                            name="description[]" type="text" placeholder="وصف بالعربى">
+                                            name="description[]" type="text" placeholder=@lang('lang.sub description')>
                                         </textarea>
 
                                         <div class="clearfix"></div>
@@ -92,7 +92,7 @@
                                     placeholder="Address">
                             </div>
 
-                            <button type="submit" class="btn btn-info">save</button>
+                            <button type="submit" class="btn btn-info">@lang('lang.save')</button>
                         </section>
 
                     </div>
@@ -143,19 +143,19 @@
         $('.div_phone_inputs').append('<div>' +
 
             '<div class="col-md-6">' +
-                '<lable>العنوان الفرعى</lable>' +
+                '<lable> @lang("lang.sub title")</lable>' +
                 '<br>' +
 
-                   '<input type="phone" name="title2[]" class="form-control" placeholder="العنوان الفرعى" /> ' +
+                   '<input type="phone" name="title2[]" class="form-control" placeholder=@lang("lang.sub title") /> ' +
             '</div>' +
             '<div class="clearfix"></div>' +
             '<br>' +
 
-            '<label>وصف الفرعى: </label>'+
+            '<label> @lang("lang.sub description") </label>'+
 
-                '<textarea class="form-control w-50"  name="description[]" type="text" placeholder="وصف بالعربى">'+
+                '<textarea class="form-control w-50"  name="description[]" type="text" placeholder=@lang("lang.sub description") >'+
             '</textarea>'+
-    
+
             '<div class="clearfix"></div>' +
             '<br>' +
             '<a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>' +

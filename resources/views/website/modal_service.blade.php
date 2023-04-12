@@ -44,21 +44,64 @@
                                 <div class="form-row">
                                     <div class="col-md-6 col-sm-12">
                                         <label for="service">نوع الخدمه</label>
-                                        <select class="custom-select mr-sm-2" name="type_services[]" id="service"
-                                            type=""required>
+                                        <select class="custom-select mr-sm-2"  id="select" name="type_services[]" id="service"
+                                         required>
                                             <option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>
                                             <option value="تصميم الجرافيك">تصميم الجرافيك</option>
                                             <option value="تسويق الكتروني">تسويق الكتروني</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6 col-sm-12">
-                                        <label for="service"> الخدمه</label>
+                                    <div class="col-md-6 col-sm-12" id="programming">
+                                        <label for="service"> الخدمات</label>
                                         <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
                                             required>
-                                            @foreach ($categories as $cat)
-                                                <option value="{{ $cat->id }}">{{ $cat->title }}</option>
-                                            @endforeach
+                                            <option>انشاء المواقع الالكترونية</option>
+                                            <option>إنشاء المتاجر الإلكترونية</option>
+                                            <option>تطوير تطبيقات الجوال</option>
+                                            <option>تطوير برمجيات مخصصة</option>
+                                            <option>خدمات الحوسبة السحابية</option>
+                                            <option>حجز النطاق والإستضافة للمواقع</option>
+                                            <option>الإستشارات التقنية وحلول الأعمال</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12" id="graphics" style="display:none;">
+                                        <label for="service"> الخدمات</label>
+                                        <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
+                                            required>
+                                            <option>تصميم الهوية البصرية كاملة</option>
+                                            <option>تصميم الشعار وبطاقة العمل</option>
+                                            <option>تصميم ملصقات التواصل الاجتماعي</option>
+                                            <option>تصميم الدعوات والإعلانات ولافتات الويب</option>
+                                            <option>تصميم صور انفو جرافيك</option>
+                                            <option>تصميم فيديو موشن جرافيك</option>
+                                            <option>تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12" id="marketing" style="display:none;">
+                                        <label for="service"> الخدمات</label>
+                                        <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
+                                            required>
+                                            <option>انشاء المواقع الالكترونية</option>
+                                            <option>إنشاء المتاجر الإلكترونية</option>
+                                            <option>تطوير تطبيقات الجوال</option>
+                                            <option>تطوير برمجيات مخصصة</option>
+                                            <option>خدمات الحوسبة السحابية</option>
+                                            <option>حجز النطاق والإستضافة للمواقع</option>
+                                            <option>الإستشارات التقنية وحلول الأعمال</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <label for="service"> الخدمات</label>
+                                        <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
+                                            required>
+                                            <option>كتابة المحتوي القيم والمقالات</option>
+                                            <option>تحسين محركات البحث (SEO)</option>
+                                            <option>التسويق عبر وسائل التواصل الاجتماعي</option>
+                                            <option>التسويق عبر البريد الإلكتروني</option>
+                                            <option>الحملات الإعلانية المدفوعة (AD)</option>
+                                            <option>الفيديو الدعائي</option>
+                                            <option>خطة تسويق متنوعة</option>
                                         </select>
                                     </div>
                                 </div>
@@ -75,8 +118,7 @@
 
                             <br>
 
-                            <a href="#" class="add_phone_input btn btn-info btn-sm"><i
-                                    class="fa fa-plus"></i></a>
+                            <a href="#" class="add_phone_input btn btn-info btn-sm"><i class="fa fa-plus"></i></a>
 
                         </div>
 

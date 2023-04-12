@@ -197,7 +197,7 @@
             <div class="col-lg-8 col-sm-12 order-2 order-lg-1">
                 <h4 class="text-center" style="color: #64b1e7;">أو عن طريق تعبئة النموذج التالي</h4>
                 <div class="form">
-                    <form method="POST" action="{{route('contact-us.store')}}">
+                    <form method="POST" action="{{ route('contact-us.store') }}">
                         @csrf
                         <div class="form-row">
 
@@ -215,18 +215,52 @@
                                 <label for="phone">رقم التواصل</label>
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1">+</span>
-                                    <input type="text" name="phone"  class="form-control border-end-0"
+                                    <input type="text" name="phone" class="form-control border-end-0"
                                         id="phone" required />
                                 </div>
 
                                 <!-- <input
-                        type="text"
-                        name="phone"
-                        class="border-0 contactNumber"
-                        id="phone"
-                        required
-                      /> -->
+                            type="text"
+                            name="phone"
+                            class="border-0 contactNumber"
+                            id="phone"
+                            required
+                          /> -->
                             </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="message">
+
+                                    الجنسيه
+                                </label>
+                                <!-- HTML code for the select dropdown -->
+                                <div class="input-group ">
+
+                                    <select name="nationality" class="form-control" id="nationality" required>
+                                        <option value="">اختر الجنسية</option>
+                                        <option value="الجزائرية">الجزائرية</option>
+                                        <option value="البحرينية">البحرينية</option>
+                                        <option value="المصرية">المصرية</option>
+                                        <option value="العراقية">العراقية</option>
+                                        <option value="الأردنية">الأردنية</option>
+                                        <option value="الكويتية">الكويتية</option>
+                                        <option value="اللبنانية">اللبنانية</option>
+                                        <option value="الليبية">الليبية</option>
+                                        <option value="المغربية">المغربية</option>
+                                        <option value="العمانية">العمانية</option>
+                                        <option value="الفلسطينية">الفلسطينية</option>
+                                        <option value="القطرية">القطرية</option>
+                                        <option value="السعودية">السعودية</option>
+                                        <option value="السودانية">السودانية</option>
+                                        <option value="السورية">السورية</option>
+                                        <option value="التونسية">التونسية</option>
+                                        <option value="الإماراتية">الإماراتية</option>
+                                        <option value="اليمنية">اليمنية</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
                             {{-- <div class="col-md-6 col-sm-12">
                                 <label for="address">البلد</label>
                                 <div class="dropdown w-100" id="dropdown">

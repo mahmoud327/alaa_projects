@@ -44,7 +44,7 @@
                                 <h5> مشاركة المنتج</h5>
                                 <div class="share">
                                     <p class="dataSocial">
-                                        <span>{{$product->link}}</span>
+                                        <span>{{ $product->link }}</span>
                                     </p>
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -119,7 +119,7 @@
                             class="swiper mySwiper2">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="{{$product->image_path }}" />
+                                    <img src="{{ $product->image_path }}" />
                                 </div>
 
 
@@ -129,10 +129,9 @@
                         </div>
                         <div thumbsSlider="" class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                                @foreach ($product->images  as $image)
-
+                                @foreach ($product->images as $image)
                                     <div class="swiper-slide">
-                                        <img src="{{$image->image_path }}" />
+                                        <img src="{{ $image->image_path }}" />
                                     </div>
                                 @endforeach
 
@@ -142,7 +141,9 @@
                         <!-- Swiper JS -->
                         <div class="vist">
 
-                            <h5>زيارة الموقع </h5>
+                            <a href="{{ $product->link }}" style="text-decoration: none">
+                                <h5>زيارة الموقع </h5>
+                            </a>
                         </div>
                     </div>
                 </div>

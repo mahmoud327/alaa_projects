@@ -28,8 +28,8 @@
  <div class="breadcrumb-header justify-content-between">
      <div class="my-auto">
          <div class="d-flex">
-             <h4 class="content-title mb-0 my-auto">Dashboard</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                 الطلبات Module</span>
+             <h4 class="content-title mb-0 my-auto">@lang('lang.Dashboard')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                 @lang('lang.requests') </span>
          </div>
      </div>
  </div>
@@ -125,10 +125,7 @@
 
      <div class="col-xl-12">
          <div class="card mg-b-20">
-             <div class="card-header pb-0">
 
-                 <a class="btn btn-outline-primary" href="{{ route('admin.my-works.create') }}">Add my-works</a>
-             </div>
              <div class="card-body">
                  <div class="table-responsive">
                      <table id="example1" class="table key-buttons text-md-nowrap" data-page-length='50'
@@ -136,15 +133,15 @@
                          <thead>
                              <tr>
                                  <th class="border-bottom-0">#</th>
-                                 <th class="border-bottom-0">name</th>
-                                 <th class="border-bottom-0">email</th>
-                                 <th class="border-bottom-0">message</th>
-                                 <th class="border-bottom-0">phone</th>
-                                 <th class="border-bottom-0">country</th>
-                                 <th class="border-bottom-0">type services</th>
-                                 <th class="border-bottom-0">categories </th>
+                                 <th class="border-bottom-0">@lang('lang.name')</th>
+                                 <th class="border-bottom-0">@lang('lang.email')</th>
+                                 <th class="border-bottom-0">@lang('lang.message')</th>
+                                 <th class="border-bottom-0">@lang('lang.phone')</th>
+                                 <th class="border-bottom-0">@lang('lang.nationality')</th>
+                                 <th class="border-bottom-0">@lang('lang.type service')</th>
+                                 <th class="border-bottom-0">@lang('lang.categories') </th>
 
-                                 <th class="border-bottom-0">action</th>
+                                 <th class="border-bottom-0">@lang('lang.actions')</th>
                              </tr>
                          </thead>
                          <tbody class="tr">

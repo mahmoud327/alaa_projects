@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content" style="width:130%">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit team</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@lang('lang.edit team')</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -22,7 +22,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" name="job_title"  value="{{$team->job_title}}" placeholder="اسم الوظيفه ">
+                                <input type="text" class="form-control" name="job_title"  value="{{$team->job_title}}" placeholder=@lang('lang.my teams')>
                             </div>
                             <div class="form-group">
                                 <input type="file" class="form-control" name="image"  placeholder=" title arabic ">
@@ -32,8 +32,8 @@
 
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">تاكيد</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                                <button type="submit" class="btn btn-primary">@lang('lang.save')</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('lang.save')</button>
                             </div>
                         </div>
 

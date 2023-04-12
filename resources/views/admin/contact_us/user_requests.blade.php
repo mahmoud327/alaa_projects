@@ -22,8 +22,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">Dashboard</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                user requests </span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.Dashboard')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                @lang('lang.mailing lists')  </span>
         </div>
     </div>
 </div>
@@ -139,7 +139,7 @@
                             <tr>
                                 <th class="border-bottom-0">#</th>
 
-                                <th class="border-bottom-0">email</th>
+                                <th class="border-bottom-0">@lang('lang.email')</th>
 
                             </tr>
                         </thead>

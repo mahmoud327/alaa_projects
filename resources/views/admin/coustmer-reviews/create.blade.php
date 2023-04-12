@@ -31,8 +31,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">customer-reviewss</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-                add customer-reviews</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.customer-reviews')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
+                @lang('lang.customer-reviews')</span>
         </div>
     </div>
 </div>
@@ -47,27 +47,27 @@
                 <form action="{{ route('admin.customer-reviews.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <div id="wizard1">
-                        <h3>customer-reviews data</h3>
+                        {{-- <h3>customer-reviews data</h3> --}}
                         <section>
 
                             <div class="control-group form-group">
-                                <label class="form-label"> user_name</label>
-                                <input type="text" class="form-control required" name="user_name"placeholder="user_name ">
+                                <label class="form-label"> @lang('lang.name')</label>
+                                <input type="text" class="form-control required" name="user_name"placeholder=@lang('lang.name')>
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label"> job</label>
-                                <input type="text" class="form-control required" name="job"placeholder="job ">
+                                <label class="form-label"> @lang('lang.job')</label>
+                                <input type="text" class="form-control required" name="job"placeholder= @lang('lang.job')>
                             </div>
 
 
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc english</label>
-                                <textarea type="text" class="form-control required" name="en[desc]" placeholder="Address">
+                                <label class="form-label">@lang('lang.english description')</label>
+                                <textarea type="text" class="form-control required" name="en[desc]" placeholder=@lang('lang.english description')>
                                             </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc arabic</label>
-                                <textarea type="text" class="form-control required" name="ar[desc]"placeholder="Address">
+                                <label class="form-label">@lang('lang.arabic description')</label>
+                                <textarea type="text" class="form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
                                   </textarea>
                             </div>
 
@@ -76,7 +76,7 @@
                                     placeholder="Address">
                             </div>
 
-                            <button type="submit" class="btn btn-info">save</button>
+                            <button type="submit" class="btn btn-info"> @lang('lang.save')</button>
                         </section>
 
                     </div>

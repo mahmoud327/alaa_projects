@@ -12,7 +12,7 @@ class Job extends Model
 
 
     protected $table = "jobs";
-    protected $fillable = ['name', 'email','phone','message','cv','job'];
+    protected $fillable = ['name', 'email','phone','message','cv','job','nationality'];
 
     /*
      * ----------------------------------------------------------------- *

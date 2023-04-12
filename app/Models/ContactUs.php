@@ -15,7 +15,8 @@ class ContactUs extends Model
         'email',
         'phone',
         'message',
-        'subject'
+        'subject',
+        'nationality'
     ];
 
 }

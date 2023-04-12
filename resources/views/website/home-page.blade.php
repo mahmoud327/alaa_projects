@@ -98,51 +98,45 @@
     <!--start why-us section-->
     <section class="why-us">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                    </svg> -->
+                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                        </svg> -->
         <div class="container text-center">
             <h2>لماذا تختارنا</h2>
             <div class="row">
                 <div class="col-lg-2 p-2 col-md-3 col-sm-12">
-                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <img src="{{ asset('website/img/whu-us-1.png') }}" alt="why-us-1"class="img-fluid">
                         <p>برمجيات آمنة ومحمية من الثغرات</p>
                     </div>
                 </div>
                 <div class="col-lg-2 p-2 col-md-3 col-sm-12">
-                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <img src="{{ asset('website/img/whu-us-2.png') }}" alt="why-us-2" class="img-fluid">
                         <p>تصميم متجاوب مع جميع الأجهزة والشاشات</p>
                     </div>
                 </div>
                 <div class="col-lg-2 p-2 col-md-3 col-sm-12">
-                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <img src="{{ asset('website/img/whu-us-3.png') }}" alt="why-us-3" class="img-fluid">
                         <p>تحسين ظهور موقعك
                             في محركات البحث (SEO)</p>
                     </div>
                 </div>
                 <div class="col-lg-2 p-2 col-md-3 col-sm-12">
-                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <img src="{{ asset('website/img/whu-us-4.png') }}" alt="why-us-4" class="img-fluid">
                         <p>المرونة في إجراء
                             التعديلات حسب رغبتك</p>
                     </div>
                 </div>
                 <div class="col-lg-2 p-2 col-md-3 col-sm-12">
-                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <img src="{{ asset('website/img/whu-us-5.png') }}" alt="why-us-5" class="img-fluid">
                         <p>إدارة موقعك مع لوحة تحكم مميزة (cPanel)</p>
                     </div>
                 </div>
                 <div class="col-lg-2 p-2 col-md-3 col-sm-12">
-                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
+                    <div class="why-us-card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                         <img src="{{ asset('website/img/whu-us-6.png') }}" alt="why-us-6" class="img-fluid">
                         <p>تصاميم عصرية وجذابة تناسب مختلف المجالات</p>
                     </div>
@@ -265,8 +259,8 @@
 
     <section class="testimonials mt-4">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                            </svg> -->
+                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                </svg> -->
         <div class="container text-center">
             <h2>أراء عملائنا</h2>
             <!-- Swiper -->
@@ -343,8 +337,8 @@
     <!--start partner section-->
     <section class="partner">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                    </svg> -->
+                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                        </svg> -->
         <div class="container text-center">
             <h2>شركاء النجاح</h2>
             <p class="mt-2">عملائنا هم شركاء نجاحنا</p>
@@ -413,8 +407,8 @@
             </div>
         </div>
         <!-- <svg class="b_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
-                                                                    </svg> -->
+                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
+                                                                        </svg> -->
     </section>
 
 
@@ -522,6 +516,30 @@
         });
     </script>
 
+    <script>
+ 
+        $('#select').on('change', function() {
+            var val = $(this).val()
+            if (val == 'برمجة وحلول تقنية') {
+
+                $('#graphics').css('display', 'none');
+                $('#marketing').css('display', 'none');
+
+
+            } else if (val == 'تصميم الجرافيك') {
+
+                $('#prgramming').css('display', 'none');
+
+                $('#marketing').css('display', 'none');
+            } else if (val == 'تسويق الكتروني') {
+
+
+                $('#prgramming').css('display', 'none');
+                $('#graphics').css('display', 'none');
+            }
+        });
+    </script>
+
 
     <script>
         $(document).ready(function() {
@@ -572,7 +590,7 @@
                 clickable: true,
             },
         });
-  
+
 
         let swiper5 = new Swiper(".mySwiper5", {
             spaceBetween: 30,

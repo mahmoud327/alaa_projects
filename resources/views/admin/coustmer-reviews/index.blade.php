@@ -22,8 +22,8 @@ customer_reviews - Page
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">Dashboard</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                coustmer_reviews Module</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.Dashboard')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                @lang('lang.customer-reviews')</span>
         </div>
     </div>
 </div>
@@ -121,7 +121,7 @@ customer_reviews - Page
         <div class="card mg-b-20">
             <div class="card-header pb-0">
 
-                    <a class="btn btn-outline-primary" href="{{route('admin.customer-reviews.create')}}">Add coustmer_reviews</a>
+                    <a class="btn btn-outline-primary" href="{{route('admin.customer-reviews.create')}}">@lang('lang.add customer-reviews')</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -130,10 +130,10 @@ customer_reviews - Page
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
-                                <th class="border-bottom-0">Image</th>
-                                <th class="border-bottom-0">user_name</th>
-                                <th class="border-bottom-0">job</th>
-                                <th class="border-bottom-0">action</th>
+                                <th class="border-bottom-0">@lang('lang.image')</th>
+                                <th class="border-bottom-0">@lang('lang.name')</th>
+                                <th class="border-bottom-0">@lang('lang.job')</th>
+                                <th class="border-bottom-0">@lang('lang.actions')</th>
                             </tr>
                         </thead>
                         <tbody class="tr">
@@ -150,7 +150,7 @@ customer_reviews - Page
                                             <i class="las la-pen"></i>
                                         </a>
                                         <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#modaldemo9{{$coustmer_review->id}} " title="delete">
-                                            delete
+                                            @lang('lang.delete')
                                         </a>
                                     </td>
                                 </tr>

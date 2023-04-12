@@ -31,8 +31,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">my_works</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-                add my_work</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.my works')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
+            @lang('lang.add my works')</span>
         </div>
     </div>
 </div>
@@ -47,22 +47,22 @@
                 <form action="{{ route('admin.my-works.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <div id="wizard1">
-                        <h3>my_work data</h3>
+                        {{-- <h3>my_work data</h3> --}}
                         <section>
                             <div class="control-group form-group">
-                                <label class="form-label">الاسم بالانجليززى </label>
+                                <label class="form-label">@lang('lang.english name') </label>
                                 <input type="text" class="form-control required" name="ar[name]" required
-                                    placeholder="Name">
+                                    placeholder=@lang('lang.english name') >
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label">الاسم بالعربى </label>
+                                <label class="form-label">@lang('lang.arabic name ')  </label>
                                 <input type="text" class="form-control required"required
-                                    name="en[name]"placeholder="text ">
+                                    name="en[name]" >
                             </div>
-                            <div class="control-group form-group">
+                            {{-- <div class="control-group form-group">
                                 <label class="form-label"> نوع المنتج</label>
                                 <input type="text" class="form-control required" name="type"placeholder="type ">
-                            </div>
+                            </div> --}}
 
 
                             <div class="d-flex gap-4 justify-content-between"  style="width: 15%">
@@ -70,7 +70,7 @@
                                 <div class="-">
                                     <label class="rdiobox">
                                         <input checked name="type_link" type="radio" value="mobile" id="mobile">
-                                        <span>موبايل
+                                        <span>@lang('lang.mobile')
                                         </span></label>
                                 </div>
 
@@ -78,35 +78,41 @@
                                 <div class="-">
                                     <label class="rdiobox"><input name="type_link" id="website_radio" value="website"
                                             type="radio"><span>
-                                            ويب
+                                            @lang('lang.web')
+                                        </span></label>
+                                </div>
+                                <div class="-">
+                                    <label class="rdiobox"><input name="type_link" id="nothing" value=""
+                                            type="radio"><span>
+                                            @lang('lang.nothing')
                                         </span></label>
                                 </div>
                             </div>
 
                             <div class="control-group form-group" id="website" style="display:none">
-                                <label class="form-label"> لينك الموقع</label>
-                                <input type="text" class="form-control " name="link"placeholder="link ">
+                                <label class="form-label"> @lang('lang.link website')</label>
+                                <input type="text" class="form-control " name="link"placeholder=@lang('lang.link website')>
                             </div>
 
 
                             <div class="control-group form-group" id="google_play">
-                                <label class="form-label"> لينك جوجل بلاى</label>
+                                <label class="form-label"> @lang('lang.link google play')</label>
                                 <input type="text" class="form-control required"
-                                    name="link_geogle_play"placeholder="link ">
+                                    name="link_geogle_play"placeholder=@lang('lang.link google play')>
                             </div>
 
 
                             <div class="control-group form-group" id=app_store>
-                                <label class="form-label"> لينك ابل استور</label>
+                                <label class="form-label">  @lang('lang.link app store') </label>
                                 <input type="text" class="form-control required"
-                                    name="link_app_stroe"placeholder="link ">
+                                    name="link_app_stroe"placeholder=@lang('lang.link app store')>
                             </div>
 
 
 
 
                             <div class="control-group form-group">
-                                <label class="form-label">اختارالخدمه </label>
+                                <label class="form-label">@lang('lang.select category')  </label>
                                 <select class="form-control" name="my_work_category_id" required>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">
@@ -119,13 +125,13 @@
                             </div>
 
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">وصف بالانجليزى </label>
-                                <textarea type="text" class="form-control required" name="en[desc]" required placeholder="Address">
+                                <label class="form-label"> @lang('lang.english description') </label>
+                                <textarea type="text" class="form-control required" name="en[desc]" required placeholder=@lang('lang.english description') >
                                             </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">وصف بالعربى </label>
-                                <textarea type="text" class="form-control required" name="ar[desc]" required placeholder="Address">
+                                <label class="form-label">@lang('lang.arabic description')  </label>
+                                <textarea type="text" class="form-control required" name="ar[desc]" required placeholder=@lang('lang.arabic description') >
                                   </textarea>
                             </div>
 
@@ -134,7 +140,7 @@
                                     placeholder="Address">
                             </div>
 
-                            <button type="submit" class="btn btn-info">save</button>
+                            <button type="submit" class="btn btn-info">@lang('lang.save')</button>
                         </section>
 
                     </div>

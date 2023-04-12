@@ -40,7 +40,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> المدونات </span><span
+                    </svg><span class="side-menu__label"> @lang('lang.blogs') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
             <li class="slide">
@@ -50,7 +50,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> فريقنا </span><span
+                    </svg><span class="side-menu__label">  @lang('lang.my teams') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
 
@@ -62,7 +62,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> الوظائف </span><span
+                    </svg><span class="side-menu__label"> @lang('lang.jobs') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
             <li class="slide">
@@ -72,7 +72,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> قوائم بريديه </span><span
+                    </svg><span class="side-menu__label">   @lang('lang.mailing lists') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
             <li class="slide">
@@ -82,7 +82,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> الطلبات </span><span
+                    </svg><span class="side-menu__label">  @lang('lang.requests') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
 
@@ -93,7 +93,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> طلبات تواصل نعنا </span><span
+                    </svg><span class="side-menu__label">   @lang('lang.caontact us') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
             <li class="slide">
@@ -103,7 +103,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> المنتجات </span><span
+                    </svg><span class="side-menu__label">  @lang('lang.products') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
 
@@ -114,7 +114,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> الخدمات </span><span
+                    </svg><span class="side-menu__label">  @lang('lang.categories') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
             <li class="slide">
@@ -124,7 +124,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> اعمالنا </span><span
+                    </svg><span class="side-menu__label">  @lang('lang.my works') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
 
@@ -135,7 +135,7 @@
                         <path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3" />
                         <path
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
-                    </svg><span class="side-menu__label"> اراء عملائنا </span><span
+                    </svg><span class="side-menu__label">   @lang('lang.customer-reviews') </span><span
                         class="badge badge-success side-badge">1</span></a>
             </li>
 

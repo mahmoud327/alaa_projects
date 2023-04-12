@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content" style="width:130%">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit category</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@lang('lang.edit category') </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -18,11 +18,11 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="en[title]"  value="{{optional($category->translate('en'))->title}}"
-                                    placeholder=" title english ">
+                                    placeholder=@lang('lang.arabic name ')>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="ar[title]" value="{{optional($category->translate('ar'))->title}}"
-                                    placeholder=" title arabic ">
+                                    placeholder=@lang('lang.english name')>
                             </div>
 
 

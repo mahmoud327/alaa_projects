@@ -85,8 +85,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">products</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-                add product</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.products')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
+                @lang('lang.products')</span>
         </div>
     </div>
 </div>
@@ -101,35 +101,35 @@
                 <form action="{{ route('admin.products.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <div id="wizard1">
-                        <h3>product data</h3>
+                        {{-- <h3>product data</h3> --}}
                         <section>
                             <div class="control-group form-group">
-                                <label class="form-label">name arabic</label>
-                                <input type="text" class="form-control required" name="ar[name]" placeholder="Name">
+                                <label class="form-label">@lang('lang.arabic name ')</label>
+                                <input type="text" class="form-control required" name="ar[name]" placeholder=@lang('lang.arabic name ')>
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label">name English</label>
-                                <input type="text" class="form-control required" name="en[name]"placeholder="text ">
+                                <label class="form-label">@lang('lang.english name')</label>
+                                <input type="text" class="form-control required" name="en[name]"placeholder=@lang('lang.english name')>
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label"> type</label>
-                                <input type="text" class="form-control required" name="type"placeholder="type ">
+                                <label class="form-label"> @lang('lang.type')</label>
+                                <input type="text" class="form-control required" name="type"placeholder= @lang('lang.type')>
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label"> link</label>
-                                <input type="text" class="form-control required" name="link"placeholder="link ">
+                                <label class="form-label">  @lang('lang.link')</label>
+                                <input type="text" class="form-control required" name="link"placeholder=@lang('lang.link')>
                             </div>
 
 
 
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc english</label>
-                                <textarea type="text" class="form-control required" name="en[desc]" placeholder="Address">
+                                <label class="form-label">@lang('lang.english description')</label>
+                                <textarea type="text" class="form-control required" name="en[desc]" placeholder=@lang('lang.english description')>
                                             </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">desc arabic</label>
-                                <textarea type="text" class="form-control required" name="ar[desc]"placeholder="Address">
+                                <label class="form-label">@lang('lang.arabic description')</label>
+                                <textarea type="text" class="form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
                                   </textarea>
                             </div>
 
@@ -143,15 +143,15 @@
 
 
                             <div class="form-group col-md-7">
-                                <h4 class="form-section"><i class="ft-home"></i>رفع الصور</h4>
+                                <h4 class="form-section"><i class="ft-home"></i>@lang('lang.image')</h4>
 
                                 <div id="dpz-multiple-files" class="dropzone dropzone-area">
-                                    <div class="dz-message"> رفع الصوره  </div>
+                                    <div class="dz-message">  @lang('lang.upload image')  </div>
                                 </div>
 
                             </div>
 
-                            <button type="submit" class="btn btn-info">save</button>
+                            <button type="submit" class="btn btn-info">@lang('lang.save')</button>
                         </section>
 
                     </div>

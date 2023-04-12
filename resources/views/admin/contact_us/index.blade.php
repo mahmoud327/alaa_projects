@@ -13,8 +13,7 @@
     <link href="{{URL::asset('assets/plugins/sweet-alert/sweetalert.css')}}" rel="stylesheet">
 
 @section('title')
-    {{ trans('lang.page_title_of_account') }}
-@stop
+@lang('lang.caontact us')@stop
 
 @endsection
 @section('page-header')
@@ -22,8 +21,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">Dashboard</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                Countact Us</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.Dashboard')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+               @lang('lang.caontact us')</span>
         </div>
     </div>
 </div>
@@ -138,10 +137,11 @@
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
-                                <th class="border-bottom-0">name</th>
-                                <th class="border-bottom-0">email</th>
-                                <th class="border-bottom-0">phone</th>
-                                <th class="border-bottom-0">message</th>
+                                <th class="border-bottom-0">@lang('lang.name')</th>
+                                <th class="border-bottom-0">@lang('lang.nationality')</th>
+                                <th class="border-bottom-0">@lang('lang.email')</th>
+                                <th class="border-bottom-0">@lang('lang.phone')</th>
+                                <th class="border-bottom-0">@lang('lang.message')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -150,6 +150,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->nationality }}</td>
                                     <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->phone }}</td>
                                     <td>{{ $contact->message }}</td>

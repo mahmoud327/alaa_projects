@@ -13,7 +13,7 @@
     <link href="{{URL::asset('assets/plugins/sweet-alert/sweetalert.css')}}" rel="stylesheet">
 
 @section('title')
-categoires - Page
+@lang('lang.jobs')
 @stop
 
 @endsection
@@ -22,8 +22,8 @@ categoires - Page
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">Dashboard</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                categoires Module</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.Dashboard')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                @lang('lang.jobs') </span>
         </div>
     </div>
 </div>
@@ -127,13 +127,14 @@ categoires - Page
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
-                                <th class="border-bottom-0">name</th>
-                                <th class="border-bottom-0">email</th>
-                                <th class="border-bottom-0">phone</th>
-                                <th class="border-bottom-0">message</th>
-                                <th class="border-bottom-0">job</th>
-                                <th class="border-bottom-0">cv</th>
-                                <th class="border-bottom-0">action</th>
+                                <th class="border-bottom-0">@lang('lang.name')</th>
+                                <th class="border-bottom-0">@lang('lang.email')</th>
+                                <th class="border-bottom-0">@lang('lang.nationality')</th>
+                                <th class="border-bottom-0">@lang('lang.phone')</th>
+                                <th class="border-bottom-0">@lang('lang.message')</th>
+                                <th class="border-bottom-0">@lang('lang.job')</th>
+                                <th class="border-bottom-0">@lang('lang.cv')</th>
+                                <th class="border-bottom-0">@lang('lang.actions')</th>
                             </tr>
                         </thead>
                         <tbody class="tr">
@@ -142,6 +143,7 @@ categoires - Page
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $job->name }}</td>
                                     <td>{{ $job->email }}</td>
+                                    <td>{{ $job->nationality }}</td>
                                     <td>{{ $job->phone }}</td>
                                     <td>{{ $job->message }}</td>
                                     <td>{{ $job->job }}
@@ -156,7 +158,7 @@ categoires - Page
                                      <td>
 
                                         <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#modaldemo9{{$job->id}} " title="delete">
-                                            delete
+                                            @lang('lang.delete')
                                         </a>
                                     </td>
                                 </tr>

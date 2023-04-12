@@ -22,8 +22,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">Dashboard</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                my_works Module</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.Dashboard')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
+                @lang('lang.my works')</span>
         </div>
     </div>
 </div>
@@ -121,7 +121,7 @@
         <div class="card mg-b-20">
             <div class="card-header pb-0">
 
-                    <a class="btn btn-outline-primary" href="{{route('admin.my-works.create')}}">Add my-works</a>
+                    <a class="btn btn-outline-primary" href="{{route('admin.my-works.create')}}">@lang('lang.my works')</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -130,9 +130,9 @@
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
-                                <th class="border-bottom-0">Image</th>
-                                <th class="border-bottom-0">name</th>
-                                <th class="border-bottom-0">action</th>
+                                <th class="border-bottom-0">@lang('lang.image')</th>
+                                <th class="border-bottom-0">@lang('lang.name')</th>
+                                <th class="border-bottom-0">@lang('lang.actions')</th>
                             </tr>
                         </thead>
                         <tbody class="tr">
@@ -148,7 +148,7 @@
                                             <i class="las la-pen"></i>
                                         </a>
                                         <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#modaldemo9{{$my_work->id}} " title="delete">
-                                            delete
+                                            @lang('lang.delete')
                                         </a>
                                     </td>
                                 </tr>
