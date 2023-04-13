@@ -51,6 +51,14 @@ class BlogController extends Controller
     }
 
 
+    public function edit($id)
+    {
+        $blog = Blog::find($id);
+
+        return view('admin.blogs.edit', compact('blog'));
+    }
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -64,13 +72,16 @@ class BlogController extends Controller
         $blog = Blog::findOrFail($id);
         $blog->update($request->except('image'));
         if ($request->file('image')) {
+
             Storage::disk('blogs')->delete($blog->image);
             $this->uploadImage('uploads/blogs', $request->file('image'));
-            $request['image'] = $request->image->hashName();
+            $blog->update(['image' => $request->image->hashName()]);
         }
 
+
+
         session()->flash('edit', 'تم اضافة سجل بنجاح ');
-        return redirect()->back();
+        return redirect(route('admin.blogs.index'));
     }
 
     /**

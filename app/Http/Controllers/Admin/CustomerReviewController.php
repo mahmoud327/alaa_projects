@@ -58,19 +58,30 @@ class CustomerReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function edit($id)
+     {
+     $review=CustomerReview::find($id);
+     return view('admin.coustmer-reviews.edit', compact('review'));
+
+
+ }
+
     public function update(Request $request, $id)
     {
 
         $CustomerReview = CustomerReview::findOrFail($id);
         $CustomerReview->update($request->except('image'));
         if ($request->file('image')) {
-            Storage::disk('CustomerReviews')->delete($CustomerReview->image);
+            Storage::disk('customer_reviews')->delete($CustomerReview->image);
             $this->uploadImage('uploads/customer_reviews', $request->file('image'));
-            $request['image'] = $request->image->hashName();
+
+          $CustomerReview->update(['image' => $request->image->hashName()]);
         }
 
         session()->flash('edit', 'تم اضافة سجل بنجاح ');
-        return redirect()->back();
+
+        return redirect(route('admin.customer-reviews.index'));
     }
 
     /**
@@ -83,7 +94,7 @@ class CustomerReviewController extends Controller
     {
         $customer_review = CustomerReview::find($id);
         if (!is_null($customer_review->image)) {
-            Storage::disk('coustmer_reviews')->delete($customer_review->image);
+            Storage::disk('customer_reviews')->delete($customer_review->image);
         }
 
         $customer_review->delete();

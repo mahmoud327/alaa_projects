@@ -45,44 +45,53 @@
     <div class="col-lg-12 col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('admin.my-works.store') }}" enctype="multipart/form-data" method="post">
+                <form action="{{ route('admin.my-works.update', $work->id) }}" enctype="multipart/form-data"
+                    method="post">
+                    @method('put')
                     @csrf
                     <div id="wizard1">
                         {{-- <h3>my_work data</h3> --}}
                         <section>
                             <div class="control-group form-group">
                                 <label class="form-label">@lang('lang.english name') </label>
-                                <input type="text" class="form-control required" name="ar[name]" required
+                                <input type="text" class="form-control required"
+                                    value="{{ $work->translate('ar')->name }}"name="ar[name]" required
                                     placeholder=@lang('lang.english name')>
                             </div>
                             <div class="control-group form-group">
                                 <label class="form-label">@lang('lang.arabic name ') </label>
-                                <input type="text" class="form-control required"required name="en[name]">
+                                <input type="text" class="form-control required"required name="en[name]"
+                                    value="{{ $work->translate('en')->name }}">
                             </div>
                             {{-- <div class="control-group form-group">
                                 <label class="form-label"> نوع المنتج</label>
                                 <input type="text" class="form-control required" name="type"placeholder="type ">
                             </div> --}}
 
+                            {{ $work->type_link }}
 
                             <div class="d-flex gap-4 justify-content-between" style="width: 15%">
 
                                 <div class="-">
                                     <label class="rdiobox">
-                                        <input checked name="type_link" type="radio" value="mobile" id="mobile">
+                                        <input checked name="type_link" type="radio"
+                                            @if ($work->type_link == 'mobile') checked @endif value="mobile"
+                                            id="mobile">
                                         <span>@lang('lang.mobile')
                                         </span></label>
                                 </div>
 
 
                                 <div class="-">
-                                    <label class="rdiobox"><input name="type_link" id="website_radio" value="website"
+                                    <label class="rdiobox"><input name="type_link" id="website_radio"
+                                            @if ($work->type_link == 'website') checked @endif value="website"
                                             type="radio"><span>
                                             @lang('lang.web')
                                         </span></label>
                                 </div>
                                 <div class="-">
-                                    <label class="rdiobox"><input name="type_link" id="nothing" value=""
+                                    <label class="rdiobox"><input name="type_link" id="nothing"
+                                            value="nothing"@if ($work->type_link == 'nothing') checked @endif
                                             type="radio"><span>
                                             @lang('lang.nothing')
                                         </span></label>
@@ -91,22 +100,24 @@
 
                             <div class="control-group form-group" id="website" style="display:none">
                                 <label class="form-label"> @lang('lang.link website')</label>
-                                <input type="text" class="form-control "
-                                    name="link"placeholder=@lang('lang.link website')>
+                                <input type="text" class="form-control " name="link"placeholder=@lang('lang.link website')
+                                    value="{{ $work->link }}">
                             </div>
 
 
                             <div class="control-group form-group" id="google_play">
                                 <label class="form-label"> @lang('lang.link google play')</label>
                                 <input type="text" class="form-control required"
-                                    name="link_geogle_play"placeholder=@lang('lang.link google play')>
+                                    name="link_geogle_play"placeholder=@lang('lang.link google play')
+                                    value="{{ $work->link_geogle_play }}">
                             </div>
 
 
                             <div class="control-group form-group" id=app_store>
                                 <label class="form-label"> @lang('lang.link app store') </label>
                                 <input type="text" class="form-control required"
-                                    name="link_app_stroe"placeholder=@lang('lang.link app store')>
+                                    name="link_app_stroe"placeholder=@lang('lang.link app store')
+                                    value="{{ $work->link_app_stroe }}">
                             </div>
 
 
@@ -116,7 +127,8 @@
                                 <label class="form-label">@lang('lang.select category') </label>
                                 <select class="form-control" name="my_work_category_id" required>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">
+                                        <option @if ($work->category_id == $category->id) selected @endif
+                                            value="{{ $category->id }}">
                                             {{ $category->title }}
                                         </option>
                                     @endforeach
@@ -127,17 +139,15 @@
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label"> @lang('lang.english description') </label>
-                                <textarea type="text" class="form-control required" name="en[desc]"  placeholder=@lang('lang.english description') required>
-                                            </textarea>
+                                <textarea type="text" class="form-control required" name="en[desc]" required placeholder=@lang('lang.english description')>{{ $work->translate('en')->desc }}</textarea>
                             </div>
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.arabic description') </label>
-                                <textarea type="text" class="form-control required" name="ar[desc]"  placeholder=@lang('lang.arabic description') required>
-                                  </textarea>
+                                <textarea type="text" class="form-control" name="ar[desc]" required placeholder=@lang('lang.arabic description')>{{ $work->translate('ar')->desc }}</textarea>
                             </div>
 
                             <div class="control-group form-group mb-0">
-                                <input type="file" class="form-control required" required name="image"
+                                <input type="file" class="form-control required" name="image"
                                     placeholder="Address">
                             </div>
 
@@ -186,6 +196,23 @@
 <script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
 
 <script>
+    var val = $('input[type="radio"]:checked').val();
+    if (val == 'website') {
+
+        $('#website').css('display', 'inline');
+        $('#app_store').css('display', 'none');
+        $('#google_play').css('display', 'none');
+    } else if (val == 'mobile') {
+        $('#website').css('display', 'none');
+        $('#app_store').css('display', 'inline');
+        $('#google_play').css('display', 'inline');
+    } else {
+        $('#website').css('display', 'none');
+        $('#app_store').css('display', 'none');
+        $('#google_play').css('display', 'none');
+    }
+
+
     $('input[type="radio"]#website_radio , input[type="radio"]#nothing,input[type="radio"]#mobile', ).on('change',
         function() {
             if ($(this).val() == 'website') {

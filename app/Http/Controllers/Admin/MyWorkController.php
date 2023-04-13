@@ -27,9 +27,9 @@ class MyWorkController extends Controller
     public function create()
     {
 
-        $categories=MyWorkCategory::latest()->get();
+        $categories = MyWorkCategory::latest()->get();
 
-        return view('admin.my_works.create',compact('categories'));
+        return view('admin.my_works.create', compact('categories'));
     }
 
     /**
@@ -52,6 +52,14 @@ class MyWorkController extends Controller
         session()->flash('Add', 'تم اضافة سجل بنجاح ');
         return redirect(route('admin.my-works.index'));
     }
+    public function edit($id)
+    {
+
+        $work = MyWork::find($id);
+        $categories = MyWorkCategory::latest()->get();
+
+        return view('admin.my_works.edit', compact('work', 'categories'));
+    }
 
 
     /**
@@ -69,11 +77,11 @@ class MyWorkController extends Controller
         if ($request->file('image')) {
             Storage::disk('my_works')->delete($my_work->image);
             $this->uploadImage('uploads/my_works', $request->file('image'));
-            $request['image'] = $request->image->hashName();
+            $my_work->update(['image' => $request->image->hashName()]);
         }
 
         session()->flash('edit', 'تم اضافة سجل بنجاح ');
-        return redirect()->back();
+        return redirect(route('admin.my-works.index'));
     }
 
     /**

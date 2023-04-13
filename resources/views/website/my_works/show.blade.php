@@ -154,7 +154,7 @@
 
 
                             </div>
-                        @else
+                        @elseif($my_work->type_link == 'mobile')
                             <div class="text-center">
 
                                 <a href="{{ $my_work->link_app_stroe }}" >

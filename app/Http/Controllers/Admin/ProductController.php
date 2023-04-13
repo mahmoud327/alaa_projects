@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductImage;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -28,6 +29,13 @@ class ProductController extends Controller
     {
 
         return view('admin.products.create');
+    }
+    public function edit($id)
+    {
+
+        $product = Product::find($id);
+
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -79,11 +87,11 @@ class ProductController extends Controller
         if ($request->file('image')) {
             Storage::disk('products')->delete($product->image);
             $this->uploadImage('uploads/products', $request->file('image'));
-            $request['image'] = $request->image->hashName();
+            $product->update(['image' => $request->image->hashName()]);
         }
 
-        session()->flash('edit', 'تم اضافة سجل بنجاح ');
-        return redirect()->back();
+        session()->flash('edit', 'تم تعديل سجل بنجاح ');
+        return redirect(route('admin.products.index'));
     }
 
     /**
@@ -114,4 +122,25 @@ class ProductController extends Controller
             'original_name' => $file->getClientOriginalName(),
         ]);
     }
+
+    public function deleteFile(Request $request)
+    {
+        return $request;
+        $media = ProductImage::where('id', $request->id)->first();
+
+        if ($media) {
+
+            // \Storage::disk('s3')->delete($media->path);
+            $media->forceDelete();
+
+        } else {
+
+            // \Storage::disk('s3')->delete($media->path);
+
+        }
+
+        return 'sucess';
+
+    } /////////approve post//////////////////////////////////
+
 }

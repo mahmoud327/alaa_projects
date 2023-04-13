@@ -144,7 +144,7 @@
                                     </td>
                                     <td>{{ $my_work->name }}</td>
                                      <td>
-                                        <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale" data-toggle="modal" href="#exampleModal2{{$my_work->id}}" title="edit">
+                                        <a class="btn btn-sm btn-info" data-effect="effect-scale" href="{{ route('admin.my-works.edit',$my_work->id) }}" title="edit">
                                             <i class="las la-pen"></i>
                                         </a>
                                         <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#modaldemo9{{$my_work->id}} " title="delete">

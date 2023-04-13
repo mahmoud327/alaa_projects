@@ -44,7 +44,7 @@ Route::group([
 ], function () {
 
 
-    Route::group(['prefix' => 'admin', 'namespace' => 'Admin','as'=>'admin.'], function () {
+    Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
         Route::get('login-page', 'AuthController@loginPage')->name('login.page');
         Route::post('login', 'AuthController@login')->name('login');
         Route::get('logout', 'AuthController@logout')->name('logout');
@@ -54,17 +54,21 @@ Route::group([
 
             Route::resource('blogs', BlogController::class);
             Route::resource('products', ProductController::class);
-            Route::post('products-image', [ProductController::class,'uploadProductImage'])->name('products.images.store');
+
+            Route::get('product/delete/image', [ProductController::class, 'deleteFile']);
+
+            Route::post('products-image', [ProductController::class, 'uploadProductImage'])->name('products.images.store');
 
             Route::resource('my-works', MyWorkController::class);
             Route::resource('user-request-services', UserRequestServiceController::class);
 
             Route::resource('customer-reviews', CustomerReviewController::class);
+
             Route::resource('categories', CategoryController::class);
             Route::resource('my-teams', MyTeamController::class);
             Route::resource('jobs', JobController::class);
             Route::resource('contact-us', ContactUsController::class);
-            Route::get('user-requests', [ContactUsController::class,'userRequest'])->name('user-request.index');
+            Route::get('user-requests', [ContactUsController::class, 'userRequest'])->name('user-request.index');
         });
     });
 });
