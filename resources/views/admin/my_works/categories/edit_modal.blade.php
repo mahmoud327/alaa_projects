@@ -1,208 +1,43 @@
-@extends('admin.layouts.master')
-@section('css')
-    <!---Internal Fileupload css-->
-    <link href="{{ URL::asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
-    <!---Internal Fancy uploader css-->
-    <link href="{{ URL::asset('assets/plugins/fancyuploder/fancy_fileupload.css') }}" rel="stylesheet" />
-    <!--Internal Sumoselect css-->
-    <link rel="stylesheet" href="{{ URL::asset('assets/plugins/sumoselect/sumoselect-rtl.css') }}">
-    <!--Internal  TelephoneInput css-->
-    <link rel="stylesheet" href="{{ URL::asset('assets/plugins/telephoneinput/telephoneinput-rtl.css') }}">
-
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    @if (App::getLocale() == 'en')
-        <!--Internal  treeview -->
-        <link href="{{ URL::asset('assets/plugins/treeview/treeview.css') }}" rel="stylesheet" type="text/css" />
-    @else
-        <!--Internal  treeview -->
-        <link href="{{ URL::asset('assets/plugins/treeview/treeview-rtl.css') }}" rel="stylesheet" type="text/css" />
-    @endif
-
-
-@section('title')
-    Add my_work
-@stop
-
-
-@endsection
-@section('page-header')
-<!-- breadcrumb -->
-<div class="breadcrumb-header justify-content-between">
-    <div class="my-auto">
-        <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">@lang('lang.my works')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-            @lang('lang.add my works')</span>
-        </div>
-    </div>
-</div>
-<!-- breadcrumb -->
-@endsection
-@section('content')
-<!-- row -->
-<div class="row">
-    <div class="col-lg-12 col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <form action="{{ route('admin.my-works.update',$work->id) }}" enctype="multipart/form-data" method="post">
+<!-- edit -->
+<div class="modal fade" id="exampleModal2{{ $category->id }}" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width:130%">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@lang('lang.edit category') </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('admin.categories.update', $category->id) }}" method="post"
+                    enctype="multipart/form-data">
                     @method('put')
                     @csrf
-                    <div id="wizard1">
-                        {{-- <h3>my_work data</h3> --}}
-                        <section>
-                            <div class="control-group form-group">
-                                <label class="form-label">@lang('lang.english name') </label>
-                                <input type="text" class="form-control required"   value="{{$work->translate('ar')->name}}"name="ar[name]" required
-                                    placeholder=@lang('lang.english name') >
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="en[title]"  value="{{optional($category->translate('en'))->title}}"
+                                    placeholder=@lang('lang.arabic name ')>
                             </div>
-                            <div class="control-group form-group">
-                                <label class="form-label">@lang('lang.arabic name ')  </label>
-                                <input type="text" class="form-control required"required
-                                    name="en[name]" value="{{$work->translate('en')->name}}" >
-                            </div>
-                            {{-- <div class="control-group form-group">
-                                <label class="form-label"> نوع المنتج</label>
-                                <input type="text" class="form-control required" name="type"placeholder="type ">
-                            </div> --}}
-
-
-                            <div class="d-flex gap-4 justify-content-between"  style="width: 15%">
-
-                                <div class="-">
-                                    <label class="rdiobox">
-                                        <input checked name="type_link" type="radio" {{$product->organization_name =="mobile" ? "checked" :""}} value="mobile" id="mobile">
-                                        <span>@lang('lang.mobile')
-                                        </span></label>
-                                </div>
-
-
-                                <div class="-">
-                                    <label class="rdiobox"><input name="type_link" id="website_radio" {{$product->organization_name =="website" ? "checked" :""}}value="website"
-                                            type="radio"><span>
-                                            @lang('lang.web')
-                                        </span></label>
-                                </div>
-                                <div class="-">
-                                    <label class="rdiobox"><input name="type_link" id="nothing" value="nothing" {{$product->organization_name =="nothing" ? "checked" :""}}
-                                            type="radio"><span>
-                                            @lang('lang.nothing')
-                                        </span></label>
-                                </div>
-                            </div>
-
-                            <div class="control-group form-group" id="website" style="display:none">
-                                <label class="form-label"> @lang('lang.link website')</label>
-                                <input type="text" class="form-control " name="link"placeholder=@lang('lang.link website')>
-                            </div>
-
-
-                            <div class="control-group form-group" id="google_play">
-                                <label class="form-label"> @lang('lang.link google play')</label>
-                                <input type="text" class="form-control required"
-                                    name="link_geogle_play"placeholder=@lang('lang.link google play')>
-                            </div>
-
-
-                            <div class="control-group form-group" id=app_store>
-                                <label class="form-label">  @lang('lang.link app store') </label>
-                                <input type="text" class="form-control required"
-                                    name="link_app_stroe"placeholder=@lang('lang.link app store')>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="ar[title]" value="{{optional($category->translate('ar'))->title}}"
+                                    placeholder=@lang('lang.english name')>
                             </div>
 
 
 
 
-                            <div class="control-group form-group">
-                                <label class="form-label">@lang('lang.select category')  </label>
-                                <select class="form-control" name="my_work_category_id" required>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">
-                                            {{ $category->title }}
-                                        </option>
-                                    @endforeach
 
-
-                                </select>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">تاكيد</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
                             </div>
-
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label"> @lang('lang.english description') </label>
-                                <textarea type="text" class="form-control required" name="en[desc]" required placeholder=@lang('lang.english description') >
-                                            </textarea>
-                            </div>
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label">@lang('lang.arabic description')  </label>
-                                <textarea type="text" class="form-control required" name="ar[desc]" required placeholder=@lang('lang.arabic description') >
-                                  </textarea>
-                            </div>
-
-                            <div class="control-group form-group mb-0">
-                                <input type="file" class="form-control required" required name="image"
-                                    placeholder="Address">
-                            </div>
-
-                            <button type="submit" class="btn btn-info">@lang('lang.save')</button>
-                        </section>
+                        </div>
 
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-</div>
-<!-- /row -->
-
-
-<!-- row closed -->
-</div>
-<!-- Container closed -->
-</div>
-<!-- main-content closed -->
-@endsection
-
-@push('script')
-<script src="{{ URL::asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js') }}"></script>
-<!-- Internal Select2 js-->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<!--Internal Fileuploads js-->
-<script src="{{ URL::asset('assets/plugins/fileuploads/js/fileupload.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/fileuploads/js/file-upload.js') }}"></script>
-<!--Internal Fancy uploader js-->
-<script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.ui.widget.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.fileupload.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.iframe-transport.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/fancyuploder/jquery.fancy-fileupload.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/fancyuploder/fancy-uploader.js') }}"></script>
-<!--Internal  Form-elements js-->
-<script src="{{ URL::asset('assets/js/advanced-form-elements.js') }}"></script>
-<script src="{{ URL::asset('assets/js/select2.js') }}"></script>
-<!--Internal Sumoselect js-->
-<script src="{{ URL::asset('assets/plugins/sumoselect/jquery.sumoselect.js') }}"></script>
-<!-- Internal TelephoneInput js-->
-<script src="{{ URL::asset('assets/plugins/telephoneinput/telephoneinput.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/telephoneinput/inttelephoneinput.js') }}"></script>
-
-<script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
-
-<script>
-    $('input[type="radio"]#website_radio , input[type="radio"]#mobile').on('change', function() {
-        if ($(this).val() == 'website') {
-
-            $('#website').css('display', 'inline');
-            $('#app_store').css('display', 'none');
-            $('#google_play').css('display', 'none');
-        } else if($(this).val() == 'mobile') {
-            $('#website').css('display', 'none');
-            $('#app_store').css('display', 'inline');
-            $('#google_play').css('display', 'inline');
-        }
-        else{
-            $('#website').css('display', 'none');
-            $('#app_store').css('display', 'none');
-            $('#google_play').css('display', 'none');
-        }
-
-    });
-</script>
-@endpush
+    <!-- End Basic modal -->
