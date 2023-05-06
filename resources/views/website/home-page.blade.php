@@ -499,7 +499,7 @@
                 '<div class="form-row">' +
                 '<div class="col-md-6 col-sm-12">' +
                 '<label for="service">نوع الخدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="service '+x' "  required>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id=""  required>' +
                 '<option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>' +
                 '<option value="تصميم الجرافيك">تصميم الجرافيك</option>' +
                 '<option value="تسويق الكتروني">تسويق الكتروني</option>' +
