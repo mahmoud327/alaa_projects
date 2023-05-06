@@ -1787,7 +1787,7 @@ h2 {
   font-weight: bolder;
 }
 .gallery img {
-  width: 100% !important;
+  width: 341px !important;
   height: 260px !important;
   object-fit: cover;
   /* border-radius: 5px !important;
@@ -2144,7 +2144,7 @@ h2 {
 .site .slideContainer .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -3089,3 +3089,13 @@ color: white;
 .cv-button a:hover{
   color: white !important;
   }
+  .my-team{
+    height: 370px;
+  }
+.my-team img{
+
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    border-radius: 5px;
+}

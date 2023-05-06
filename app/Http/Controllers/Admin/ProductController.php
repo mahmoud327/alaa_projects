@@ -90,6 +90,15 @@ class ProductController extends Controller
             $product->update(['image' => $request->image->hashName()]);
         }
 
+
+        if ($request->document) {
+
+            foreach ($request->document as $file) {
+                $product->images()->create([
+                    'url' => $file
+                ]);
+            }
+        }
         session()->flash('edit', 'تم تعديل سجل بنجاح ');
         return redirect(route('admin.products.index'));
     }
@@ -106,6 +115,7 @@ class ProductController extends Controller
         if (!is_null($product->image)) {
             Storage::disk('products')->delete($product->image);
         }
+
 
         $product->delete();
         session()->flash('delete', 'تم حذف سجل بنجاح ');
@@ -125,22 +135,20 @@ class ProductController extends Controller
 
     public function deleteFile(Request $request)
     {
-        return $request;
         $media = ProductImage::where('id', $request->id)->first();
 
         if ($media) {
 
-            // \Storage::disk('s3')->delete($media->path);
-            $media->forceDelete();
-
+            Storage::disk('products')->delete($media->url);
+            $media->delete();
         } else {
 
+            dd('dd');
             // \Storage::disk('s3')->delete($media->path);
 
         }
 
         return 'sucess';
-
     } /////////approve post//////////////////////////////////
 
 }

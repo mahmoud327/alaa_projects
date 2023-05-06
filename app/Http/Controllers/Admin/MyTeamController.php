@@ -28,6 +28,17 @@ class MyTeamController extends Controller
 
         return view('admin.my-teams.index', compact('teams'));
     }
+    public function create()
+    {
+
+        return view('admin.my-teams.create');
+    }
+    public function edit($id)
+    {
+
+        $team = MyTeam::find($id);
+        return view('admin.my-teams.edit', compact('team'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -55,7 +66,7 @@ class MyTeamController extends Controller
             $my_team->update(['image' => $request->image->hashName()]);
         }
 
-        return back()->with('status', "add successfully");
+        return redirect(route('admin.my-teams.index'));
     }
 
     public function destroy(MyTeam $my_team)

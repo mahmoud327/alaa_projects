@@ -15,12 +15,14 @@
 <!-- Sidemenu css -->
 <link rel="stylesheet" href="{{URL::asset('assets/css/sidemenu.css')}}">
 <!--- Style css en -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" />
 <link href="{{URL::asset('assets/css/style.css')}}" rel="stylesheet">
 <!--- Dark-mode css -->
 <link href="{{URL::asset('assets/css/style-dark.css')}}" rel="stylesheet">
 <!---Skinmodes css-->
 <link href="{{URL::asset('assets/css/skin-modes.css')}}" rel="stylesheet">
 <link href="{{asset('assets/assets/admin/css/dropzone.min.css')}}" rel="stylesheet">
+
 @else
 <title> لوحة تحكم سيوز . </title>
 <!-- Favicon -->
@@ -40,6 +42,7 @@
 <link href="{{URL::asset('assets/css-rtl/style-dark.css')}}" rel="stylesheet">
 <!---Skinmodes css-->
 <link href="{{URL::asset('assets/css-rtl/skin-modes.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" />
 <link href="{{asset('assets/assets/admin/css/dropzone.min.css')}}" rel="stylesheet">
 @endif
 

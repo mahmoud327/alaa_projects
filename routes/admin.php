@@ -53,6 +53,7 @@ Route::group([
             Route::get('home', 'HomeController@index')->name('home');
 
             Route::resource('blogs', BlogController::class);
+
             Route::resource('products', ProductController::class);
 
             Route::get('product/delete/image', [ProductController::class, 'deleteFile']);
@@ -60,6 +61,10 @@ Route::group([
             Route::post('products-image', [ProductController::class, 'uploadProductImage'])->name('products.images.store');
 
             Route::resource('my-works', MyWorkController::class);
+
+            Route::get('works/delete/image', [MyWorkController::class, 'deleteFile']);
+            Route::post('works-image', [MyWorkController::class, 'uploadmWorkImage'])->name('works.images.store');
+
             Route::resource('user-request-services', UserRequestServiceController::class);
 
             Route::resource('customer-reviews', CustomerReviewController::class);
@@ -69,6 +74,10 @@ Route::group([
             Route::resource('jobs', JobController::class);
             Route::resource('contact-us', ContactUsController::class);
             Route::get('user-requests', [ContactUsController::class, 'userRequest'])->name('user-request.index');
+            Route::delete('user-requests/{id}', [ContactUsController::class, 'destroy'])->name('user-request.destroy');
+
+            Route::get('export', [ContactUsController::class,'export'])->name('export');
+
         });
     });
 });

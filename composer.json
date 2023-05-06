@@ -18,7 +18,9 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
-        "mcamara/laravel-localization": "^1.7"
+        "maatwebsite/excel": "^3.1",
+        "mcamara/laravel-localization": "^1.7",
+        "psr/simple-cache": "1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

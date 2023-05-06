@@ -6,6 +6,7 @@
 <script src="{{asset('website/js/jsuites.net/v4/jsuites.js')}}"></script>
 <script src="{{asset('website/js/aos.js')}}"></script>
 <script src="{{asset('website/js/bootstrap.js')}}"></script>
+<script src="{{asset('website/js/jquery.magnific-popup.min.js')}}"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js">
 </script>

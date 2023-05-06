@@ -23,7 +23,10 @@
 <!-- right-sidebar js -->
 <script src="{{URL::asset('assets/plugins/sidebar/sidebar-rtl.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/sidebar/sidebar-custom.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.js" integrity="sha512-6rE6Bx6fCBpRXG/FWpQmvguMWDLWMQjPycXMr35Zx/HRD9nwySZswkkLksgyQcvrpYMx0FELLJVBvWFtubZhDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- Eva-icons js -->
+<script src="//cdn.ckeditor.com/4.21.0/basic/ckeditor.js"></script>
 <script src="{{URL::asset('assets/js/eva-icons.min.js')}}"></script>
 @yield('js')
 <!-- Sticky js -->

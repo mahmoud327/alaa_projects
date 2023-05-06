@@ -66,7 +66,7 @@
                         <div class="swiper-wrapper">
                             @foreach ($teams as $team)
                                 <div class="swiper-slide">
-                                    <div class="card">
+                                    <div class="card my-team">
                                         <img src="{{ $team->image_path }}" alt="quote" class="img-fluid">
                                         <h3>{{ $team->name }}</h3>
                                         <span>{{ $team->job_title }} </span>

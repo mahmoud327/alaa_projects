@@ -98,8 +98,8 @@
     <!--start why-us section-->
     <section class="why-us">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                        </svg> -->
+                                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                                </svg> -->
         <div class="container text-center">
             <h2>لماذا تختارنا</h2>
             <div class="row">
@@ -259,8 +259,8 @@
 
     <section class="testimonials mt-4">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                </svg> -->
+                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                        </svg> -->
         <div class="container text-center">
             <h2>أراء عملائنا</h2>
             <!-- Swiper -->
@@ -271,9 +271,9 @@
                             <div class="card w-100">
                                 <img src="{{ $customer_review->image_path }}" alt="quote" class="img-fluid">
                                 <h3>{{ $customer_review->user_name }}</h3>
-                                <span> {{ $customer_review->job }}</span>
+                                <span class="m-0"> {{ $customer_review->job }}</span>
                                 <p>
-                                    {{ $customer_review->desc }}
+                                    {!! $customer_review->desc !!}
 
                                 </p>
 
@@ -337,8 +337,8 @@
     <!--start partner section-->
     <section class="partner">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                        </svg> -->
+                                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                                </svg> -->
         <div class="container text-center">
             <h2>شركاء النجاح</h2>
             <p class="mt-2">عملائنا هم شركاء نجاحنا</p>
@@ -407,8 +407,8 @@
             </div>
         </div>
         <!-- <svg class="b_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
-                                                                        </svg> -->
+                                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
+                                                                                </svg> -->
     </section>
 
 
@@ -461,8 +461,35 @@
     </section>
 @endsection
 @push('js')
+    <script>
+        $('#select').on('change', function() {
+            var val = $(this).val()
+            if (val == 'برمجة وحلول تقنية') {
+
+                $('#programming').css('display', 'inline')
+                $('#graphics').css('display', 'none');
+                $('#marketing').css('display', 'none');
+
+
+            } else if (val == 'تصميم الجرافيك') {
+
+                $('#programming').css('display', 'none')
+                $('#graphics').css('display', 'inline');
+                $('#marketing').css('display', 'none');
+
+            } else if (val == 'تسويق الكتروني') {
+
+                $('#programming').css('display', 'none');
+                $('#graphics').css('display', 'none');
+                $('#marketing').css('display', 'inline');
+
+            }
+        });
+    </script>
+
     <script type="text/javascript">
         var x = 2;
+        var y=2;
         $(document).on('click', '.add_phone_input', function(e) {
             e.preventDefault();
             $('.div_phone_inputs').append('<div>' +
@@ -472,7 +499,7 @@
                 '<div class="form-row">' +
                 '<div class="col-md-6 col-sm-12">' +
                 '<label for="service">نوع الخدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" type=""required>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="service '+x' "  required>' +
                 '<option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>' +
                 '<option value="تصميم الجرافيك">تصميم الجرافيك</option>' +
                 '<option value="تسويق الكتروني">تسويق الكتروني</option>' +
@@ -481,19 +508,31 @@
 
 
 
-                '<div class="col-md-6 col-sm-12">' +
-                '<label for="service"> الخدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="categories_ids[]" id="service"required>' +
 
-
-
-                '@foreach ($categories as $cat)' +
-                '<option value="{{ $cat->id }}">{{ $cat->title }}</option>' +
-                '@endforeach' +
-
-
-
-
+                '<div class="col-md-6 col-sm-12" id="programming1">' +
+                '<label for="service"> مواقع</label>' +
+                '<select class="custom-select mr-sm-2" name="categories_ids[]" id="service" required>' +
+                '<option>انشاء المواقع الالكترونية</option>' +
+                '<option>إنشاء المتاجر الإلكترونية</option>' +
+                '<option>تطوير تطبيقات الجوال</option>' +
+                '<option>تطوير برمجيات مخصصة</option>' +
+                '<option>خدمات الحوسبة السحابية</option>' +
+                '<option>حجز النطاق والإستضافة للمواقع</option>' +
+                '<option>الإستشارات التقنية وحلول الأعمال</option>' +
+                '</select>' +
+                '</div>' +
+                '<div class="col-md-6 col-sm-12" id="graphics1" style="display:none;">' +
+                '<label for="service"> تصميم</label>' +
+                '<select class="custom-select mr-sm-2" name="categories_ids[]" id="service" required>' +
+                '<option>تصميم الهوية البصرية كاملة</option>' +
+                '<option>تصميم الشعار وبطاقة العمل</option>' +
+                '<option>تصميم ملصقات التواصل الاجتماعي</option>' +
+                '<option>تصميم الدعوات والإعلانات ولافتات الويب</option>' +
+                '<option>تصميم صور انفو جرافيك</option>' +
+                '<option>تصميم فيديو موشن جرافيك</option>' +
+                '<option>تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>' +
+                '</select>' +
+                '</div>' +
 
 
                 '</select>' +
@@ -508,6 +547,31 @@
 
                 '</div>');
             x++;
+
+            // $('select').on('change', function() {
+            //     alert('fff');
+            //     var val = $(this).val()
+            //     if (val == 'برمجة وحلول تقنية') {
+
+            //         $('#programming1').css('display', 'inline')
+            //         $('#graphics1').css('display', 'none');
+            //         $('#marketing1').css('display', 'none');
+
+
+            //     } else if (val == 'تصميم الجرافيك') {
+
+            //         $('#programming1').css('display', 'none')
+            //         $('#graphics1').css('display', 'inline');
+            //         $('#marketing1').css('display', 'none');
+
+            //     } else if (val == 'تسويق الكتروني') {
+
+            //         $('#programming1').css('display', 'none');
+            //         $('#graphics1').css('display', 'none');
+            //         $('#marketing1').css('display', 'inline');
+
+            //     }
+            // });
         });
         $(document).on('click', '.remove_input', function() {
             $(this).parent('div').remove();
@@ -516,29 +580,7 @@
         });
     </script>
 
-    <script>
- 
-        $('#select').on('change', function() {
-            var val = $(this).val()
-            if (val == 'برمجة وحلول تقنية') {
 
-                $('#graphics').css('display', 'none');
-                $('#marketing').css('display', 'none');
-
-
-            } else if (val == 'تصميم الجرافيك') {
-
-                $('#prgramming').css('display', 'none');
-
-                $('#marketing').css('display', 'none');
-            } else if (val == 'تسويق الكتروني') {
-
-
-                $('#prgramming').css('display', 'none');
-                $('#graphics').css('display', 'none');
-            }
-        });
-    </script>
 
 
     <script>

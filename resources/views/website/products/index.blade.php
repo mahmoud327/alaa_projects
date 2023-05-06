@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="galleryCard-footer">
-                                    <p class="p-1 m-0">{{$product->desc}} </p>
+                                    <p class="p-1 m-0">{!! $product->desc !!} </p>
 
                                 </div>
                             </div>

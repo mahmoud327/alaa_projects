@@ -132,12 +132,12 @@
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.english description')</label>
-                                <textarea type="text" class="form-control required" name="en[desc]" placeholder=@lang('lang.english description')>{{ $product->translate('en')->desc }}</textarea>
+                                <textarea type="text" class="summernote form-control required" name="en[desc]" placeholder=@lang('lang.english description')>{!!$product->translate('en')->desc!!}</textarea>
                             </div>
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.arabic description')</label>
-                                <textarea type="text" class="form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
-                                    {{ $product->translate('ar')->desc }}
+                                <textarea type="text" class="summernote form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
+                                  {!!$product->translate('ar')->desc !!}
                                   </textarea>
                             </div>
 
@@ -181,6 +181,7 @@
 
 @push('script')
 <script src="{{ URL::asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js') }}"></script>
+
 <!-- Internal Select2 js-->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!--Internal Fileuploads js-->
@@ -203,8 +204,15 @@
 
 <script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.summernote').summernote();
+    });
+</script>
+
 
 <script>
+    var file_name = '';
     var uploadedDocumentMap = {}
     Dropzone.options.dpzMultipleFiles = {
         paramName: "dzfile", // The name that will be used to transfer the file

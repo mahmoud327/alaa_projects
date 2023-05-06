@@ -31,8 +31,9 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">@lang('lang.blogs')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-                 @lang('lang.add blog') </span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.blogs')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">
+                /
+                @lang('lang.add blog') </span>
         </div>
     </div>
 </div>
@@ -44,7 +45,7 @@
     <div class="col-lg-12 col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('admin.blogs.update',$blog->id) }}" enctype="multipart/form-data" method="post">
+                <form action="{{ route('admin.blogs.update', $blog->id) }}" enctype="multipart/form-data" method="post">
                     @method('put')
                     @csrf
                     <div id="wizard1">
@@ -92,39 +93,40 @@
                             <div id="other_data" class="tab-pane ">
                                 <div class="div_phone_inputs ">
 
-                                        <div class="col-md-7">
-                                            @if ($blog->title2)
+                                    <div class="col-md-7">
+                                        @if ($blog->title2)
 
-                                                @for($i=0;$i<count($blog->title2);$i++)
-                                                    <label> @lang('lang.sub title') </label>
+                                            @for ($i = 0; $i < count($blog->title2); $i++)
+                                                <label> @lang('lang.sub title') </label>
 
-                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper"
-                                                     name="title2[]" type="text"  value="{{$blog->title[$i] }}" placeholder=@lang('lang.sub title')>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper"
+                                                    name="title2[]" type="text" value="{{ $blog->title[$i] }}"
+                                                    placeholder=@lang('lang.sub title')>
 
-                                                    <div class="clearfix"></div>
-                                                    <br>
-                                                    <a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                                    <br>
+                                                <div class="clearfix"></div>
+                                                <br>
+                                                <a href="#" class="remove_input btn btn-danger btn-sm"><i
+                                                        class="fa fa-trash"></i></a>
+                                                <br>
 
-                                                    <label>@lang('lang.sub description') </label>
+                                                <label>@lang('lang.sub description') </label>
 
-                                                    <textarea class="form-control w-80" data-parsley-class-handler="#lnWrapper"
-                                                        name="description[]" type="text"  placeholder=@lang('lang.sub description')>
-                                                        {{$blog->description[$i]}}
+                                                <textarea class="summernote form-control w-80" data-parsley-class-handler="#lnWrapper" name="description[]" type="text"
+                                                    placeholder=@lang('lang.sub description')>
+                                                        {!! $blog->description[$i] !!}
                                                     </textarea>
+                                            @endfor
+                                        @endif
 
 
-                                                @endfor
-                                            @endif
+                                    </div>
 
-
-                                        </div>
-
-                                 </div>
+                                </div>
 
                                 <br>
 
-                                <a href="#" class="add_phone_input btn btn-info btn-sm"><i class="fa fa-plus"></i></a>
+                                <a href="#" class="add_phone_input btn btn-info btn-sm"><i
+                                        class="fa fa-plus"></i></a>
 
                             </div>
                             <div class="control-group form-group w-50">
@@ -183,18 +185,18 @@
         $('.div_phone_inputs').append('<div>' +
 
             '<div class="col-md-6">' +
-                '<lable> @lang("lang.sub title")</lable>' +
-                '<br>' +
+            '<lable> @lang('lang.sub title')</lable>' +
+            '<br>' +
 
-                   '<input type="phone" name="title2[]" class="form-control" placeholder=@lang("lang.sub title") /> ' +
+            '<input type="phone" name="title2[]" class="form-control" placeholder=@lang('lang.sub title') /> ' +
             '</div>' +
             '<div class="clearfix"></div>' +
             '<br>' +
 
-            '<label> @lang("lang.sub description") </label>'+
+            '<label> @lang('lang.sub description') </label>' +
 
-                '<textarea class="form-control w-50"  name="description[]" type="text" placeholder=@lang("lang.sub description") >'+
-            '</textarea>'+
+            '<textarea class="summernote1 form-control w-50"  name="description[]" type="text" placeholder=@lang('lang.sub description') >' +
+            '</textarea>' +
 
             '<div class="clearfix"></div>' +
             '<br>' +
@@ -202,11 +204,18 @@
             '<br>' +
             '</div>');
         x++;
+        $('.summernote1').summernote();
+
     });
     $(document).on('click', '.remove_input', function() {
         $(this).parent('div').remove();
         x--;
         return false;
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.summernote').summernote();
     });
 </script>
 @endpush

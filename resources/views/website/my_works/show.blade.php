@@ -16,7 +16,7 @@
                             <div class="data">
                                 <h5>فكرة المنتج</h5>
                                 <p>
-                                    {{ $my_work->desc }}
+                                    {!! $my_work->desc!!}
                                 </p>
                             </div>
                         </div>
@@ -111,12 +111,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slideContainer col-lg-6 col-md-6 col-sm-12">
+
+                    {{-- <div class="slideContainer col-lg-6 col-md-6 col-sm-12">
 
                         <!-- Swiper -->
 
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                            class="swiper mySwiper2">
+                            class="swiper mySwiper-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <img src="{{ $my_work->image_path }}" />
@@ -127,24 +128,24 @@
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                         </div>
-                        <div thumbsSlider="" class="swiper mySwiper">
+
+                        <div thumbsSlider="" class="swiper mySwiper gallery-thumbs">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="{{ $my_work->image_path }}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{ $my_work->image_path }}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{ $my_work->image_path }}" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{ $my_work->image_path }}" />
-                                </div>
+                                @foreach ($my_work->images as $image)
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-container">
+                                            <img style="height:100px" src="{{ $image->image_path }}" />
+
+                                        </div>
+                                    </div>
+                                @endforeach
+
                             </div>
                         </div>
 
+
                         <!-- Swiper JS -->
+
                         @if ($my_work->type_link == 'website')
                             <div class="vist ">
 
@@ -155,27 +156,115 @@
 
                             </div>
                         @elseif($my_work->type_link == 'mobile')
-                            <div class="text-center">
+                            <div class="text-center  d-flex gap-2" style="gap: 5px">
 
-                                <a href="{{ $my_work->link_app_stroe }}" >
-                                    <img style="width:20%" src="{{ asset('uploads/apple-store.jpg') }}">
+                                <a class="vist w-100" href="{{ $my_work->link_app_stroe }}">
+                                    <h5> App Store </h5>
 
                                 </a>
 
 
-                                <a href="{{ $my_work->link_app_stroe }}">
-                                    <img style="width:26%"  src="{{ asset('uploads/google-play.png') }}">
+                                <a class="vist w-100" href="{{ $my_work->link_app_stroe }}">
+                                    <h5> Google Play </h5>
                                 </a>
 
 
                             </div>
                         @endif
+                    </div> --}}
 
+                    <div class="slideContainer col-lg-6 col-md-6 col-sm-12">
+
+                        <!-- Swiper -->
+                              <div>
+
+                                  <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                      class="swiper mySwiper-product">
+                                      <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                          <div class="swiper-slide-container">
+
+                                              <img src="{{ $my_work->image_path }}" />
+
+                                          </div>
+                                          </div>
+
+
+                                      </div>
+                                      <div class="swiper-button-next"></div>
+                                      <div class="swiper-button-prev"></div>
+                                  </div>
+                                  <div thumbsSlider="" class="swiper mySwiper gallery-thumbs">
+                                      <div class="swiper-wrapper">
+                                          @foreach ($my_work->images as $image)
+                                              <div class="swiper-slide">
+                                              <div class="swiper-slide-container">
+                                                  <img style="height:100px" src="{{ $image->image_path }}" />
+
+                                              </div>
+                                              </div>
+                                          @endforeach
+
+                                      </div>
+                                  </div>
+                              </div>
+
+                        <!-- Swiper JS -->
+                        @if ($my_work->type_link == 'website')
+
+                        <div class="d-flex justify-content-between " style="gap:5px">
+
+                            <a class="vist w-100" href="{{ $my_work->link }}" style="text-decoration: none">
+                                <h5>زيارة الموقع </h5>
+                            </a>
+
+                        </div>
+                        @elseif($my_work->type_link == 'mobile')
+
+                        <div class="d-flex justify-content-between " style="gap:5px">
+
+                            <a class="vist w-100" href="{{ $my_work->link_app_stroe }}" style="text-decoration: none">
+                                <h5>  App store </h5>
+                            </a>
+                            <a class="vist w-100" href="{{ $my_work->link_app_stroe }}" style="text-decoration: none">
+                                <h5> Google play </h5>
+                            </a>
+                        </div>
+
+                        @endif
                     </div>
                 </div>
+
+
             </div>
 
 
         </section>
     </div>
 @endsection
+@push('js')
+<script>
+    let swiper4 = new Swiper(".mySwiper-product", {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+        loopedSlides: 4
+    });
+
+
+    let galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+        loop: true,
+        loopedSlides: 4
+    });
+    swiper4.controller.control = galleryThumbs;
+    galleryThumbs.controller.control = galleryTop;
+</script>
+@endpush

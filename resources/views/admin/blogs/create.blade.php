@@ -68,7 +68,7 @@
                                         <br>
                                         <label>@lang('lang.sub description') </label>
 
-                                        <textarea class="form-control w-80" data-parsley-class-handler="#lnWrapper"
+                                        <textarea class="summernote form-control w-80" data-parsley-class-handler="#lnWrapper"
                                             name="description[]" type="text" placeholder=@lang('lang.sub description')>
                                         </textarea>
 
@@ -153,7 +153,7 @@
 
             '<label> @lang("lang.sub description") </label>'+
 
-                '<textarea class="form-control w-50"  name="description[]" type="text" placeholder=@lang("lang.sub description") >'+
+                '<textarea class="summernote1 form-control w-50"  name="description[]" type="text" placeholder=@lang("lang.sub description") >'+
             '</textarea>'+
 
             '<div class="clearfix"></div>' +
@@ -162,6 +162,9 @@
             '<br>' +
             '</div>');
         x++;
+
+        $('.summernote1').summernote();
+
     });
     $(document).on('click', '.remove_input', function() {
         $(this).parent('div').remove();
@@ -169,4 +172,10 @@
         return false;
     });
 </script>
+<script type="text/javascript">
+        $('textarea').summernote();
+    // $(document).ready(function () {
+    // });
+</script>
+
 @endpush

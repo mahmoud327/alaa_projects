@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="{{ asset('website/../jsuites.net/v4/jsuites.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('website/./css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('website/css/dark.css')}}">
+    <link rel="stylesheet" href="{{ asset('website/css/magnific-popup.min.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('website/css/loader.css')}}"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-    <link rel="icon" href="imgs/صورة الفيس2.jpg">
+    {{-- <link rel="icon" href="imgs/صورة الفيس2.jpg"> --}}
 </head>
 
 

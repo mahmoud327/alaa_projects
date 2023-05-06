@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\MyWork;
 use App\Models\MyWorkCategory;
+use App\Models\WorkImage;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -47,6 +48,18 @@ class MyWorkController extends Controller
 
         $this->uploadImage('uploads/my_works', $request->file('image'));
         $MyWork->update(['image' => $request->image->hashName()]);
+
+
+        if ($request->document) {
+
+            foreach ($request->document as $file) {
+                $MyWork->images()->create([
+                    'url' => $file
+                ]);
+            }
+        }
+
+
 
 
         session()->flash('Add', 'تم اضافة سجل بنجاح ');
@@ -94,11 +107,39 @@ class MyWorkController extends Controller
     {
         $my_work = MyWork::find($id);
         if (!is_null($my_work->image)) {
-            Storage::disk('MyWork')->delete($my_work->image);
+            Storage::disk('my_works')->delete($my_work->image);
         }
 
         $my_work->delete();
         session()->flash('delete', 'تم حذف سجل بنجاح ');
         return redirect()->back();
     }
+
+    public function uploadmWorkImage(Request $request)
+    {
+        $file = $request->file('dzfile');
+        $filename = $this->uploadImage('uploads/my_works/', $file);
+
+        return response()->json([
+            'name' => $filename,
+            'original_name' => $file->getClientOriginalName(),
+        ]);
+    }
+
+    public function deleteFile(Request $request)
+    {
+
+        $media = WorkImage::where('id', $request->id)->first();
+
+        if ($media) {
+
+            \Storage::disk('my_works')->delete($media->url);
+            $media->delete();
+        } else {
+
+
+        }
+
+        return 'sucess';
+    } /////////approve post//////////////////////////////////
 }

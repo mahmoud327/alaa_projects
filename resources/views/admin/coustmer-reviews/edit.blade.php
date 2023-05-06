@@ -63,11 +63,11 @@
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.english description')</label>
-                                <textarea type="text" class="form-control required" name="en[desc]"placeholder=@lang('lang.english description')>{{ $review->translate('en')->desc;  }}</textarea>
+                                <textarea type="text" class="summernote form-control required" name="en[desc]"placeholder=@lang('lang.english description')>{!!$review->translate('en')->desc  !!}</textarea>
                             </div>
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.arabic description')</label>
-                                <textarea type="text" class="form-control required" name="ar[desc]" placeholder=@lang('lang.arabic description')>{{$review->translate('ar')->desc; }}</textarea>
+                                <textarea type="text" class="summernote form-control required" name="ar[desc]" placeholder=@lang('lang.arabic description')>{!!$review->translate('ar')->desc !!}</textarea>
                             </div>
 
                             <div class="control-group form-group mb-0">
@@ -118,4 +118,10 @@
 <script src="{{ URL::asset('assets/plugins/telephoneinput/inttelephoneinput.js') }}"></script>
 
 <script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.summernote').summernote();
+    });
+</script>
 @endpush
+

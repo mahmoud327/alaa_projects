@@ -23,7 +23,7 @@
 
                         <div class="text">
                             <p>
-                                {{ $blog->description[$i] }}
+                                {!! $blog->description[$i] !!}
                             </p>
                         </div>
                     </div>

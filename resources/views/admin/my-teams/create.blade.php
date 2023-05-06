@@ -21,7 +21,7 @@
 
 
 @section('title')
-    Add customer-reviews
+    اضافه مدونه
 @stop
 
 
@@ -31,8 +31,9 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">@lang('lang.customer-reviews')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
-                @lang('lang.customer-reviews')</span>
+            <h4 class="content-title mb-0 my-auto">@lang('lang.my teams')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">
+                /
+                @lang('lang.add team') </span>
         </div>
     </div>
 </div>
@@ -44,40 +45,36 @@
     <div class="col-lg-12 col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('admin.customer-reviews.store') }}" enctype="multipart/form-data" method="post">
-                    @csrf
-                    <div id="wizard1">
-                        {{-- <h3>customer-reviews data</h3> --}}
-                        <section>
+                <form action="{{ route('admin.my-teams.store') }}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
 
-                            <div class="control-group form-group">
-                                <label class="form-label"> @lang('lang.name')</label>
-                                <input type="text" class="form-control required" name="user_name"placeholder=@lang('lang.name')>
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="form-group w-50">
+                                <input type="text" class="form-control" name="name" required value="{{ old('name') }}"
+                                    placeholder=@lang('lang.name')>
                             </div>
-                            <div class="control-group form-group">
-                                <label class="form-label"> @lang('lang.job')</label>
-                                <input type="text" class="form-control required" name="job"placeholder= @lang('lang.job')>
-                            </div>
+                            <br>
 
 
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label">@lang('lang.english description')</label>
-                                <textarea type="text" class="summernote form-control required" name="en[desc]" placeholder=@lang('lang.english description')>
-                                            </textarea>
+
+                            <div class="form-group w-50">
+                                <input type="text" class="form-control" name="job_title"
+                                    value="{{ old('job_title') }}" required placeholder=@lang('lang.job')>
                             </div>
-                            <div class="control-group form-group mb-0">
-                                <label class="form-label">@lang('lang.arabic description')</label>
-                                <textarea type="text" class="summernote form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
-                                  </textarea>
+                            <br>
+
+                            <div class="form-group w-50">
+                                <input type="file" class="form-control" name="image" required placeholder=" title arabic ">
                             </div>
 
-                            <div class="control-group form-group mb-0">
-                                <input type="file" class="form-control required" name="image"
-                                    placeholder="Address">
-                            </div>
+                            <br>
 
-                            <button type="submit" class="btn btn-info"> @lang('lang.save')</button>
-                        </section>
+
+                            <button type="submit" class="btn btn-primary">@lang('lang.save')</button>
+
+                        </div>
 
                     </div>
                 </form>
@@ -119,10 +116,46 @@
 <script src="{{ URL::asset('assets/plugins/telephoneinput/inttelephoneinput.js') }}"></script>
 
 <script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
+
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('.summernote').summernote();
+    var x = 2;
+    $(document).on('click', '.add_phone_input', function(e) {
+        e.preventDefault();
+        $('.div_phone_inputs').append('<div>' +
+
+            '<div class="col-md-6">' +
+            '<lable> @lang('lang.sub title')</lable>' +
+            '<br>' +
+
+            '<input type="phone" name="title2[]" class="form-control" placeholder=@lang('lang.sub title') /> ' +
+            '</div>' +
+            '<div class="clearfix"></div>' +
+            '<br>' +
+
+            '<label> @lang('lang.sub description') </label>' +
+
+            '<textarea class="summernote1 form-control w-50"  name="description[]" type="text" placeholder=@lang('lang.sub description') >' +
+            '</textarea>' +
+
+            '<div class="clearfix"></div>' +
+            '<br>' +
+            '<a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>' +
+            '<br>' +
+            '</div>');
+        x++;
+
+        $('.summernote1').summernote();
+
+    });
+    $(document).on('click', '.remove_input', function() {
+        $(this).parent('div').remove();
+        x--;
+        return false;
     });
 </script>
-
+<script type="text/javascript">
+    $('textarea').summernote();
+    // $(document).ready(function () {
+    // });
+</script>
 @endpush

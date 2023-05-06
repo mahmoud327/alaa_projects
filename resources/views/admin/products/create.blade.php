@@ -9,6 +9,7 @@
     <!--Internal  TelephoneInput css-->
     <link rel="stylesheet" href="{{ URL::asset('assets/plugins/telephoneinput/telephoneinput-rtl.css') }}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     @if (App::getLocale() == 'en')
@@ -85,7 +86,8 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">@lang('lang.products')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> /
+            <h4 class="content-title mb-0 my-auto">@lang('lang.products')</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">
+                /
                 @lang('lang.products')</span>
         </div>
     </div>
@@ -105,31 +107,35 @@
                         <section>
                             <div class="control-group form-group">
                                 <label class="form-label">@lang('lang.arabic name ')</label>
-                                <input type="text" class="form-control required" name="ar[name]" placeholder=@lang('lang.arabic name ')>
+                                <input type="text" class="form-control required" name="ar[name]"
+                                    placeholder=@lang('lang.arabic name ')>
                             </div>
                             <div class="control-group form-group">
                                 <label class="form-label">@lang('lang.english name')</label>
-                                <input type="text" class="form-control required" name="en[name]"placeholder=@lang('lang.english name')>
+                                <input type="text" class="form-control required"
+                                    name="en[name]"placeholder=@lang('lang.english name')>
                             </div>
                             <div class="control-group form-group">
                                 <label class="form-label"> @lang('lang.type')</label>
-                                <input type="text" class="form-control required" name="type"placeholder= @lang('lang.type')>
+                                <input type="text" class="form-control required"
+                                    name="type"placeholder=@lang('lang.type')>
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label">  @lang('lang.link')</label>
-                                <input type="text" class="form-control required" name="link"placeholder=@lang('lang.link')>
+                                <label class="form-label"> @lang('lang.link')</label>
+                                <input type="text" class="form-control required"
+                                    name="link"placeholder=@lang('lang.link')>
                             </div>
 
 
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.english description')</label>
-                                <textarea type="text" class="form-control required" name="en[desc]" placeholder=@lang('lang.english description')>
-                                            </textarea>
+                                <textarea type="text" class="summernote form-control required" name="en[desc]" placeholder=@lang('lang.english description')>
+                                 </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.arabic description')</label>
-                                <textarea type="text" class="form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
+                                <textarea type="text" class="summernote form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
                                   </textarea>
                             </div>
 
@@ -137,16 +143,16 @@
                                 <input type="file" class="form-control required" name="image"
                                     placeholder="Address">
                             </div>
-                          <br>
-                          <br>
-                          <br>
+                            <br>
+                            <br>
+                            <br>
 
 
                             <div class="form-group col-md-7">
                                 <h4 class="form-section"><i class="ft-home"></i>@lang('lang.image')</h4>
 
                                 <div id="dpz-multiple-files" class="dropzone dropzone-area">
-                                    <div class="dz-message">  @lang('lang.upload image')  </div>
+                                    <div class="dz-message"> @lang('lang.upload image') </div>
                                 </div>
 
                             </div>
@@ -173,6 +179,9 @@
 
 @push('script')
 <script src="{{ URL::asset('assets/plugins/jquery-ui/ui/widgets/datepicker.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.js"
+    integrity="sha512-6rE6Bx6fCBpRXG/FWpQmvguMWDLWMQjPycXMr35Zx/HRD9nwySZswkkLksgyQcvrpYMx0FELLJVBvWFtubZhDQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Internal Select2 js-->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!--Internal Fileuploads js-->
@@ -195,6 +204,11 @@
 
 <script src="{{ URL::asset('assets/plugins/treeview/treeview.js') }}"></script>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.summernote').summernote();
+    });
+</script>
 
 <script>
     var uploadedDocumentMap = {}

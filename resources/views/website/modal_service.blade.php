@@ -32,9 +32,26 @@
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <label for="address">البلد</label>
-                                <select class="custom-select mr-sm-2" name="service" id="service" required>
-                                    <option value="Egypt">مصر</option>
-                                    <option value="saudia"> السعوديه</option>
+                                <select class="custom-select mr-sm-2" name="country" id="country" required>
+                                    <option value="">اختر الجنسية</option>
+                                    <option value="الجزائرية">الجزائرية</option>
+                                    <option value="البحرينية">البحرينية</option>
+                                    <option value="المصرية">المصرية</option>
+                                    <option value="العراقية">العراقية</option>
+                                    <option value="الأردنية">الأردنية</option>
+                                    <option value="الكويتية">الكويتية</option>
+                                    <option value="اللبنانية">اللبنانية</option>
+                                    <option value="الليبية">الليبية</option>
+                                    <option value="المغربية">المغربية</option>
+                                    <option value="العمانية">العمانية</option>
+                                    <option value="الفلسطينية">الفلسطينية</option>
+                                    <option value="القطرية">القطرية</option>
+                                    <option value="السعودية">السعودية</option>
+                                    <option value="السودانية">السودانية</option>
+                                    <option value="السورية">السورية</option>
+                                    <option value="التونسية">التونسية</option>
+                                    <option value="الإماراتية">الإماراتية</option>
+                                    <option value="اليمنية">اليمنية</option>
                                 </select>
                             </div>
                         </div>
@@ -44,8 +61,8 @@
                                 <div class="form-row">
                                     <div class="col-md-6 col-sm-12">
                                         <label for="service">نوع الخدمه</label>
-                                        <select class="custom-select mr-sm-2"  id="select" name="type_services[]" id="service"
-                                         required>
+                                        <select class="custom-select mr-sm-2" id="select" name="type_services[]"
+                                            id="service" required>
                                             <option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>
                                             <option value="تصميم الجرافيك">تصميم الجرافيك</option>
                                             <option value="تسويق الكتروني">تسويق الكتروني</option>
@@ -53,7 +70,7 @@
                                     </div>
 
                                     <div class="col-md-6 col-sm-12" id="programming">
-                                        <label for="service"> الخدمات</label>
+                                        <label for="service"> مواقع</label>
                                         <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
                                             required>
                                             <option>انشاء المواقع الالكترونية</option>
@@ -66,7 +83,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-sm-12" id="graphics" style="display:none;">
-                                        <label for="service"> الخدمات</label>
+                                        <label for="service"> تصميم</label>
                                         <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
                                             required>
                                             <option>تصميم الهوية البصرية كاملة</option>
@@ -79,20 +96,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-sm-12" id="marketing" style="display:none;">
-                                        <label for="service"> الخدمات</label>
-                                        <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
-                                            required>
-                                            <option>انشاء المواقع الالكترونية</option>
-                                            <option>إنشاء المتاجر الإلكترونية</option>
-                                            <option>تطوير تطبيقات الجوال</option>
-                                            <option>تطوير برمجيات مخصصة</option>
-                                            <option>خدمات الحوسبة السحابية</option>
-                                            <option>حجز النطاق والإستضافة للمواقع</option>
-                                            <option>الإستشارات التقنية وحلول الأعمال</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <label for="service"> الخدمات</label>
+                                        <label for="service"> تسويق</label>
                                         <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
                                             required>
                                             <option>كتابة المحتوي القيم والمقالات</option>
@@ -104,6 +108,10 @@
                                             <option>خطة تسويق متنوعة</option>
                                         </select>
                                     </div>
+
+
+
+
                                 </div>
 
                                 <div class="clearfix"></div>
@@ -118,7 +126,8 @@
 
                             <br>
 
-                            <a href="#" class="add_phone_input btn btn-info btn-sm"><i class="fa fa-plus"></i></a>
+                            <a href="#" class="add_phone_input btn btn-info btn-sm"><i
+                                    class="fa fa-plus"></i></a>
 
                         </div>
 

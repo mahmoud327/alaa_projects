@@ -16,7 +16,7 @@
                             <div class="data">
                                 <h5>فكرة المنتج</h5>
                                 <p>
-                                    {{ $product->desc }}
+                                    {!! $product->desc!!}
                                 </p>
                             </div>
                         </div>
@@ -114,27 +114,36 @@
                     <div class="slideContainer col-lg-6 col-md-6 col-sm-12">
 
                         <!-- Swiper -->
+                        <div>
 
-                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                            class="swiper mySwiper2">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="{{ $product->image_path }}" />
-                                </div>
-
-
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                        <div thumbsSlider="" class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                @foreach ($product->images as $image)
+                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                class="swiper mySwiper-product">
+                                <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="{{ $image->image_path }}" />
-                                    </div>
-                                @endforeach
+                                        <div class="swiper-slide-container">
 
+                                            <img src="{{ $product->image_path }}" />
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <div thumbsSlider="" class="swiper mySwiper gallery-thumbs">
+                                <div class="swiper-wrapper">
+                                    @foreach ($product->images as $image)
+                                        <div class="swiper-slide">
+                                            <div class="swiper-slide-container">
+                                                <img style="height:100px" src="{{ $image->image_path }}" />
+
+                                            </div>
+                                        </div>
+                                    @endforeach
+
+                                </div>
                             </div>
                         </div>
 
@@ -153,3 +162,30 @@
         </section>
     </div>
 @endsection
+
+@push('js')
+    <script>
+        let swiper4 = new Swiper(".mySwiper-product", {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+            loopedSlides: 4
+        });
+
+
+        let galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            loop: true,
+            loopedSlides: 4
+        });
+        swiper4.controller.control = galleryThumbs;
+        galleryThumbs.controller.control = galleryTop;
+    </script>
+@endpush

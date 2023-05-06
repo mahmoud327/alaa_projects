@@ -28,6 +28,7 @@ class MyWork extends Model
 
 
 
+
     /*
      * ----------------------------------------------------------------- *
      * --------------------------- Accessors --------------------------- *
@@ -38,5 +39,11 @@ class MyWork extends Model
     public function getImagePathAttribute()
     {
         return $this->image ? asset('uploads/my_works/' . $this->image) : asset('uploads/default.jpeg');
+    }
+
+
+    public function images()
+    {
+        return $this->hasmany('App\Models\WorkImage','work_id');
     }
 }
