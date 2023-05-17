@@ -11,6 +11,8 @@ use App\Models\MyTeam;
 use App\Models\MyWork;
 use App\Models\MyWorkCategory;
 use App\Models\Product;
+use App\Models\User;
+use App\Models\UserRequest;
 use App\Models\UserRequestService;
 use App\Models\UserRequesttService;
 use App\Services\CategoryService;
@@ -73,7 +75,13 @@ class WebSiteController extends Controller
     }
     public function serviceRequest(Request $request)
     {
-        UserRequestService::create($request->all());
+       $services= $request->services;
+       $types= $request->type_services;
+       $data= array_combine($services,$types);
+       $request->merge(['type_services'=>$data]);
+        UserRequestService::create($request->except('services'));
+       dd( UserRequestService::first()->type_services);
+
 
         return back();
     }

@@ -70,8 +70,8 @@
                                     </div>
 
                                     <div class="col-md-6 col-sm-12" id="programming">
-                                        <label for="service"> خدمه</label>
-                                        <select class="custom-select mr-sm-2" name="type_services[]" id="service"
+                                        <label for="programming_select"> خدمه</label>
+                                        <select class="custom-select mr-sm-2" name="type_services[]" id="programming_select"
                                             required>
                                             <option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>
                                             <option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>
@@ -84,8 +84,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-sm-12" id="graphics" style="display:none;">
-                                        <label for="service"> خدمه</label>
-                                        <select class="custom-select mr-sm-2" name="type_services[]" id="service"
+                                        <label for="graphics_select"> خدمه</label>
+                                        <select class="custom-select mr-sm-2" name="type_services[]" id="graphics_select" disabled
                                             required>
                                             <option value="تصميم الهوية البصرية كاملة">تصميم الهوية البصرية كاملة</option>
                                             <option value="تصميم الشعار وبطاقة العمل">تصميم الشعار وبطاقة العمل</option>
@@ -100,8 +100,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-sm-12" id="marketing" style="display:none;">
-                                        <label for="service"> تسويق</label>
-                                        <select class="custom-select mr-sm-2" name="type_services[]" id="service"
+                                        <label for="marketing_select"> تسويق</label>
+                                        <select class="custom-select mr-sm-2" name="type_services[]" id="marketing_select" disabled
                                             required>
                                             <option value="كتابة المحتوي القيم والمقالات">كتابة المحتوي القيم والمقالات</option>
                                             <option value="تحسين محركات البحث">تحسين محركات البحث (SEO)</option>

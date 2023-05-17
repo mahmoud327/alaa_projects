@@ -42,7 +42,7 @@
                         <img src="{{ asset('website/img/coding.png') }}" alt="web-development" class="img-fluid">
                         <h4> حلول التقنية</h4>
                         <ul class="list-unstyled">
-                            <li > المواقع الالكترونية</li>
+                            <li> المواقع الالكترونية</li>
                             <li>إنشاء المتاجر الإلكترونية</li>
                             <li>تطوير تطبيقات الجوال</li>
                             <li>تطوير برمجيات مخصصة</li>
@@ -100,8 +100,8 @@
     <!--start why-us section-->
     <section class="why-us">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                                        </svg> -->
+                                                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                                                    </svg> -->
         <div class="container text-center">
             <h2>لماذا تختارنا</h2>
             <div class="row">
@@ -241,7 +241,7 @@
                                     </div>
                                     <div class="galleryCard-footer">
                                         <p class="p-1 m-0">
-                                            {!! $my_work->desc  !!}
+                                            {!! $my_work->desc !!}
                                         </p>
                                     </div>
                                 </div>
@@ -263,8 +263,8 @@
 
     <section class="testimonials mt-4">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                </svg> -->
+                                                                                <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                            </svg> -->
         <div class="container text-center">
             <h2>أراء عملائنا</h2>
             <!-- Swiper -->
@@ -341,8 +341,8 @@
     <!--start partner section-->
     <section class="partner">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                                        </svg> -->
+                                                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                                                    </svg> -->
         <div class="container text-center">
             <h2>شركاء النجاح</h2>
             <p class="mt-2">عملائنا هم شركاء نجاحنا</p>
@@ -411,8 +411,8 @@
             </div>
         </div>
         <!-- <svg class="b_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
-                                                                                        </svg> -->
+                                                                                                        <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
+                                                                                                    </svg> -->
     </section>
 
 
@@ -470,19 +470,36 @@
             var val = $(this).val()
             if (val == 'برمجة وحلول تقنية') {
 
+                var programming = document.getElementById("programming_select");
+                programming.disabled = false;
+                var graphics = document.getElementById("graphics_select");
+                graphics.disabled = true;
+                var marketing = document.getElementById("marketing_select");
+                marketing.disabled = true;
                 $('#programming').css('display', 'inline')
                 $('#graphics').css('display', 'none');
                 $('#marketing').css('display', 'none');
 
 
-            } else if (val == 'تصميم الجرافيك') {
 
+            } else if (val == 'تصميم الجرافيك') {
+                var programming = document.getElementById("programming_select");
+                programming.disabled = true;
+                var graphics = document.getElementById("graphics_select");
+                graphics.disabled = false;
+                var marketing = document.getElementById("marketing_select");
+                marketing.disabled = true;
                 $('#programming').css('display', 'none')
                 $('#graphics').css('display', 'inline');
                 $('#marketing').css('display', 'none');
 
             } else if (val == 'تسويق الكتروني') {
-
+                var programming = document.getElementById("programming_select");
+                programming.disabled = true;
+                var graphics = document.getElementById("graphics_select");
+                graphics.disabled = true;
+                var marketing = document.getElementById("marketing_select");
+                marketing.disabled = false;
                 $('#programming').css('display', 'none');
                 $('#graphics').css('display', 'none');
                 $('#marketing').css('display', 'inline');
@@ -514,8 +531,8 @@
 
 
                 '<div class="col-md-6 col-sm-12" id="programming1">' +
-                '<label for="service"> خدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" required>' +
+                '<label for="programming_select1"> خدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="programming_select1" required>' +
                 '<option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>' +
                 '<option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>' +
                 '<option value="تطوير تطبيقات الجوال">تطوير تطبيقات الجوال</option>' +
@@ -528,8 +545,8 @@
                 '</select>' +
                 '</div>' +
                 '<div class="col-md-6 col-sm-12" id="graphics1" style="display:none;">' +
-                '<label for="service"> خدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" required>' +
+                '<label for="graphics_select1"> خدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="graphics_select1" required disabled>' +
                 '<option value="تصميم الهوية البصرية كاملة">تصميم الهوية البصرية كاملة</option>' +
                 '<option value="تصميم الشعار وبطاقة العمل">تصميم الشعار وبطاقة العمل</option>' +
                 '<option value="تصميم ملصقات التواصل الاجتماعي">تصميم ملصقات التواصل الاجتماعي</option>' +
@@ -545,8 +562,8 @@
 
                 '</select>' +
                 '<div class="col-md-6 col-sm-12" id="marketing1" style="display:none;">' +
-                '<label for="service"> خدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" required>' +
+                '<label for="marketing_select1"> خدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="marketing_select1" required disabled>' +
                 '<option value="كتابة المحتوي القيم والمقالات">كتابة المحتوي القيم والمقالات</option>' +
                 '<option value="تحسين محركات البحث">تحسين محركات البحث (SEO)</option>' +
                 '<option value="التسويق عبر وسائل التواصل الاجتماعي">التسويق عبر وسائل التواصل الاجتماعي</option>' +
@@ -574,19 +591,46 @@
             $('select').on('change', function() {
                 var val = $(this).val();
                 var parentDiv = $(this).closest('.form-row');
+                // var selectDiv = $(this).closest('.custom-select');
 
                 if (val == 'برمجة وحلول تقنية') {
+                    var programming_input = document.getElementById("programming_select1");
+                    var programming = programming_input.closest("select");
+                    programming.disabled = false;
+                    var graphics_input = document.getElementById("graphics_select1");
+                    var graphics = graphics_input.closest("select");
+                    graphics.disabled = true;
+                    var marketing_input = document.getElementById("marketing_select1");
+                    var marketing = marketing_input.closest("select");
+                    marketing.disabled = true;
                     parentDiv.find('#programming1').css('display', 'inline');
                     parentDiv.find('#marketing1').css('display', 'none');
                     parentDiv.find('#graphics1').css('display', 'none');
 
 
-                    parentDiv.find('#graphics1').css('display', 'none');
                 } else if (val == 'تصميم الجرافيك') {
+                    var programming_input = document.getElementById("programming_select1");
+                    var programming = programming_input.closest("select");
+                    programming.disabled = true;
+                    var graphics_input = document.getElementById("graphics_select1");
+                    var graphics = graphics_input.closest("select");
+                    graphics.disabled = false;
+                    var marketing_input = document.getElementById("marketing_select1");
+                    var marketing = marketing_input.closest("select");
+                    marketing.disabled = true;
                     parentDiv.find('#programming1').css('display', 'none');
                     parentDiv.find('#marketing1').css('display', 'none');
                     parentDiv.find('#graphics1').css('display', 'inline');
                 } else if (val == 'تسويق الكتروني') {
+                    var programming_input = document.getElementById("programming_select1");
+                    var programming = programming_input.closest("select");
+                    programming.disabled = true;
+                    var graphics_input = document.getElementById("graphics_select1");
+                    var graphics = graphics_input.closest("select");
+                    graphics.disabled = true;
+                    var marketing_input = document.getElementById("marketing_select1");
+                    var marketing = marketing_input.closest("select");
+                    marketing.disabled = false;
                     parentDiv.find('#programming1').css('display', 'none');
                     parentDiv.find('#graphics1').css('display', 'none');
                     parentDiv.find('#marketing1').css('display', 'inline');
