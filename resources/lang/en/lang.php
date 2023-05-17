@@ -54,6 +54,13 @@
      'type'=>'type',
      'link'=>'link',
 
+
+    'english product name'=>'english product name',
+    'arabic product name '=>'arabic product name',
+    'arabic idea product' =>'arabic idea product',
+    'english idea  product'=>'english idea  product',
+
+
      'categories'=>'categories',
      'add category'=>'add category',
      'edit category'=>'edit category',
@@ -61,6 +68,8 @@
      'add my works'=>'add my works',
      'my works'=>'my works',
      'upload image'=>'upload image',
+     'subject '=>'subject',
+
      'mobile'=>'mobile',
      'web'=>'web',
      'nothing'=>'nothing',

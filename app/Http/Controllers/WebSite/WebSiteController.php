@@ -83,7 +83,7 @@ class WebSiteController extends Controller
         ->take(6)
         ->latest()
         ->get();
-        
+
         return view('website.about-us',compact('teams'));
     }
 }

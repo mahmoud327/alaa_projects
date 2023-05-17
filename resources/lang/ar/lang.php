@@ -45,10 +45,17 @@
     'products'=>'المنتجات',
     'add product'=>'اضافة منتج',
 
-    'english name'=>'الاسم بالانجليزى',
-    'arabic name '=>'الاسم بالعربى',
-    'arabic description' =>'وصف بالعربى',
-    'english description'=>'وصف بالانجليزى',
+    'english name'=>'الاسم المشروع  بالانجليزى',
+    'subject '=>'الموضوع',
+    'arabic name '=>'اسم المشروع  بالعربى',
+    'arabic description' =>'فكرة المشروع بالعربى',
+    'english description'=>'فكرة المشروع بالانجليزى',
+
+    'english product name'=>'الاسم المنتج  بالانجليزى',
+    'arabic product name '=>'اسم المنتج  بالعربى',
+    'arabic idea product' =>'فكرة المنتج بالعربى',
+    'english idea  product'=>'فكرة المنتج بالانجليزى',
+
     'product idea '=>'فكرة المنتج',
 
     'type'=>'نوع المنتج',
@@ -65,7 +72,7 @@
     'link app store'=>'لينك  ابل ستور',
     'link website'=>'اختار الموقع',
 
-    'select category'=>'اختر الخدمه',
+    'select category'=>' نوع المشروع',
 
     'customer-reviews'=>'اراء عملائنا',
     'add customer-reviews'=>'اضافه'

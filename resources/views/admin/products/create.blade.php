@@ -106,12 +106,12 @@
                         {{-- <h3>product data</h3> --}}
                         <section>
                             <div class="control-group form-group">
-                                <label class="form-label">@lang('lang.arabic name ')</label>
+                                <label class="form-label">@lang('lang.arabic product name ')</label>
                                 <input type="text" class="form-control required" name="ar[name]"
                                     placeholder=@lang('lang.arabic name ')>
                             </div>
                             <div class="control-group form-group">
-                                <label class="form-label">@lang('lang.english name')</label>
+                                <label class="form-label">@lang('lang.english product name')</label>
                                 <input type="text" class="form-control required"
                                     name="en[name]"placeholder=@lang('lang.english name')>
                             </div>
@@ -129,12 +129,12 @@
 
 
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">@lang('lang.english description')</label>
+                                <label class="form-label">@lang('lang.english idea  product')</label>
                                 <textarea type="text" class="summernote form-control required" name="en[desc]" placeholder=@lang('lang.english description')>
                                  </textarea>
                             </div>
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">@lang('lang.arabic description')</label>
+                                <label class="form-label">@lang('lang.arabic idea product')</label>
                                 <textarea type="text" class="summernote form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
                                   </textarea>
                             </div>

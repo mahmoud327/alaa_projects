@@ -33,7 +33,7 @@
                             <div class="col-md-6 col-sm-12">
                                 <label for="address">البلد</label>
                                 <select class="custom-select mr-sm-2" name="country" id="country" required>
-                                    <option value="">اختر الجنسية</option>
+                                    <option value="اختر الجنسية">اختر الجنسية</option>
                                     <option value="الجزائرية">الجزائرية</option>
                                     <option value="البحرينية">البحرينية</option>
                                     <option value="المصرية">المصرية</option>
@@ -61,7 +61,7 @@
                                 <div class="form-row">
                                     <div class="col-md-6 col-sm-12">
                                         <label for="service">نوع الخدمه</label>
-                                        <select class="custom-select mr-sm-2" id="select" name="type_services[]"
+                                        <select class="custom-select mr-sm-2" id="select" name="services[]"
                                             id="service" required>
                                             <option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>
                                             <option value="تصميم الجرافيك">تصميم الجرافيك</option>
@@ -70,42 +70,48 @@
                                     </div>
 
                                     <div class="col-md-6 col-sm-12" id="programming">
-                                        <label for="service"> مواقع</label>
-                                        <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
+                                        <label for="service"> خدمه</label>
+                                        <select class="custom-select mr-sm-2" name="type_services[]" id="service"
                                             required>
-                                            <option>انشاء المواقع الالكترونية</option>
-                                            <option>إنشاء المتاجر الإلكترونية</option>
-                                            <option>تطوير تطبيقات الجوال</option>
-                                            <option>تطوير برمجيات مخصصة</option>
-                                            <option>خدمات الحوسبة السحابية</option>
-                                            <option>حجز النطاق والإستضافة للمواقع</option>
-                                            <option>الإستشارات التقنية وحلول الأعمال</option>
+                                            <option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>
+                                            <option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>
+                                            <option value="تطوير تطبيقات الجوال<">تطوير تطبيقات الجوال</option>
+                                            <option value="تطوير برمجيات مخصصة">تطوير برمجيات مخصصة</option>
+                                            <option value="خدمات الحوسبة السحابية">خدمات الحوسبة السحابية</option>
+                                            <option value="حجز النطاق والإستضافة للمواقع<">حجز النطاق والإستضافة للمواقع</option>
+                                            <option value="الإستشارات التقنية وحلول الأعمال">الإستشارات التقنية وحلول الأعمال</option>
+                                            <option value="اخرى"> اخرى</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-sm-12" id="graphics" style="display:none;">
-                                        <label for="service"> تصميم</label>
-                                        <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
+                                        <label for="service"> خدمه</label>
+                                        <select class="custom-select mr-sm-2" name="type_services[]" id="service"
                                             required>
-                                            <option>تصميم الهوية البصرية كاملة</option>
-                                            <option>تصميم الشعار وبطاقة العمل</option>
-                                            <option>تصميم ملصقات التواصل الاجتماعي</option>
-                                            <option>تصميم الدعوات والإعلانات ولافتات الويب</option>
-                                            <option>تصميم صور انفو جرافيك</option>
-                                            <option>تصميم فيديو موشن جرافيك</option>
-                                            <option>تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>
+                                            <option value="تصميم الهوية البصرية كاملة">تصميم الهوية البصرية كاملة</option>
+                                            <option value="تصميم الشعار وبطاقة العمل">تصميم الشعار وبطاقة العمل</option>
+                                            <option value="تصميم ملصقات التواصل الاجتماعي</">تصميم ملصقات التواصل الاجتماعي</option>
+                                            <option value="تصميم الدعوات والإعلانات ولافتات الويب">تصميم الدعوات والإعلانات ولافتات الويب</option>
+                                            <option value="تصميم صور انفو جرافيك">تصميم صور انفو جرافيك</option>
+                                            <option value="تصميم فيديو موشن جرافيك<">تصميم فيديو موشن جرافيك</option>
+                                            <option value="تصميم نماذج تفاعلية لمواقع وتطبيقات">تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>
+                                            <option value="اخرى"> اخرى</option>
+
+
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-sm-12" id="marketing" style="display:none;">
                                         <label for="service"> تسويق</label>
-                                        <select class="custom-select mr-sm-2" name="categories_ids[]" id="service"
+                                        <select class="custom-select mr-sm-2" name="type_services[]" id="service"
                                             required>
-                                            <option>كتابة المحتوي القيم والمقالات</option>
-                                            <option>تحسين محركات البحث (SEO)</option>
-                                            <option>التسويق عبر وسائل التواصل الاجتماعي</option>
-                                            <option>التسويق عبر البريد الإلكتروني</option>
-                                            <option>الحملات الإعلانية المدفوعة (AD)</option>
-                                            <option>الفيديو الدعائي</option>
-                                            <option>خطة تسويق متنوعة</option>
+                                            <option value="كتابة المحتوي القيم والمقالات">كتابة المحتوي القيم والمقالات</option>
+                                            <option value="تحسين محركات البحث">تحسين محركات البحث (SEO)</option>
+                                            <option value="التسويق عبر وسائل التواصل الاجتماعي">التسويق عبر وسائل التواصل الاجتماعي</option>
+                                            <option value="التسويق عبر البريد الإلكتروني">التسويق عبر البريد الإلكتروني</option>
+                                            <option value="الحملات الإعلانية المدفوعة">الحملات الإعلانية المدفوعة (AD)</option>
+                                            <option value="الفيديو الدعائي">الفيديو الدعائي</option>
+                                            <option value="خطة تسويق متنوعة">خطة تسويق متنوعة</option>
+                                            <option value="اخرى"> اخرى</option>
+
                                         </select>
                                     </div>
 
@@ -140,7 +146,7 @@
                                     <span style="    color: #c3c2c2;">(اختياري)</span>
 
                                 </label>
-                                <textarea class="form-control" name="message" rows="8" id="message" required></textarea>
+                                <textarea class="form-control" name="message" rows="8" id="message" ></textarea>
                             </div>
                         </div>
                         <div class="modal-footer  justify-content-center">

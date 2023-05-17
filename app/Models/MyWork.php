@@ -22,7 +22,7 @@ class MyWork extends Model
     public $translatedAttributes = ['name', 'desc'];
     public $translationModel = 'App\Models\Translation\MyWork';
     protected $table = "my_works";
-    protected $fillable = ['type', 'image', 'link','type_link','link_app_stroe','link_geogle_play'];
+    protected $fillable = ['type', 'image', 'link','type_link','link_app_stroe','link_geogle_play','my_work_category_id'];
 
 
 
@@ -45,5 +45,9 @@ class MyWork extends Model
     public function images()
     {
         return $this->hasmany('App\Models\WorkImage','work_id');
+    }
+    public function category()
+    {
+        return $this->belongsTo('App\Models\MyWorkCategory','my_work_category_id');
     }
 }

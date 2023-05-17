@@ -14,7 +14,7 @@
                         <div class="content">
                             <img src="{{ asset('website/img/sites-idea.png') }}" alt="">
                             <div class="data">
-                                <h5>فكرة المنتج</h5>
+                                <h5>فكرة المشروع</h5>
                                 <p>
                                     {!! $my_work->desc!!}
                                 </p>
@@ -23,7 +23,7 @@
                         <div class="content">
                             <img src="{{ asset('website/img/sites-share.png') }}" alt="">
                             <div class="data">
-                                <h5> اسم المنتج</h5>
+                                <h5> اسم المشروع</h5>
                                 <p>
                                     {{ $my_work->name }}
                                 </p>
@@ -32,19 +32,19 @@
                         <div class="content">
                             <img src="{{ asset('website/img/sites-share.png') }}" alt="">
                             <div class="data">
-                                <h5> نوع المنتج </h5>
+                                <h5> نوع المشروع </h5>
                                 <p>
-                                    {{ $my_work->type }}
+                                    {{ optional($my_work->category)->title }}
                                 </p>
                             </div>
                         </div>
                         <div class="content">
                             <img src="{{ asset('website/img/sites-share.png') }}" alt="">
                             <div class="data social">
-                                <h5> مشاركة المنتج</h5>
+                                <h5> مشاركة المشروع</h5>
                                 <div class="share">
                                     <p class="dataSocial">
-                                        <span>{{ $my_work->link }}</span>
+                                        <span>{{ asset('my-works/'.$my_work->id)}}</span>
                                     </p>
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

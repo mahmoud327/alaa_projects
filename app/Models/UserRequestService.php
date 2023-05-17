@@ -12,7 +12,7 @@ class UserRequestService extends Model
 
 
     protected $table = "user_request_service";
-    protected $fillable = ['name', 'email', 'message', 'type_services', 'phone', 'country'];
+    protected $fillable = ['name', 'email', 'message', 'type_services', 'phone', 'country','services'];
 
 
 
@@ -20,6 +20,7 @@ class UserRequestService extends Model
     protected $casts = [
         'categories_ids' => 'array',
         'type_services' => 'array',
+        'services' => 'array',
     ];
-    
+
 }

@@ -167,15 +167,14 @@
                                      </td>
 
                                      <td>
-                                         @if ($service->categories_ids)
-                                             @foreach ($service->categories_ids as $cat)
+                                         @if ($service->services)
+                                             @foreach ($service->services as $ser)
                                                  -
 
                                                  <?php
-                                                 $cat_name = \App\Models\MyWorkCategory::find((int) $cat)->title;
                                                  ?>
 
-                                                 {{ $cat_name }}
+                                                 {{ $ser }}
                                              @endforeach
                                          @endif
                                      </td>

@@ -11,39 +11,42 @@
     <!--start gallery section-->
     <section class="gallery" id="gallery">
         <div class="container" data-aos="zoom-in" data-aos-duration="2000">
-            <!-- <h2>بعض النماذج من اعمالنا الرائعة</h2> -->
-            <ul class="list-unstyled head">
-                <li class="active" data-class="all">الكل</li>
-                @foreach ($categories as $cat)
-                    <li data-class=".sites">{{ $cat->title }} </li>
-                @endforeach
+            <form action="{{ route('my-works.index') }}">
+
+                <!-- <h2>بعض النماذج من اعمالنا الرائعة</h2> -->
+                <select class="list-unstyled head" name="cat">
+                    <li class="active" data-class="all">الكل</li>
+                    @foreach ($categories as $cat)
+                        <option value="{{ $cat->id }}"  data-class=".sites">{{ $cat->title }} </option>
+                    @endforeach
 
 
-            </ul>
-            <div class="row">
-                @foreach ($my_works as $my_work)
-                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-card sites mt-5">
-                        <div class="gallery-card sites">
-                            <div class="galleryCard-head">
-                                <p class="p-1 m-0">{{ $my_work->type }}</p>
-                            </div>
-                            <div class="image">
+                </select>
+                <div class="row">
+                    @foreach ($my_works as $my_work)
+                        <div class="col-lg-4 col-md-6 col-sm-12 gallery-card sites mt-5">
+                            <div class="gallery-card sites">
+                                <div class="galleryCard-head">
+                                    <p class="p-1 m-0">{{ optional($my_work->category)->title }}</p>
+                                </div>
+                                <div class="image">
 
-                                <img src="{{ $my_work->image_path }}" alt="gallery-1" class="img-fluid">
-                                <div class="overlay">
-                                    <a href="{{ route('my-works.show', $my_work->id) }}">للتفاصيل </a>
+                                    <img src="{{ $my_work->image_path }}" alt="gallery-1" class="img-fluid">
+                                    <div class="overlay">
+                                        <a href="{{ route('my-works.show', $my_work->id) }}">للتفاصيل </a>
+                                    </div>
+                                </div>
+                                <div class="galleryCard-footer">
+                                    <p class="p-1 m-0">{{ $my_work->desc }} </p>
+
                                 </div>
                             </div>
-                            <div class="galleryCard-footer">
-                                <p class="p-1 m-0">{{ $my_work->desc }} </p>
-
-                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
 
 
-            </div>
+                </div>
+            </form>
         </div>
     </section>
     <!--end gallery section-->

@@ -140,6 +140,7 @@
                                 <th class="border-bottom-0">@lang('lang.name')</th>
                                 <th class="border-bottom-0">@lang('lang.nationality')</th>
                                 <th class="border-bottom-0">@lang('lang.email')</th>
+                                <th class="border-bottom-0">@lang('lang.subject ')</th>
                                 <th class="border-bottom-0">@lang('lang.phone')</th>
                                 <th class="border-bottom-0">@lang('lang.message')</th>
                             </tr>
@@ -152,6 +153,7 @@
                                     <td>{{ $contact->name }}</td>
                                     <td>{{ $contact->nationality }}</td>
                                     <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->subject }}</td>
                                     <td>{{ $contact->phone }}</td>
                                     <td>{{ $contact->message }}</td>
 

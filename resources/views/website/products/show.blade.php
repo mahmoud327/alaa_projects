@@ -44,7 +44,7 @@
                                 <h5> مشاركة المنتج</h5>
                                 <div class="share">
                                     <p class="dataSocial">
-                                        <span>{{ $product->link }}</span>
+                                        <span>{{ asset('products/'.$product->id)}}</span>
                                     </p>
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

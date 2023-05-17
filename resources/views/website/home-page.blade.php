@@ -42,7 +42,7 @@
                         <img src="{{ asset('website/img/coding.png') }}" alt="web-development" class="img-fluid">
                         <h4> حلول التقنية</h4>
                         <ul class="list-unstyled">
-                            <li>انشاء المواقع الالكترونية</li>
+                            <li > المواقع الالكترونية</li>
                             <li>إنشاء المتاجر الإلكترونية</li>
                             <li>تطوير تطبيقات الجوال</li>
                             <li>تطوير برمجيات مخصصة</li>
@@ -55,7 +55,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 box-services">
                     <div class="card">
                         <img src="{{ asset('website/img/Graphic Design.png') }}" alt="cms" class="img-fluid">
-                        <h4>تصميم الجرافيك</h4>
+                        <h4> خدمه</h4>
                         <ul class="list-unstyled">
                             <li>تصميم الهوية البصرية كاملة</li>
                             <li>تصميم الشعار وبطاقة العمل</li>
@@ -64,13 +64,14 @@
                             <li>تصميم صور انفو جرافيك</li>
                             <li>تصميم فيديو موشن جرافيك</li>
                             <li>تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</li>
+
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 box-services">
                     <div class="card">
                         <img src="{{ asset('website/img/digital marketing.png') }}" alt="e-learning" class="img-fluid">
-                        <h4>التسويق الالكتروني</h4>
+                        <h4> خدمه</h4>
                         <ul class="list-unstyled">
                             <li>كتابة المحتوي القيم والمقالات</li>
                             <li>تحسين محركات البحث (SEO)</li>
@@ -79,6 +80,7 @@
                             <li>الحملات الإعلانية المدفوعة (AD)</li>
                             <li>الفيديو الدعائي</li>
                             <li>خطة تسويق متنوعة</li>
+
                         </ul>
                     </div>
                 </div>
@@ -98,8 +100,8 @@
     <!--start why-us section-->
     <section class="why-us">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                                </svg> -->
+                                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                                        </svg> -->
         <div class="container text-center">
             <h2>لماذا تختارنا</h2>
             <div class="row">
@@ -238,7 +240,9 @@
                                         </div>
                                     </div>
                                     <div class="galleryCard-footer">
-                                        <p class="p-1 m-0">{{ $my_work->desc }} </p>
+                                        <p class="p-1 m-0">
+                                            {!! $my_work->desc  !!}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -259,8 +263,8 @@
 
     <section class="testimonials mt-4">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                        </svg> -->
+                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                </svg> -->
         <div class="container text-center">
             <h2>أراء عملائنا</h2>
             <!-- Swiper -->
@@ -337,8 +341,8 @@
     <!--start partner section-->
     <section class="partner">
         <!-- <svg class="t_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
-                                                                                </svg> -->
+                                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,0L0,0Z"></path>
+                                                                                        </svg> -->
         <div class="container text-center">
             <h2>شركاء النجاح</h2>
             <p class="mt-2">عملائنا هم شركاء نجاحنا</p>
@@ -407,8 +411,8 @@
             </div>
         </div>
         <!-- <svg class="b_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                                                                                    <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
-                                                                                </svg> -->
+                                                                                            <path fill="#64B1E7" fill-opacity="1" d="M0,320L1440,0L1440,320L0,320Z"></path>
+                                                                                        </svg> -->
     </section>
 
 
@@ -489,7 +493,7 @@
 
     <script type="text/javascript">
         var x = 2;
-        var y=2;
+        var y = 2;
         $(document).on('click', '.add_phone_input', function(e) {
             e.preventDefault();
             $('.div_phone_inputs').append('<div>' +
@@ -499,7 +503,7 @@
                 '<div class="form-row">' +
                 '<div class="col-md-6 col-sm-12">' +
                 '<label for="service">نوع الخدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id=""  required>' +
+                '<select class="custom-select mr-sm-2" name="services[]" id=""  required>' +
                 '<option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>' +
                 '<option value="تصميم الجرافيك">تصميم الجرافيك</option>' +
                 '<option value="تسويق الكتروني">تسويق الكتروني</option>' +
@@ -510,33 +514,53 @@
 
 
                 '<div class="col-md-6 col-sm-12" id="programming1">' +
-                '<label for="service"> مواقع</label>' +
-                '<select class="custom-select mr-sm-2" name="categories_ids[]" id="service" required>' +
-                '<option>انشاء المواقع الالكترونية</option>' +
-                '<option>إنشاء المتاجر الإلكترونية</option>' +
-                '<option>تطوير تطبيقات الجوال</option>' +
-                '<option>تطوير برمجيات مخصصة</option>' +
-                '<option>خدمات الحوسبة السحابية</option>' +
-                '<option>حجز النطاق والإستضافة للمواقع</option>' +
-                '<option>الإستشارات التقنية وحلول الأعمال</option>' +
+                '<label for="service"> خدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" required>' +
+                '<option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>' +
+                '<option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>' +
+                '<option value="تطوير تطبيقات الجوال">تطوير تطبيقات الجوال</option>' +
+                '<option value="تطوير برمجيات مخصصة">تطوير برمجيات مخصصة</option>' +
+                '<option value="خدمات الحوسبة السحابية">خدمات الحوسبة السحابية</option>' +
+                '<option value="حجز النطاق والإستضافة للمواقع<">حجز النطاق والإستضافة للمواقع</option>' +
+                '<option value="الإستشارات التقنية وحلول الأعمال">الإستشارات التقنية وحلول الأعمال</option>' +
+                '<option value=" اخرى">اخرى</option>' +
+
                 '</select>' +
                 '</div>' +
                 '<div class="col-md-6 col-sm-12" id="graphics1" style="display:none;">' +
-                '<label for="service"> تصميم</label>' +
-                '<select class="custom-select mr-sm-2" name="categories_ids[]" id="service" required>' +
-                '<option>تصميم الهوية البصرية كاملة</option>' +
-                '<option>تصميم الشعار وبطاقة العمل</option>' +
-                '<option>تصميم ملصقات التواصل الاجتماعي</option>' +
-                '<option>تصميم الدعوات والإعلانات ولافتات الويب</option>' +
-                '<option>تصميم صور انفو جرافيك</option>' +
-                '<option>تصميم فيديو موشن جرافيك</option>' +
-                '<option>تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>' +
+                '<label for="service"> خدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" required>' +
+                '<option value="تصميم الهوية البصرية كاملة">تصميم الهوية البصرية كاملة</option>' +
+                '<option value="تصميم الشعار وبطاقة العمل">تصميم الشعار وبطاقة العمل</option>' +
+                '<option value="تصميم ملصقات التواصل الاجتماعي">تصميم ملصقات التواصل الاجتماعي</option>' +
+                '<option value="تصميم الدعوات والإعلانات ولافتات الويب">تصميم الدعوات والإعلانات ولافتات الويب</option>' +
+                '<option value="تصميم صور انفو جرافيك">تصميم صور انفو جرافيك</option>' +
+                '<option value="تصميم فيديو موشن جرافيك">تصميم فيديو موشن جرافيك</option>' +
+                '<option value="تصميم نماذج تفاعلية لمواقع وتطبيقات">تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>' +
+                '<option value=" اخرى">اخرى</option>' +
+
                 '</select>' +
                 '</div>' +
 
 
                 '</select>' +
+                '<div class="col-md-6 col-sm-12" id="marketing1" style="display:none;">' +
+                '<label for="service"> خدمه</label>' +
+                '<select class="custom-select mr-sm-2" name="type_services[]" id="service" required>' +
+                '<option value="كتابة المحتوي القيم والمقالات">كتابة المحتوي القيم والمقالات</option>' +
+                '<option value="تحسين محركات البحث">تحسين محركات البحث (SEO)</option>' +
+                '<option value="التسويق عبر وسائل التواصل الاجتماعي">التسويق عبر وسائل التواصل الاجتماعي</option>' +
+                '<option value="التسويق عبر البريد الإلكتروني">التسويق عبر البريد الإلكتروني</option>' +
+                '<option value="الحملات الإعلانية المدفوعة (AD)">الحملات الإعلانية المدفوعة (AD)</option>' +
+                '<option value="الفيديو الدعائي">الفيديو الدعائي</option>' +
+                '<option value="خطة تسويق متنوعة">خطة تسويق متنوعة</option>' +
+                '<option value=" اخرى">اخرى</option>' +
+
+                '</select>' +
                 '</div>' +
+
+
+
 
                 '</div>' +
 
@@ -547,6 +571,27 @@
 
                 '</div>');
             x++;
+            $('select').on('change', function() {
+                var val = $(this).val();
+                var parentDiv = $(this).closest('.form-row');
+
+                if (val == 'برمجة وحلول تقنية') {
+                    parentDiv.find('#programming1').css('display', 'inline');
+                    parentDiv.find('#marketing1').css('display', 'none');
+                    parentDiv.find('#graphics1').css('display', 'none');
+
+
+                    parentDiv.find('#graphics1').css('display', 'none');
+                } else if (val == 'تصميم الجرافيك') {
+                    parentDiv.find('#programming1').css('display', 'none');
+                    parentDiv.find('#marketing1').css('display', 'none');
+                    parentDiv.find('#graphics1').css('display', 'inline');
+                } else if (val == 'تسويق الكتروني') {
+                    parentDiv.find('#programming1').css('display', 'none');
+                    parentDiv.find('#graphics1').css('display', 'none');
+                    parentDiv.find('#marketing1').css('display', 'inline');
+                }
+            });
 
             // $('select').on('change', function() {
             //     alert('fff');
