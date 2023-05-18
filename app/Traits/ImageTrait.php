@@ -17,6 +17,7 @@ trait ImageTrait
         Image::make($file)->resize(300, null, function ($constraint) {
             $constraint->aspectRatio();
         })->save(public_path($path.'/'.$file->hashName()));
+        
         return $file->hashName();
 
     }

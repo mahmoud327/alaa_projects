@@ -200,8 +200,18 @@
                             </div>
 
                             <div class="control-group form-group mb-0">
-                                <input type="file" class="form-control required" name="image"
+                                <input type="file" class="form-control required" name="image2"
                                     placeholder="Address">
+                            </div>
+                            <br>
+                            <br>
+
+
+                            <div class="control-group form-group mb-0">
+                                <label class="form-label"> راى العميل  </label>
+
+                                <input type="file" class="form-control"
+                                    name="image">
                             </div>
                             <br>
                             <br>

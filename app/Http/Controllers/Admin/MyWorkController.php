@@ -47,7 +47,9 @@ class MyWorkController extends Controller
         $MyWork = MyWork::create($request->all());
 
         $this->uploadImage('uploads/my_works', $request->file('image'));
-        $MyWork->update(['image' => $request->image->hashName()]);
+
+        $this->uploadImage('uploads/my_works', $request->file('image_clinet'));
+        $MyWork->update(['image' => $request->image->hashName(),'image_clinet'=>$request->image_clinet->hashName()]);
 
 
         if ($request->document) {
@@ -58,8 +60,6 @@ class MyWorkController extends Controller
                 ]);
             }
         }
-
-
 
 
         session()->flash('Add', 'تم اضافة سجل بنجاح ');
@@ -86,12 +86,29 @@ class MyWorkController extends Controller
     {
 
         $my_work = MyWork::findOrFail($id);
-        $my_work->update($request->except('image'));
-        if ($request->file('image')) {
-            Storage::disk('my_works')->delete($my_work->image);
+        $my_work->update($request->except('image','image_clinet'));
+
+
+
+
+        if ($request->has('image')) {
             $this->uploadImage('uploads/my_works', $request->file('image'));
-            $my_work->update(['image' => $request->image->hashName()]);
+            $my_work->update(['image_clinet' => $request->image->hashName()]);
+
+
+
         }
+
+
+        if ($request->file('image2')) {
+
+            $this->uploadImage('uploads/my_works', $request->file('image2'));
+            $my_work->update(['image' => $request->image2->hashName()]);
+        }
+
+
+
+
 
         session()->flash('edit', 'تم اضافة سجل بنجاح ');
         return redirect(route('admin.my-works.index'));

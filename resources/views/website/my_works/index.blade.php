@@ -11,9 +11,9 @@
     <!--start gallery section-->
     <section class="gallery" id="gallery">
         <div class="container" data-aos="zoom-in" data-aos-duration="2000">
-            <form action="{{ route('my-works.index') }}">
+            {{-- <form action="{{ route('my-works.index') }}"> --}}
 
-                <!-- <h2>بعض النماذج من اعمالنا الرائعة</h2> -->
+                {{-- <!-- <h2>بعض النماذج من اعمالنا الرائعة</h2> -->
                 <select class="list-unstyled head" name="cat">
                     <li class="active" data-class="all">الكل</li>
                     @foreach ($categories as $cat)
@@ -21,7 +21,39 @@
                     @endforeach
 
 
-                </select>
+                </select> --}}
+                <ul class="list-unstyled head">
+
+
+                    <form action="{{ route('my-works.index') }}" method="get" >
+
+                        <li value="all" data-class="all">
+
+                            <button class="nav-link"
+                            type="submit"
+                            >الكل
+
+                        </button>
+                        <input type="hidden" name="category_id" value="all" >
+
+                        </li>
+                    </form>
+                    <form action="{{ route('my-works.index') }}" method="get" >
+
+                        @foreach ($categories as $cat)
+                        <input type="hidden" name="category_id" value="{{ $cat->id }}" >
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link"
+                                    type="submit"
+                                    >{{ $cat->title }}
+                                </button>
+                            </li>
+                            @endforeach
+                        </form>
+
+                </ul>
+
                 <div class="row">
                     @foreach ($my_works as $my_work)
                         <div class="col-lg-4 col-md-6 col-sm-12 gallery-card sites mt-5">
@@ -46,7 +78,7 @@
 
 
                 </div>
-            </form>
+            {{-- </form> --}}
         </div>
     </section>
     <!--end gallery section-->

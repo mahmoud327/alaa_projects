@@ -236,6 +236,17 @@
                 </div>
 
 
+
+
+            </div>
+            <div class="mt-5">
+                <h6 class="mt-5">
+                    رأي العميل
+                </h6>
+                <div class="text-center mt-5">
+                    <img  class=" Clinet" src="{{asset('uploads/my_works/'.$my_work->image_clinet) }}"
+                        alt="">
+                </div>
             </div>
 
 

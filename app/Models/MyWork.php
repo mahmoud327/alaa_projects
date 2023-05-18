@@ -22,7 +22,7 @@ class MyWork extends Model
     public $translatedAttributes = ['name', 'desc'];
     public $translationModel = 'App\Models\Translation\MyWork';
     protected $table = "my_works";
-    protected $fillable = ['type', 'image', 'link','type_link','link_app_stroe','link_geogle_play','my_work_category_id'];
+    protected $fillable = ['type', 'image', 'link','type_link','link_app_stroe','link_geogle_play','my_work_category_id','image_clinet'];
 
 
 
@@ -39,6 +39,12 @@ class MyWork extends Model
     public function getImagePathAttribute()
     {
         return $this->image ? asset('uploads/my_works/' . $this->image) : asset('uploads/default.jpeg');
+    }
+
+
+    public function getImageClientPathAttribute()
+    {
+        return $this->image_clinet ? asset('uploads/my_works/' . $this->image_clinet) : asset('uploads/default.jpeg');
     }
 
 

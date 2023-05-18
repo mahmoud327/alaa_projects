@@ -21,10 +21,17 @@ class MyWorkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $my_works = MyWork::query()
+            ->when($request->category_id,function($q){
+                if(request()->category_id !='all'){
+                    $q->where('my_work_category_id',request()->category_id);
+
+                }
+            })
             ->latest()
+
             ->with('category')
             ->paginate(10);
         $categories = MyWorkCategory::latest()->get();

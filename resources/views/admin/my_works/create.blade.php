@@ -192,6 +192,15 @@
                                     placeholder="Address">
                             </div>
 
+
+                            <div class="control-group form-group mb-0">
+                                <label class="form-label"> راى العميل  </label>
+
+
+                                <input type="file" class="form-control required" required name="image_clinet"
+                                    placeholder="Address">
+                            </div>
+
                             <br>
                             <br>
                             <br>

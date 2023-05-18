@@ -465,27 +465,24 @@
     </section>
 @endsection
 @push('js')
+
     <script>
         $('#select').on('change', function() {
             var val = $(this).val()
             if (val == 'برمجة وحلول تقنية') {
 
                 $('#programming').css('display', 'inline')
-                $('#graphics').css('display', 'none');
-                $('#marketing').css('display', 'none');
 
+                $('#graphics').css('display', 'none')
+                $('#marketing').css('display', 'none')
 
             } else if (val == 'تصميم الجرافيك') {
 
-                $('#programming').css('display', 'none')
-                $('#graphics').css('display', 'inline');
-                $('#marketing').css('display', 'none');
-
+                $('#programming').css('display', 'none')                $('#graphics').css('display', 'inline');
+                $('#marketing').css('display', 'none')
             } else if (val == 'تسويق الكتروني') {
 
-                $('#programming').css('display', 'none');
-                $('#graphics').css('display', 'none');
-                $('#marketing').css('display', 'inline');
+                $('#programming').css('display', 'none')                $('#graphics').css('display', 'none')                $('#marketing').css('display', 'inline');
 
             }
         });
@@ -577,18 +574,18 @@
 
                 if (val == 'برمجة وحلول تقنية') {
                     parentDiv.find('#programming1').css('display', 'inline');
-                    parentDiv.find('#marketing1').css('display', 'none');
-                    parentDiv.find('#graphics1').css('display', 'none');
+                    parentDiv.find('#marketing1').css('display', 'none')
+                    parentDiv.find('#graphics1').css('display', 'none')
 
 
-                    parentDiv.find('#graphics1').css('display', 'none');
+                    parentDiv.find('#graphics1').css('display', 'none')
                 } else if (val == 'تصميم الجرافيك') {
-                    parentDiv.find('#programming1').css('display', 'none');
-                    parentDiv.find('#marketing1').css('display', 'none');
+                    parentDiv.find('#programming1').css('display', 'none')
+                    parentDiv.find('#marketing1').css('display', 'none')
                     parentDiv.find('#graphics1').css('display', 'inline');
                 } else if (val == 'تسويق الكتروني') {
-                    parentDiv.find('#programming1').css('display', 'none');
-                    parentDiv.find('#graphics1').css('display', 'none');
+                    parentDiv.find('#programming1').css('display', 'none')
+                    parentDiv.find('#graphics1').css('display', 'none')
                     parentDiv.find('#marketing1').css('display', 'inline');
                 }
             });

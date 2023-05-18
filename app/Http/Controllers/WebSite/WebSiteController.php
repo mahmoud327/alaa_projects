@@ -73,6 +73,8 @@ class WebSiteController extends Controller
     }
     public function serviceRequest(Request $request)
     {
+        dd($request->all());
+        return $request;
         UserRequestService::create($request->all());
 
         return back();
