@@ -86,10 +86,8 @@ class UserRequestServiceController extends Controller
      */
     public function destroy($id)
     {
-        $my_work = MyWork::find($id);
-        if (!is_null($my_work->image)) {
-            Storage::disk('MyWork')->delete($my_work->image);
-        }
+        $my_work = UserRequestService::find($id);
+      
 
         $my_work->delete();
         session()->flash('delete', 'تم حذف سجل بنجاح ');

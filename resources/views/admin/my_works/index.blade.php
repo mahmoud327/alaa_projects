@@ -144,7 +144,7 @@
                         <tbody class="tr">
                             @foreach ($my_works as $my_work )
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $my_work->id }}</td>
                                     <td>
                                         <img src="{{$my_work->image_path}}" height="50px" width="60px">
                                     </td>

@@ -23,7 +23,7 @@ class MyTeamController extends Controller
     {
 
 
-        $teams = MyTeam::latest()->paginate(10);
+        $teams = MyTeam::orderby('id','desc')->paginate(10);
 
 
         return view('admin.my-teams.index', compact('teams'));

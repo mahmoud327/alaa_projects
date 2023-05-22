@@ -45,10 +45,16 @@
      'products'=>'products',
      'add product'=>'add product',
 
+
+
      'english name'=>'english name',
      'arabic name'=>'arabic name',
      'arabic description' =>'arabic description',
      'english description'=>'english description',
+
+     'arabic desc' =>'arabic description',
+     'english desc'=>'english description',
+
      'product idea '=>'product idea',
 
      'type'=>'type',

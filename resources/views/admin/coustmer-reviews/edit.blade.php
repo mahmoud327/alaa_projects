@@ -62,12 +62,12 @@
 
 
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">@lang('lang.english description')</label>
-                                <textarea type="text" class="summernote form-control required" name="en[desc]"placeholder=@lang('lang.english description')>{!!$review->translate('en')->desc  !!}</textarea>
+                                <label class="form-label">@lang('lang.english desc')</label>
+                                <textarea type="text" class="summernote form-control required" name="en[desc]"placeholder=@lang('lang.english desc')>{!!$review->translate('en')->desc  !!}</textarea>
                             </div>
                             <div class="control-group form-group mb-0">
-                                <label class="form-label">@lang('lang.arabic description')</label>
-                                <textarea type="text" class="summernote form-control required" name="ar[desc]" placeholder=@lang('lang.arabic description')>{!!$review->translate('ar')->desc !!}</textarea>
+                                <label class="form-label">@lang('lang.arabic desc')</label>
+                                <textarea type="text" class="summernote form-control required" name="ar[desc]" placeholder=@lang('lang.arabic desc')>{!!$review->translate('ar')->desc !!}</textarea>
                             </div>
 
                             <div class="control-group form-group mb-0">

@@ -74,7 +74,7 @@ Route::group([
             Route::resource('jobs', JobController::class);
             Route::resource('contact-us', ContactUsController::class);
             Route::get('user-requests', [ContactUsController::class, 'userRequest'])->name('user-request.index');
-            Route::delete('user-requests/{id}', [ContactUsController::class, 'destroy'])->name('user-request.destroy');
+            Route::delete('user-requests/{id}', [ContactUsController::class, 'userRequestDestroy'])->name('user-request.destroy');
 
             Route::get('export', [ContactUsController::class,'export'])->name('export');
 

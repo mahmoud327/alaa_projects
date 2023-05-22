@@ -138,7 +138,7 @@ categoires - Page
                         <tbody class="tr">
                             @foreach ($categories as $category )
                                 <tr data-id="{{ $category->id }}">
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $category->id }}</td>
                                     <td>{{ $category->title }}</td>
                                      <td>
                                         <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale" data-toggle="modal" href="#exampleModal2{{$category->id}}" title="edit">

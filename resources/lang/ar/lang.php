@@ -47,6 +47,13 @@
 
     'english name'=>'الاسم المشروع  بالانجليزى',
     'subject '=>'الموضوع',
+
+
+
+    'arabic desc' =>'وصف بالعربى',
+    'english desc'=>'وصف بالانجليزى ',
+
+
     'arabic name '=>'اسم المشروع  بالعربى',
     'arabic description' =>'فكرة المشروع بالعربى',
     'english description'=>'فكرة المشروع بالانجليزى',
@@ -61,9 +68,9 @@
     'type'=>'نوع المنتج',
     'link'=>'مشاركة المنتج',
 
-    'categories'=>'الخدمات',
-    'add category'=>'اضافة خدمه',
-    'edit category'=>'تعديل خدمه',
+    'categories'=>'الفئات',
+    'add category'=>'اضافة فئه',
+    'edit category'=>'تعديل فئه',
 
     'add my works'=>'اضافة عمل',
     'my works'=>'اعمالنا',
@@ -72,7 +79,7 @@
     'link app store'=>'لينك  ابل ستور',
     'link website'=>'اختار الموقع',
 
-    'select category'=>' نوع المشروع',
+    'select category'=>'فئه المشروع',
 
     'customer-reviews'=>'اراء عملائنا',
     'add customer-reviews'=>'اضافه'

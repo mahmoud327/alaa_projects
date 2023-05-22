@@ -122,22 +122,74 @@
                                 <input type="text" class="form-control required" value="{{ $product->type }}"
                                     name="type"placeholder=@lang('lang.type')>
                             </div>
-                            <div class="control-group form-group">
+                            {{-- <div class="control-group form-group">
                                 <label class="form-label"> @lang('lang.link')</label>
                                 <input type="text" class="form-control required"value="{{ $product->link }}"
                                     name="link"placeholder=@lang('lang.link')>
+                            </div> --}}
+
+                            <div class="d-flex gap-4 justify-content-between" style="width: 15%">
+
+                                <div class="-">
+                                    <label class="rdiobox">
+                                        <input checked name="type_link" type="radio"
+                                            @if ($product->type_link == 'mobile') checked @endif value="mobile"
+                                            id="mobile">
+                                        <span>@lang('lang.mobile')
+                                        </span></label>
+                                </div>
+
+
+                                <div class="-">
+                                    <label class="rdiobox"><input name="type_link" id="website_radio"
+                                            @if ($product->type_link == 'website') checked @endif value="website"
+                                            type="radio"><span>
+                                            @lang('lang.web')
+                                        </span></label>
+                                </div>
+                                <div class="-">
+                                    <label class="rdiobox"><input name="type_link" id="nothing"
+                                            value="nothing"@if ($product->type_link == 'nothing') checked @endif
+                                            type="radio"><span>
+                                            @lang('lang.nothing')
+                                        </span></label>
+                                </div>
                             </div>
+
+                            <div class="control-group form-group" id="website" style="display:none">
+                                <label class="form-label"> @lang('lang.link website')</label>
+                                <input type="text" class="form-control " name="link"placeholder=@lang('lang.link website')
+                                    value="{{ $product->link }}">
+                            </div>
+
+
+                            <div class="control-group form-group" id="google_play">
+                                <label class="form-label"> @lang('lang.link google play')</label>
+                                <input type="text" class="form-control required"
+                                    name="link_geogle_play"placeholder=@lang('lang.link google play')
+                                    value="{{ $product->link_geogle_play }}">
+                            </div>
+
+
+                            <div class="control-group form-group" id=app_store>
+                                <label class="form-label"> @lang('lang.link app store') </label>
+                                <input type="text" class="form-control required"
+                                    name="link_app_stroe"placeholder=@lang('lang.link app store')
+                                    value="{{ $product->link_app_stroe }}">
+                            </div>
+
+
 
 
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.english description')</label>
-                                <textarea type="text" class="summernote form-control required" name="en[desc]" placeholder=@lang('lang.english description')>{!!$product->translate('en')->desc!!}</textarea>
+                                <textarea type="text" class="summernote form-control required" name="en[desc]" placeholder=@lang('lang.english description')>{!! $product->translate('en')->desc !!}</textarea>
                             </div>
                             <div class="control-group form-group mb-0">
                                 <label class="form-label">@lang('lang.arabic description')</label>
                                 <textarea type="text" class="summernote form-control required" name="ar[desc]"placeholder=@lang('lang.arabic description')>
-                                  {!!$product->translate('ar')->desc !!}
+                                  {!! $product->translate('ar')->desc !!}
                                   </textarea>
                             </div>
 
@@ -296,5 +348,44 @@
         }
 
     }
+</script>
+
+
+<script>
+    var val = $('input[type="radio"]:checked').val();
+    if (val == 'website') {
+
+        $('#website').css('display', 'inline');
+        $('#app_store').css('display', 'none');
+        $('#google_play').css('display', 'none');
+    } else if (val == 'mobile') {
+        $('#website').css('display', 'none');
+        $('#app_store').css('display', 'inline');
+        $('#google_play').css('display', 'inline');
+    } else {
+        $('#website').css('display', 'none');
+        $('#app_store').css('display', 'none');
+        $('#google_play').css('display', 'none');
+    }
+
+
+    $('input[type="radio"]#website_radio , input[type="radio"]#nothing,input[type="radio"]#mobile', ).on('change',
+        function() {
+            if ($(this).val() == 'website') {
+
+                $('#website').css('display', 'inline');
+                $('#app_store').css('display', 'none');
+                $('#google_play').css('display', 'none');
+            } else if ($(this).val() == 'mobile') {
+                $('#website').css('display', 'none');
+                $('#app_store').css('display', 'inline');
+                $('#google_play').css('display', 'inline');
+            } else {
+                $('#website').css('display', 'none');
+                $('#app_store').css('display', 'none');
+                $('#google_play').css('display', 'none');
+            }
+
+        });
 </script>
 @endpush

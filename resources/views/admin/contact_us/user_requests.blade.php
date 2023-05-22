@@ -164,7 +164,7 @@
                                         </a>
 
                                     </td>
-                                    @include('admin.contact_us.delete_modal', ['user_request' => $user_request])
+                                    @include('admin.contact_us.user_request_delete_modal', ['user_request' => $user_request])
 
 
                                 </tr>

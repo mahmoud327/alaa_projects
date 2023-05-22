@@ -23,7 +23,9 @@ class Product extends Model
     public $translatedAttributes = ['name', 'desc'];
     public $translationModel = 'App\Models\Translation\Product';
     protected $table = "products";
-    protected $fillable = ['type', 'image', 'link'];
+    protected $fillable = ['type', 'image', 'link','link_app_stroe','link_geogle_play','type_link'];
+
+
 
 
 

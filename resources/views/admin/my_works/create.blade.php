@@ -110,11 +110,26 @@
                                 <label class="form-label">@lang('lang.arabic name ') </label>
                                 <input type="text" class="form-control required"required name="en[name]">
                             </div>
-                            {{-- <div class="control-group form-group">
-                                <label class="form-label"> نوع المنتج</label>
-                                <input type="text" class="form-control required" name="type"placeholder="type ">
-                            </div> --}}
+                            <div class="control-group form-group">
+                                <label class="form-label"> نوع المشروع</label>
+                                <input type="text" class="form-control required" name="type" placeholder="type ">
+                            </div>
 
+
+
+
+                            <div class="control-group form-group">
+                                <label class="form-label">@lang('lang.select category') </label>
+                                <select class="form-control" name="my_work_category_id" required>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">
+                                            {{ $category->title }}
+                                        </option>
+                                    @endforeach
+
+
+                                </select>
+                            </div>
 
                             <div class="d-flex gap-4 justify-content-between" style="width: 15%">
 
@@ -162,19 +177,6 @@
 
 
 
-
-                            <div class="control-group form-group">
-                                <label class="form-label">@lang('lang.select category') </label>
-                                <select class="form-control" name="my_work_category_id" required>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">
-                                            {{ $category->title }}
-                                        </option>
-                                    @endforeach
-
-
-                                </select>
-                            </div>
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label"> @lang('lang.english description') </label>

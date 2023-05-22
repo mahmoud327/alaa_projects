@@ -16,7 +16,7 @@
                             <div class="data">
                                 <h5>فكرة المشروع</h5>
                                 <p>
-                                    {!! $my_work->desc!!}
+                                    {!! $my_work->desc !!}
                                 </p>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                             <div class="data">
                                 <h5> نوع المشروع </h5>
                                 <p>
-                                    {{ optional($my_work->category)->title }}
+                                    {{ $my_work->type }}
                                 </p>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                 <h5> مشاركة المشروع</h5>
                                 <div class="share">
                                     <p class="dataSocial">
-                                        <span>{{ asset('my-works/'.$my_work->id)}}</span>
+                                        <span>{{ asset('my-works/' . $my_work->id) }}</span>
                                     </p>
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -176,61 +176,60 @@
                     <div class="slideContainer col-lg-6 col-md-6 col-sm-12">
 
                         <!-- Swiper -->
-                              <div>
+                        <div>
 
-                                  <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                                      class="swiper mySwiper-product">
-                                      <div class="swiper-wrapper">
-                                          <div class="swiper-slide">
-                                          <div class="swiper-slide-container">
+                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                class="swiper mySwiper-product">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="swiper-slide-container">
 
-                                              <img src="{{ $my_work->image_path }}" />
+                                            <img src="{{ $my_work->image_path }}" />
 
-                                          </div>
-                                          </div>
+                                        </div>
+                                    </div>
 
 
-                                      </div>
-                                      <div class="swiper-button-next"></div>
-                                      <div class="swiper-button-prev"></div>
-                                  </div>
-                                  <div thumbsSlider="" class="swiper mySwiper gallery-thumbs">
-                                      <div class="swiper-wrapper">
-                                          @foreach ($my_work->images as $image)
-                                              <div class="swiper-slide">
-                                              <div class="swiper-slide-container">
-                                                  <img style="height:100px" src="{{ $image->image_path }}" />
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <div thumbsSlider="" class="swiper mySwiper gallery-thumbs">
+                                <div class="swiper-wrapper">
+                                    @foreach ($my_work->images as $image)
+                                        <div class="swiper-slide">
+                                            <div class="swiper-slide-container">
+                                                <img style="height:100px" src="{{ $image->image_path }}" />
 
-                                              </div>
-                                              </div>
-                                          @endforeach
+                                            </div>
+                                        </div>
+                                    @endforeach
 
-                                      </div>
-                                  </div>
-                              </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- Swiper JS -->
                         @if ($my_work->type_link == 'website')
+                            <div class="d-flex justify-content-between " style="gap:5px">
 
-                        <div class="d-flex justify-content-between " style="gap:5px">
+                                <a class="vist w-100" href="{{ $my_work->link }}" style="text-decoration: none">
+                                    <h5>زيارة الموقع </h5>
+                                </a>
 
-                            <a class="vist w-100" href="{{ $my_work->link }}" style="text-decoration: none">
-                                <h5>زيارة الموقع </h5>
-                            </a>
-
-                        </div>
+                            </div>
                         @elseif($my_work->type_link == 'mobile')
+                            <div class="d-flex justify-content-between " style="gap:5px">
 
-                        <div class="d-flex justify-content-between " style="gap:5px">
-
-                            <a class="vist w-100" href="{{ $my_work->link_app_stroe }}" style="text-decoration: none">
-                                <h5>  App store </h5>
-                            </a>
-                            <a class="vist w-100" href="{{ $my_work->link_app_stroe }}" style="text-decoration: none">
-                                <h5> Google play </h5>
-                            </a>
-                        </div>
-
+                                <a class="vist w-100" href="{{ $my_work->link_app_stroe }}"
+                                    style="text-decoration: none">
+                                    <h5> App store </h5>
+                                </a>
+                                <a class="vist w-100" href="{{ $my_work->link_geogle_play }}"
+                                    style="text-decoration: none">
+                                    <h5> Google play </h5>
+                                </a>
+                            </div>
                         @endif
                     </div>
                 </div>
@@ -244,8 +243,7 @@
                     رأي العميل
                 </h6>
                 <div class="text-center mt-5">
-                    <img  class=" Clinet" src="{{asset('uploads/my_works/'.$my_work->image_clinet) }}"
-                        alt="">
+                    <img class=" Clinet" src="{{ asset('uploads/my_works/' . $my_work->image_clinet) }}" alt="">
                 </div>
             </div>
 
@@ -254,28 +252,28 @@
     </div>
 @endsection
 @push('js')
-<script>
-    let swiper4 = new Swiper(".mySwiper-product", {
-        spaceBetween: 10,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        loop: true,
-        loopedSlides: 4
-    });
+    <script>
+        let swiper4 = new Swiper(".mySwiper-product", {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+            loopedSlides: 4
+        });
 
 
-    let galleryThumbs = new Swiper('.gallery-thumbs', {
-        spaceBetween: 10,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        touchRatio: 0.2,
-        slideToClickedSlide: true,
-        loop: true,
-        loopedSlides: 4
-    });
-    swiper4.controller.control = galleryThumbs;
-    galleryThumbs.controller.control = galleryTop;
-</script>
+        let galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            loop: true,
+            loopedSlides: 4
+        });
+        swiper4.controller.control = galleryThumbs;
+        galleryThumbs.controller.control = galleryTop;
+    </script>
 @endpush

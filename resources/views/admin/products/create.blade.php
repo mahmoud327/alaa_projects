@@ -120,11 +120,60 @@
                                 <input type="text" class="form-control required"
                                     name="type"placeholder=@lang('lang.type')>
                             </div>
-                            <div class="control-group form-group">
+                            {{-- <div class="control-group form-group">
                                 <label class="form-label"> @lang('lang.link')</label>
                                 <input type="text" class="form-control required"
                                     name="link"placeholder=@lang('lang.link')>
+                            </div> --}}
+
+
+
+
+                            <div class="d-flex gap-4 justify-content-between" style="width: 15%">
+
+                                <div class="-">
+                                    <label class="rdiobox">
+                                        <input checked name="type_link" type="radio" value="mobile" id="mobile">
+                                        <span>@lang('lang.mobile')
+                                        </span></label>
+                                </div>
+
+
+                                <div class="-">
+                                    <label class="rdiobox"><input name="type_link" id="website_radio" value="website"
+                                            type="radio"><span>
+                                            @lang('lang.web')
+                                        </span></label>
+                                </div>
+                                <div class="-">
+                                    <label class="rdiobox"><input name="type_link" id="nothing" value=""
+                                            type="radio"><span>
+                                            @lang('lang.nothing')
+                                        </span></label>
+                                </div>
                             </div>
+
+                            <div class="control-group form-group" id="website" style="display:none">
+                                <label class="form-label"> @lang('lang.link website')</label>
+                                <input type="text" class="form-control "
+                                    name="link"placeholder=@lang('lang.link website')>
+                            </div>
+
+
+                            <div class="control-group form-group" id="google_play">
+                                <label class="form-label"> @lang('lang.link google play')</label>
+                                <input type="text" class="form-control required"
+                                    name="link_geogle_play"placeholder=@lang('lang.link google play')>
+                            </div>
+
+
+                            <div class="control-group form-group" id=app_store>
+                                <label class="form-label"> @lang('lang.link app store') </label>
+                                <input type="text" class="form-control required"
+                                    name="link_app_stroe"placeholder=@lang('lang.link app store')>
+                            </div>
+
+
 
 
 
@@ -209,6 +258,28 @@
         $('.summernote').summernote();
     });
 </script>
+
+<script>
+    $('input[type="radio"]#website_radio , input[type="radio"]#nothing,input[type="radio"]#mobile', ).on('change',
+        function() {
+            if ($(this).val() == 'website') {
+
+                $('#website').css('display', 'inline');
+                $('#app_store').css('display', 'none');
+                $('#google_play').css('display', 'none');
+            } else if ($(this).val() == 'mobile') {
+                $('#website').css('display', 'none');
+                $('#app_store').css('display', 'inline');
+                $('#google_play').css('display', 'inline');
+            } else {
+                $('#website').css('display', 'none');
+                $('#app_store').css('display', 'none');
+                $('#google_play').css('display', 'none');
+            }
+
+        });
+</script>
+
 
 <script>
     var uploadedDocumentMap = {}

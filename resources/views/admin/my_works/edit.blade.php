@@ -116,10 +116,24 @@
                                 <input type="text" class="form-control required"required name="en[name]"
                                     value="{{ $work->translate('en')->name }}">
                             </div>
-                            {{-- <div class="control-group form-group">
-                                <label class="form-label"> نوع المنتج</label>
-                                <input type="text" class="form-control required" name="type"placeholder="type ">
-                            </div> --}}
+                            <div class="control-group form-group">
+                                <label class="form-label"> نوع المشروع</label>
+                                <input type="text" class="form-control required" name="type"value="{{$work->type }}"placeholder="type ">
+                            </div>
+
+                            <div class="control-group form-group">
+                                <label class="form-label">@lang('lang.select category') </label>
+                                <select class="form-control" name="my_work_category_id" required>
+                                    @foreach ($categories as $category)
+                                        <option @if ($work->category_id == $category->id) selected @endif
+                                            value="{{ $category->id }}">
+                                            {{ $category->title }}
+                                        </option>
+                                    @endforeach
+
+
+                                </select>
+                            </div>
 
                             {{ $work->type_link }}
 
@@ -176,19 +190,7 @@
 
 
 
-                            <div class="control-group form-group">
-                                <label class="form-label">@lang('lang.select category') </label>
-                                <select class="form-control" name="my_work_category_id" required>
-                                    @foreach ($categories as $category)
-                                        <option @if ($work->category_id == $category->id) selected @endif
-                                            value="{{ $category->id }}">
-                                            {{ $category->title }}
-                                        </option>
-                                    @endforeach
 
-
-                                </select>
-                            </div>
 
                             <div class="control-group form-group mb-0">
                                 <label class="form-label"> @lang('lang.english description') </label>

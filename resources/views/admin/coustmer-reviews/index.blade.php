@@ -139,7 +139,7 @@ customer_reviews - Page
                         <tbody class="tr">
                             @foreach ($customer_reviews as $coustmer_review )
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $coustmer_review->id }}</td>
                                     <td>
                                         <img src="{{$coustmer_review->image_path}}" height="50px" width="60px">
                                     </td>

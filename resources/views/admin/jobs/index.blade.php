@@ -140,7 +140,7 @@
                         <tbody class="tr">
                             @foreach ($jobs as $job )
                                 <tr data-id="{{ $job->id }}">
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $job->id }}</td>
                                     <td>{{ $job->name }}</td>
                                     <td>{{ $job->email }}</td>
                                     <td>{{ $job->nationality }}</td>
@@ -161,6 +161,9 @@
                                             @lang('lang.delete')
                                         </a>
                                     </td>
+
+                                    @include('admin.jobs.delete_modal', ['job' => $job])
+
                                 </tr>
                             @endforeach
                         </tbody>

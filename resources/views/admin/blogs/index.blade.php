@@ -139,7 +139,7 @@
                          <tbody class="tr">
                              @foreach ($blogs as $blog)
                                  <tr>
-                                     <td>{{ $loop->iteration }}</td>
+                                     <td>{{ $blog->id }}</td>
                                      <td>
                                          <img src="{{$blog->image_path}}" height="50px" width="60px">
                                      </td>

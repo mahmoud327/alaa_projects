@@ -48,8 +48,9 @@ class CategoryController extends Controller
         return back()->with('status', "add successfully");
     }
 
-    public function destroy(Category $category)
+    public function destroy($id)
     {
+        $category=Category::find($id);
         $category->delete();
         return back()->with('status', "deleted successfully");
     }

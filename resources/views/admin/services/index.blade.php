@@ -147,7 +147,7 @@
                          <tbody class="tr">
                              @foreach ($services as $service)
                                  <tr>
-                                     <td>{{ $loop->iteration }}</td>
+                                     <td>{{ $service->id }}</td>
 
                                      <td>{{ $service->name }}</td>
                                      <td>{{ $service->email }}</td>

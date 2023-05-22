@@ -31,6 +31,13 @@ class ContactUsController extends Controller
     }
     public function destroy($id)
     {
+        $request =  ContactUs::find($id);
+        $request->delete();
+        return redirect()->back();
+    }
+
+    public function userRequestDestroy($id)
+    {
         $request =  UserRequest::find($id);
         $request->delete();
         return redirect()->back();

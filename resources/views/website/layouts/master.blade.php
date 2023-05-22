@@ -10,6 +10,9 @@
 
     @include('website.layouts.head')
     @yield('style')
+    @livewireStyles
+
+
 </head>
 <body>
     @include('website.layouts.navbar')
@@ -19,6 +22,8 @@
     @include('website.layouts.up-btn')
     @include('website.layouts.footer-scripts')
     @stack('js')
+    @livewireScripts
+
 
 </body>
 

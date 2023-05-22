@@ -22,62 +22,7 @@
 
 
                 </select> --}}
-                <ul class="list-unstyled head">
-
-
-                    <form action="{{ route('my-works.index') }}" method="get" >
-
-                        <li value="all" data-class="all">
-
-                            <button class="nav-link"
-                            type="submit"
-                            >الكل
-
-                        </button>
-                        <input type="hidden" name="category_id" value="all" >
-
-                        </li>
-                    </form>
-                    <form action="{{ route('my-works.index') }}" method="get" >
-
-                        @foreach ($categories as $cat)
-                        <input type="hidden" name="category_id" value="{{ $cat->id }}" >
-
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link"
-                                    type="submit"
-                                    >{{ $cat->title }}
-                                </button>
-                            </li>
-                            @endforeach
-                        </form>
-
-                </ul>
-
-                <div class="row">
-                    @foreach ($my_works as $my_work)
-                        <div class="col-lg-4 col-md-6 col-sm-12 gallery-card sites mt-5">
-                            <div class="gallery-card sites">
-                                <div class="galleryCard-head">
-                                    <p class="p-1 m-0">{{ optional($my_work->category)->title }}</p>
-                                </div>
-                                <div class="image">
-
-                                    <img src="{{ $my_work->image_path }}" alt="gallery-1" class="img-fluid">
-                                    <div class="overlay">
-                                        <a href="{{ route('my-works.show', $my_work->id) }}">للتفاصيل </a>
-                                    </div>
-                                </div>
-                                <div class="galleryCard-footer">
-                                    <p class="p-1 m-0">{{ $my_work->desc }} </p>
-
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-
-                </div>
+          @livewire('filter-tabs')
             {{-- </form> --}}
         </div>
     </section>
@@ -99,7 +44,7 @@
                                 <h3>{{ $customer_review->user_name }}</h3>
                                 <span> {{ $customer_review->job }}</span>
                                 <p>
-                                    {{ $customer_review->desc }}
+                                    {!!  $customer_review->desc!!}
 
                                 </p>
 

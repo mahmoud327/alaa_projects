@@ -141,7 +141,7 @@
                          <tbody class="tr">
                              @foreach ($teams as $team)
                                  <tr data-id="{{ $team->id }}">
-                                     <td>{{ $loop->iteration }}</td>
+                                     <td>{{ $team->id }}</td>
                                      <td>{{ $team->name }}</td>
                                      <td>{{ $team->job_title }}
 

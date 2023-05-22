@@ -59,9 +59,11 @@ class JobController extends Controller
         return back()->with('status', "add successfully");
     }
 
-    public function destroy(Job $jobs)
+    public function destroy($id)
     {
-        $jobs->delete();
+
+        $job=Job::find($id);
+        $job->delete();
         return back()->with('status', "deleted successfully");
     }
 }
