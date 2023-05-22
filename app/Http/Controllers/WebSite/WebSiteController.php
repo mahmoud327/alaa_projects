@@ -75,14 +75,19 @@ class WebSiteController extends Controller
     }
     public function serviceRequest(Request $request)
     {
-       $services= $request->services;
+
+        $services= $request->services;
        $types= $request->type_services;
-       $data= array_combine($services,$types);
-       $request->merge(['type_services'=>$data]);
+       $combinedArray = [];
+       $count = count($services);
+
+       for ($i = 0; $i < $count; $i++) {
+           $service = $services[$i];
+           $type = $types[$i];
+           $combinedArray[$service][] = $type;
+       }
+       $request->merge(['type_services'=>$combinedArray]);
         UserRequestService::create($request->except('services'));
-       dd( UserRequestService::first()->type_services);
-
-
         return back();
     }
     public function aboutUs()

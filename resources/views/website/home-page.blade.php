@@ -512,161 +512,109 @@
         var x = 2;
         var y = 2;
         $(document).on('click', '.add_phone_input', function(e) {
-            e.preventDefault();
-            $('.div_phone_inputs').append('<div>' +
+    e.preventDefault();
 
+    var divPhoneInputs = $('.div_phone_inputs');
+    var index = divPhoneInputs.children().length + 1;
 
+    var phoneInput = $('<div>' +
+        '<div class="form-row">' +
+        '<div class="col-md-6 col-sm-12">' +
+        '<label for="service">نوع الخدمه</label>' +
+        '<select class="custom-select mr-sm-2" name="services[]" id="service' + index + '" required>' +
+        '<option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>' +
+        '<option value="تصميم الجرافيك">تصميم الجرافيك</option>' +
+        '<option value="تسويق الكتروني">تسويق الكتروني</option>' +
+        '</select>' +
+        '</div>' +
 
-                '<div class="form-row">' +
-                '<div class="col-md-6 col-sm-12">' +
-                '<label for="service">نوع الخدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="services[]" id=""  required>' +
-                '<option value="برمجة وحلول تقنية">برمجة وحلول تقنية</option>' +
-                '<option value="تصميم الجرافيك">تصميم الجرافيك</option>' +
-                '<option value="تسويق الكتروني">تسويق الكتروني</option>' +
-                '</select>' +
-                '</div>' +
+        '<div class="col-md-6 col-sm-12" id="programming' + index + '">' +
+        '<label for="programming_select' + index + '"> خدمه</label>' +
+        '<select class="custom-select mr-sm-2" name="type_services[]" id="programming_select' + index + '" required>' +
+        '<option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>' +
+        '<option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>' +
+        '<option value="تطوير تطبيقات الجوال">تطوير تطبيقات الجوال</option>' +
+        '<option value="تطوير برمجيات مخصصة">تطوير برمجيات مخصصة</option>' +
+        '<option value="خدمات الحوسبة السحابية">خدمات الحوسبة السحابية</option>' +
+        '<option value="حجز النطاق والإستضافة للمواقع">حجز النطاق والإستضافة للمواقع</option>' +
+        '<option value="الإستشارات التقنية وحلول الأعمال">الإستشارات التقنية وحلول الأعمال</option>' +
+        '<option value="اخرى">اخرى</option>' +
+        '</select>' +
+        '</div>' +
 
+        '<div class="col-md-6 col-sm-12" id="graphics' + index + '" style="display:none;">' +
+        '<label for="graphics_select' + index + '"> خدمه</label>' +
+        '<select class="custom-select mr-sm-2" name="type_services[]" id="graphics_select' + index + '" required disabled>' +
+        '<option value="تصميم الهوية البصرية كاملة">تصميم الهوية البصرية كاملة</option>' +
+        '<option value="تصميم الشعار وبطاقة العمل">تصميم الشعار وبطاقة العمل</option>' +
+        '<option value="تصميم ملصقات التواصل الاجتماعي">تصميم ملصقات التواصل الاجتماعي</option>' +
+        '<option value="تصميم الدعوات والإعلانات ولافتات الويب">تصميم الدعوات والإعلانات ولافتات الويب</option>' +
+        '<option value="تصميم صور انفو جرافيك">تصميم صور انفو جرافيك</option>' +
+        '<option value="تصميم فيديو موشن جرافيك">تصميم فيديو موشن جرافيك</option>' +
+        '<option value="تصميم نماذج تفاعلية لمواقع وتطبيقات">تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>' +
+        '<option value="اخرى">اخرى</option>' +
+        '</select>' +
+        '</div>' +
 
+        '<div class="col-md-6 col-sm-12" id="marketing' + index + '" style="display:none;">' +
+        '<label for="marketing_select' + index + '"> خدمه</label>' +
+        '<select class="custom-select mr-sm-2" name="type_services[]" id="marketing_select' + index + '" required disabled>' +
+        '<option value="كتابة المحتوي القيم والمقالات">كتابة المحتوي القيم والمقالات</option>' +
+        '<option value="تحسين محركات البحث">تحسين محركات البحث (SEO)</option>' +
+        '<option value="التسويق عبر وسائل التواصل الاجتماعي">التسويق عبر وسائل التواصل الاجتماعي</option>' +
+        '<option value="التسويق عبر البريد الإلكتروني">التسويق عبر البريد الإلكتروني</option>' +
+        '<option value="الحملات الإعلانية المدفوعة (AD)">الحملات الإعلانية المدفوعة (AD)</option>' +
+        '<option value="الفيديو الدعائي">الفيديو الدعائي</option>' +
+        '<option value="خطة تسويق متنوعة">خطة تسويق متنوعة</option>' +
+        '<option value="اخرى">اخرى</option>' +
+        '</select>' +
+        '</div>' +
 
+        '</div>' +
 
-                '<div class="col-md-6 col-sm-12" id="programming1">' +
-                '<label for="programming_select1"> خدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="programming_select1" required>' +
-                '<option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>' +
-                '<option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>' +
-                '<option value="تطوير تطبيقات الجوال">تطوير تطبيقات الجوال</option>' +
-                '<option value="تطوير برمجيات مخصصة">تطوير برمجيات مخصصة</option>' +
-                '<option value="خدمات الحوسبة السحابية">خدمات الحوسبة السحابية</option>' +
-                '<option value="حجز النطاق والإستضافة للمواقع<">حجز النطاق والإستضافة للمواقع</option>' +
-                '<option value="الإستشارات التقنية وحلول الأعمال">الإستشارات التقنية وحلول الأعمال</option>' +
-                '<option value=" اخرى">اخرى</option>' +
+        '<div class="clearfix"></div>' +
 
-                '</select>' +
-                '</div>' +
-                '<div class="col-md-6 col-sm-12" id="graphics1" style="display:none;">' +
-                '<label for="graphics_select1"> خدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="graphics_select1" required disabled>' +
-                '<option value="تصميم الهوية البصرية كاملة">تصميم الهوية البصرية كاملة</option>' +
-                '<option value="تصميم الشعار وبطاقة العمل">تصميم الشعار وبطاقة العمل</option>' +
-                '<option value="تصميم ملصقات التواصل الاجتماعي">تصميم ملصقات التواصل الاجتماعي</option>' +
-                '<option value="تصميم الدعوات والإعلانات ولافتات الويب">تصميم الدعوات والإعلانات ولافتات الويب</option>' +
-                '<option value="تصميم صور انفو جرافيك">تصميم صور انفو جرافيك</option>' +
-                '<option value="تصميم فيديو موشن جرافيك">تصميم فيديو موشن جرافيك</option>' +
-                '<option value="تصميم نماذج تفاعلية لمواقع وتطبيقات">تصميم نماذج تفاعلية لمواقع وتطبيقات (UI/UX)</option>' +
-                '<option value=" اخرى">اخرى</option>' +
+        '<a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>' +
 
-                '</select>' +
-                '</div>' +
+        '</div>');
 
+    phoneInput.find('[name="services[]"]').on('change', function() {
+        var selectedService = $(this).val();
+        var programmingSelect = phoneInput.find('[id^="programming_select"]');
+        var graphicsSelect = phoneInput.find('[id^="graphics_select"]');
+        var marketingSelect = phoneInput.find('[id^="marketing_select"]');
+        if (selectedService === "برمجة وحلول تقنية") {
+            programmingSelect.prop('disabled', false);
+            graphicsSelect.prop('disabled', true);
+            marketingSelect.prop('disabled', true);
+            $('#programming' + index).show();
+            $('#graphics' + index).hide();
+            $('#marketing' + index).hide();
+        } else if (selectedService === "تصميم الجرافيك") {
+            programmingSelect.prop('disabled', true);
+            graphicsSelect.prop('disabled', false);
+            marketingSelect.prop('disabled', true);
+            $('#programming' + index).hide();
+            $('#graphics' + index).show();
+            $('#marketing' + index).hide();
+        } else if (selectedService === "تسويق الكتروني") {
+            programmingSelect.prop('disabled', true);
+            graphicsSelect.prop('disabled', true);
+            marketingSelect.prop('disabled', false);
+            $('#programming' + index).hide();
+            $('#graphics' + index).hide();
+            $('#marketing' + index).show();
+        }
+    });
 
-                '</select>' +
-                '<div class="col-md-6 col-sm-12" id="marketing1" style="display:none;">' +
-                '<label for="marketing_select1"> خدمه</label>' +
-                '<select class="custom-select mr-sm-2" name="type_services[]" id="marketing_select1" required disabled>' +
-                '<option value="كتابة المحتوي القيم والمقالات">كتابة المحتوي القيم والمقالات</option>' +
-                '<option value="تحسين محركات البحث">تحسين محركات البحث (SEO)</option>' +
-                '<option value="التسويق عبر وسائل التواصل الاجتماعي">التسويق عبر وسائل التواصل الاجتماعي</option>' +
-                '<option value="التسويق عبر البريد الإلكتروني">التسويق عبر البريد الإلكتروني</option>' +
-                '<option value="الحملات الإعلانية المدفوعة (AD)">الحملات الإعلانية المدفوعة (AD)</option>' +
-                '<option value="الفيديو الدعائي">الفيديو الدعائي</option>' +
-                '<option value="خطة تسويق متنوعة">خطة تسويق متنوعة</option>' +
-                '<option value=" اخرى">اخرى</option>' +
+    phoneInput.find('.remove_input').on('click', function(e) {
+        e.preventDefault();
+        phoneInput.remove();
+    });
 
-                '</select>' +
-                '</div>' +
+    divPhoneInputs.append(phoneInput);
+});
 
-
-
-
-                '</div>' +
-
-
-                '<div class="clearfix"></div>' +
-
-                '<a href="#" class="remove_input btn btn-danger btn-sm"><i class="fa fa-trash"></i class=></a>' +
-
-                '</div>');
-            x++;
-            $('select').on('change', function() {
-                var val = $(this).val();
-                var parentDiv = $(this).closest('.form-row');
-                // var selectDiv = $(this).closest('.custom-select');
-
-                if (val == 'برمجة وحلول تقنية') {
-                    var programming_input = document.getElementById("programming_select1");
-                    var programming = programming_input.closest("select");
-                    programming.disabled = false;
-                    var graphics_input = document.getElementById("graphics_select1");
-                    var graphics = graphics_input.closest("select");
-                    graphics.disabled = true;
-                    var marketing_input = document.getElementById("marketing_select1");
-                    var marketing = marketing_input.closest("select");
-                    marketing.disabled = true;
-                    parentDiv.find('#programming1').css('display', 'inline');
-                    parentDiv.find('#marketing1').css('display', 'none');
-                    parentDiv.find('#graphics1').css('display', 'none');
-
-
-                } else if (val == 'تصميم الجرافيك') {
-                    var programming_input = document.getElementById("programming_select1");
-                    var programming = programming_input.closest("select");
-                    programming.disabled = true;
-                    var graphics_input = document.getElementById("graphics_select1");
-                    var graphics = graphics_input.closest("select");
-                    graphics.disabled = false;
-                    var marketing_input = document.getElementById("marketing_select1");
-                    var marketing = marketing_input.closest("select");
-                    marketing.disabled = true;
-                    parentDiv.find('#programming1').css('display', 'none');
-                    parentDiv.find('#marketing1').css('display', 'none');
-                    parentDiv.find('#graphics1').css('display', 'inline');
-                } else if (val == 'تسويق الكتروني') {
-                    var programming_input = document.getElementById("programming_select1");
-                    var programming = programming_input.closest("select");
-                    programming.disabled = true;
-                    var graphics_input = document.getElementById("graphics_select1");
-                    var graphics = graphics_input.closest("select");
-                    graphics.disabled = true;
-                    var marketing_input = document.getElementById("marketing_select1");
-                    var marketing = marketing_input.closest("select");
-                    marketing.disabled = false;
-                    parentDiv.find('#programming1').css('display', 'none');
-                    parentDiv.find('#graphics1').css('display', 'none');
-                    parentDiv.find('#marketing1').css('display', 'inline');
-                }
-            });
-
-            // $('select').on('change', function() {
-            //     alert('fff');
-            //     var val = $(this).val()
-            //     if (val == 'برمجة وحلول تقنية') {
-
-            //         $('#programming1').css('display', 'inline')
-            //         $('#graphics1').css('display', 'none');
-            //         $('#marketing1').css('display', 'none');
-
-
-            //     } else if (val == 'تصميم الجرافيك') {
-
-            //         $('#programming1').css('display', 'none')
-            //         $('#graphics1').css('display', 'inline');
-            //         $('#marketing1').css('display', 'none');
-
-            //     } else if (val == 'تسويق الكتروني') {
-
-            //         $('#programming1').css('display', 'none');
-            //         $('#graphics1').css('display', 'none');
-            //         $('#marketing1').css('display', 'inline');
-
-            //     }
-            // });
-        });
-        $(document).on('click', '.remove_input', function() {
-            $(this).parent('div').remove();
-            x--;
-            return false;
-        });
     </script>
 
 
