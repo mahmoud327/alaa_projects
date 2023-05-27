@@ -119,13 +119,16 @@
                             <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                                 class="swiper mySwiper-product">
                                 <div class="swiper-wrapper">
+                                    @foreach ($product->images as $image)
                                     <div class="swiper-slide">
                                         <div class="swiper-slide-container">
 
-                                            <img src="{{ $product->image_path }}" />
+                                            <img src="{{ $image->image_path }}" />
 
                                         </div>
+                                        
                                     </div>
+                                    @endforeach
 
 
                                 </div>
