@@ -24,7 +24,7 @@
                         <img src="{{ asset('website/img/coding.png') }}" alt="web-development" class="img-fluid">
                         <h4>برمجة وحلول تقنية</h4>
                         <ul class="list-unstyled">
-                            <li>انشاء المواقع الالكترونية</li>
+                            <li>إنشاء المواقع الالكترونية</li>
                             <li>إنشاء المتاجر الإلكترونية</li>
                             <li>تطوير تطبيقات الجوال</li>
                             <li>تطوير برمجيات مخصصة</li>

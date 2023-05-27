@@ -8,7 +8,7 @@
     </section>
     <!--end header section-->
     <!--start contact section-->
-    <section class="contact">
+    <section class="contact cont">
         <div class="container" data-aos="zoom-in" data-aos-duration="2000">
             <h3> إن كنت من أصحاب الشغف والطموح والإبداع أهلا بك في فريقنا الإحترافي</h3>
 

@@ -16,7 +16,7 @@
                             <div class="data">
                                 <h5>فكرة المنتج</h5>
                                 <p>
-                                    {!! $product->desc!!}
+                                    {!! $product->desc !!}
                                 </p>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                 <h5> مشاركة المنتج</h5>
                                 <div class="share">
                                     <p class="dataSocial">
-                                        <span>{{ asset('products/'.$product->id)}}</span>
+                                        <span>{{ asset('products/' . $product->id) }}</span>
                                     </p>
                                     <div class="icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -119,13 +119,16 @@
                             <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                                 class="swiper mySwiper-product">
                                 <div class="swiper-wrapper">
+                                    @foreach ($product->images as $image)
                                     <div class="swiper-slide">
                                         <div class="swiper-slide-container">
 
-                                            <img src="{{ $product->image_path }}" />
+                                            <img src="{{ $image->image_path }}" />
 
                                         </div>
+                                        
                                     </div>
+                                    @endforeach
 
 
                                 </div>
@@ -148,12 +151,27 @@
                         </div>
 
                         <!-- Swiper JS -->
-                        <div class="vist">
+                        @if ($product->type_link == 'website')
+                            <div class="d-flex justify-content-between " style="gap:5px">
 
-                            <a href="{{ $product->link }}" style="text-decoration: none">
-                                <h5>زيارة الموقع </h5>
-                            </a>
-                        </div>
+                                <a class="vist w-100" href="{{ $product->link }}" style="text-decoration: none">
+                                    <h5>زيارة الموقع </h5>
+                                </a>
+
+                            </div>
+                        @elseif($product->type_link == 'mobile')
+                            <div class="d-flex justify-content-between " style="gap:5px">
+
+                                <a class="vist w-100" href="{{ $product->link_app_stroe }}"
+                                    style="text-decoration: none">
+                                    <h5> App store </h5>
+                                </a>
+                                <a class="vist w-100" href="{{ $product->link_geogle_play }}"
+                                    style="text-decoration: none">
+                                    <h5> Google play </h5>
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

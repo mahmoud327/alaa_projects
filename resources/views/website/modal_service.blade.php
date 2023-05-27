@@ -73,7 +73,7 @@
                                         <label for="programming_select"> خدمه</label>
                                         <select class="custom-select mr-sm-2" name="type_services[]" id="programming_select"
                                             required>
-                                            <option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>
+                                            <option value="إنشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>
                                             <option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>
                                             <option value="تطوير تطبيقات الجوال<">تطوير تطبيقات الجوال</option>
                                             <option value="تطوير برمجيات مخصصة">تطوير برمجيات مخصصة</option>
