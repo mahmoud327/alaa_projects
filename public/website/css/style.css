@@ -372,7 +372,7 @@ h2 {
   justify-content: center;
   align-items: center;
   /* clip-path: polygon(25% 0%, 75% 0%, 85% 50%, 75% 100%, 25% 100%, 15% 50%); */
-  background-color: var(--hover-color);
+  background-color: var(--main-Color);
   color: #fff;
   padding: 15px 40px;
   border-radius: 5px;
@@ -389,7 +389,7 @@ h2 {
 }
 .services a:hover {
   /* color: #282828; */
-  background-color: var(--main-Color);
+  background-color: var(--hover-color);
 }
 .services a a {
   clip-path: polygon(25% 0%, 75% 0%, 85% 50%, 75% 100%, 25% 100%, 15% 50%);
@@ -1787,7 +1787,7 @@ h2 {
   font-weight: bolder;
 }
 .gallery img {
-  width: 341px !important;
+  width: 348px !important;
   height: 260px !important;
   object-fit: cover;
   /* border-radius: 5px !important;

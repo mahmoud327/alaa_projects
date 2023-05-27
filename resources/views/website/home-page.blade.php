@@ -10,8 +10,8 @@
                         text-align: center;">
                     <div class="col-md-6 col-sm-12">
                         <h1 style="font-weight: bolder;">علاء عزاني للتقنية</h1>
-                        <p>شريكك التقني الأول للتحول الرقمي</p>
-                        <p>
+                        <p class="fs-5">شريكك التقني الأول للتحول الرقمي</p>
+                        <p class="fs-5">
                             <span style="color: #64b1e7;">
                                 مستعد
                             </span>
@@ -40,9 +40,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 box-services">
                     <div class="card">
                         <img src="{{ asset('website/img/coding.png') }}" alt="web-development" class="img-fluid">
-                        <h4> حلول التقنية</h4>
+                        <h4> الحلول التقنية</h4>
                         <ul class="list-unstyled">
-                            <li> المواقع الالكترونية</li>
+                            <li> إنشاء المواقع الالكترونية </li>
                             <li>إنشاء المتاجر الإلكترونية</li>
                             <li>تطوير تطبيقات الجوال</li>
                             <li>تطوير برمجيات مخصصة</li>
@@ -55,7 +55,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 box-services">
                     <div class="card">
                         <img src="{{ asset('website/img/Graphic Design.png') }}" alt="cms" class="img-fluid">
-                        <h4> خدمه</h4>
+                        <h4> التصميم الجرافيك
+</h4>
                         <ul class="list-unstyled">
                             <li>تصميم الهوية البصرية كاملة</li>
                             <li>تصميم الشعار وبطاقة العمل</li>
@@ -71,7 +72,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 box-services">
                     <div class="card">
                         <img src="{{ asset('website/img/digital marketing.png') }}" alt="e-learning" class="img-fluid">
-                        <h4> خدمه</h4>
+                        <h4> التسويق الالكتروني
+</h4>
                         <ul class="list-unstyled">
                             <li>كتابة المحتوي القيم والمقالات</li>
                             <li>تحسين محركات البحث (SEO)</li>
@@ -256,7 +258,7 @@
                 <div class="swiper-pagination"></div>
             </div>
             <!-- <div class="clip-path"> -->
-            <a href="{{ route('my-works.index') }}">المزيد من المقالات</a>
+            <a href="{{ route('my-works.index') }}">المزيد من الاعمال</a>
             <!-- </div> -->
         </div>
     </section>
@@ -531,7 +533,7 @@
         '<div class="col-md-6 col-sm-12" id="programming' + index + '">' +
         '<label for="programming_select' + index + '"> خدمه</label>' +
         '<select class="custom-select mr-sm-2" name="type_services[]" id="programming_select' + index + '" required>' +
-        '<option value="انشاء المواقع الالكترونية">انشاء المواقع الالكترونية</option>' +
+        '<option value="إنشاء المواقع الالكترونية">إنشاء المواقع الالكترونية</option>' +
         '<option value="إنشاء المتاجر الإلكترونية">إنشاء المتاجر الإلكترونية</option>' +
         '<option value="تطوير تطبيقات الجوال">تطوير تطبيقات الجوال</option>' +
         '<option value="تطوير برمجيات مخصصة">تطوير برمجيات مخصصة</option>' +

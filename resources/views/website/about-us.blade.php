@@ -43,7 +43,7 @@
                 </p>
             </div>
 
-            <div class="story">
+            <!-- <div class="story">
                 <h4>قصتنا </h4>
                 <p>
                     فريق علاء عزاني للتقنية تأسس عام 2022 لتقدم الخدمات والحلول الرقمية
@@ -52,36 +52,11 @@
                     والمؤسسات والشركات والجهات الحكومية بأحدث التقنيات والأدوات المواكبة
                     للعصر.
                 </p>
-            </div>
+            </div> -->
 
             <br>
             
 
-            <section class="team">
-
-                <div class="container text-center">
-                    <h2>فريقنا</h2>
-                    <!-- Swiper -->
-                    <div class="swiper mySwiper4">
-                        <div class="swiper-wrapper">
-                            @foreach ($teams as $team)
-                                <div class="swiper-slide">
-                                    <div class="card my-team">
-                                        <img src="{{ $team->image_path }}" alt="quote" class="img-fluid">
-                                        <h3>{{ $team->name }}</h3>
-                                        <span>{{ $team->job_title }} </span>
-                                    </div>
-                                </div>
-                            @endforeach
-
-
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
 
             <div class="goals">
                 <div class="row text-center">
@@ -103,7 +78,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <img src="{{ asset('website/img/target.png') }}" width="70" alt="target" class="img-fluid" />
-                        <h5>اهدافنا</h5>
+                        <h5>أهدافنا</h5>
                         <p>
                             أن نحظى بثقة عملائنا من خلال رضاهم عن خدماتنا التى
                             نقدمها لهم بكل حب
@@ -111,6 +86,32 @@
                     </div>
                 </div>
             </div>
+            
+            <section class="team">
+
+                <div class="container text-center">
+                    <h2 style="color:#48a5e7 !important">فريقنا</h2>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper4">
+                        <div class="swiper-wrapper">
+                            @foreach ($teams as $team)
+                                <div class="swiper-slide">
+                                    <div class="card my-team">
+                                        <img src="{{ $team->image_path }}" alt="quote" class="img-fluid">
+                                        <h3>{{ $team->name }}</h3>
+                                        <span>{{ $team->job_title }} </span>
+                                    </div>
+                                </div>
+                            @endforeach
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
         </div>
     </section>
 @endsection

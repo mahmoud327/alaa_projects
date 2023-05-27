@@ -10,7 +10,7 @@
     </section>
     <!--end header section-->
     <!--start contact section-->
-    <section class="contact">
+    <section class="contact container-fluid">
         <div class="container" data-aos="zoom-in" data-aos-duration="2000">
             <h4 style="color: #64b1e7;">تواصل معنا عن طريق قنوات التواصل التالية</h4>
 
@@ -187,7 +187,7 @@
                   direction: initial;
                   background-color: #e9f6fd;
                 "
-                            class="py-1 sochial">AlaaAzani
+                            class="py-1 sochial">Alaa Azani
                         </a>
                     </div>
                 </div>
